@@ -7,6 +7,8 @@ const siteMetadata={
     language: 'es-ES',
     email: 'cristiantafur@gmail.com',
     siteUrl: '',
+    instagramUrl:'https://www.instagram.com/tafur0011/',
+    facebookUrl: 'https://www.facebook.com/cristiandavid.tafurcampo',
     socialBanner: '/static/images/twitter-card.png',
     siteRepo:'https://github.com/CristianTafur249/blog-personal.git',
     siteLogo: '/static/images/logo-techcode.png',
