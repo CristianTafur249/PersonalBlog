@@ -3,7 +3,7 @@ import siteMetadata, { siteUrl } from "@/data/siteMetatdata";
 export default function Footer(){
     return(
         
-        <footer className="bg-neutral-900 text-center text-white">
+        <footer className=" bg-gray-900 text-center text-white mix-blend-difference">
             <div className="container px-6 pt-6 ">
                 <div className="mb-6 flex justify-center">
                     <a
@@ -106,7 +106,7 @@ export default function Footer(){
                 </div>
             </div>
             <div
-                className="p-4 text-center bg-gray-900">
+                className="p-4 text-center ">
                     © 2023 Copyright: 
                 <a className="text-whitehite" href={siteMetadata.siteUrl}
                 >{siteMetadata.title}</a>

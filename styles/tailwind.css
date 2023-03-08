@@ -14,4 +14,9 @@
             max-width: 768px;
           }
     }
+    .background{
+    background-image: url('https://media.licdn.com/dms/image/D4E16AQGQ4BECTKwWQA/profile-displaybackgroundimage-shrink_350_1400/0/1671630887073?e=1683763200&v=beta&t=HfpWPbMLyPzGXSbCgH65w-vjv0KtJNWZVjvaCAq2lY0');
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
 }

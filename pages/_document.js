@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html lang={siteMetadata.language}>
+    <Html lang={siteMetadata.language} className="bg-white dark:bg-black">
       <Head />
       <body className='bg-white dark:bg-black'>
         <Main />
