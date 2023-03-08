@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
+      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <main className='' > 
       <Navbar/>
       <div className='flex justify-center'>

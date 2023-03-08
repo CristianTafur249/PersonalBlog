@@ -5,7 +5,8 @@ export default function Document() {
   return (
     <Html lang={siteMetadata.language} className="bg-white dark:bg-black">
       <Head>
-        </Head> 
+        
+      </Head> 
       <body className='bg-white dark:bg-black'>
         <Main />
         <NextScript />
