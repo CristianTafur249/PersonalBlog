@@ -3,6 +3,7 @@ import Header from "./Header";
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { current } from "tailwindcss/colors";
+import ThemeSwitch from "./ThemeSwitch";
 
 const navigation = [
     {name: 'Inicio', href: '/', current: true},
@@ -17,10 +18,10 @@ function className (...classes){
 export default function Navbar(){
     return(
         <>
-        <Disclosure as="nav">
+        <Disclosure as="nav" className='bg-gray-900 '>
             {({open}) => (
                 <>
-                <div className=" mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                <div className="text-white mix-blend-difference mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                     <div className="relative flex items-center justify-between h-16">
                         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                             {/* Boton de menú de celular */}
@@ -71,6 +72,7 @@ export default function Navbar(){
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
+                 
                 </button>
               </div>
             </div>

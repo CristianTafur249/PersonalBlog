@@ -1,5 +1,6 @@
-const siteMetadata={
+const siteMetadata = {
     site_name: 'Tafur Blog',
+    theme: 'system',
     title: 'The TechCode',
     author: 'Cristian Tafur',
     headerTitle: 'The TechCode',
