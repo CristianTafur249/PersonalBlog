@@ -7,9 +7,9 @@ import Footer from "./Footer";
 import ThemeSwitch from "./ThemeSwitch";
 
 const navigation = [
-    {name: 'Inicio', href: '/', current: true},
-    {name: 'Blogs', href: './blog', current: false},
-    {name: 'Sobre mi', href: './sobre-mi',current: false},
+    {name: 'Inicio', href: '/'},
+    {name: 'Blogs', href: './blog'},
+    {name: 'Sobre mi', href: './sobre-mi'},
 ];
 
 function className (...classes){

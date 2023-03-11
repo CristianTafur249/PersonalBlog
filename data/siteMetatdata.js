@@ -3,7 +3,7 @@ const siteMetadata = {
     theme: 'system',
     title: ' The TechCode ',
     author: 'Cristian Tafur',
-    headerTitle: 'The TechCode',
+    headerTitle: ' The TechCode ',
     description: 'Código, tecnología y programación',
     language: 'es-ES',
     email: 'cristiantafur@gmail.com',

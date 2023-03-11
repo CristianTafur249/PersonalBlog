@@ -4,7 +4,6 @@ import siteMetadata from '@/data/siteMetatdata'
 import '@/styles/globals.css'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
-import '@/styles/tailwind.css'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
