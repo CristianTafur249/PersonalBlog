@@ -6,13 +6,13 @@ import siteMetadata from "@/data/siteMetatdata";
 export default function FourZeroFour(){
     return(
         <>
-        <PageSEO title={`Page no encontrada - ${siteMetadata.title}`}/>
-        <main className=" grid min-w-full min-h-full place-items-center text-white py-24 px-6 sm:py-32 lg:px-8 mix-blend-difference">
+        <PageSEO title={`Pagina no encontrada - ${siteMetadata.title}`}/>
+        <main className=" t grid min-w-full min-h-full place-items-center mix-blend-difference py-24 px-6 sm:py-32 lg:px-8 ">
             <div className="text-center">
-                <p className="text-6xl  font-semibold text-yellow-600">
+                <p className="text-6xl  font-semibold text-yellow-400">
                     404
                 </p>
-                <h1 className="text-3xl mt-4 font-extrabold leading-9 tracking-tight  sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+                <h1 className="text-3xl mix-blend-difference mt-4 font-extrabold leading-9 tracking-tight  sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
                     Pagina no Escontrada
                 </h1>
                 <p className="mt-6 text-base leading-7 ">

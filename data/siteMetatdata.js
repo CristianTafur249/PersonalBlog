@@ -1,7 +1,7 @@
 const siteMetadata = {
     site_name: 'Tafur Blog',
     theme: 'system',
-    title: 'The TechCode',
+    title: ' The TechCode ',
     author: 'Cristian Tafur',
     headerTitle: 'The TechCode',
     description: 'Código, tecnología y programación',

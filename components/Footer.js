@@ -3,15 +3,15 @@ import siteMetadata, { siteUrl } from "@/data/siteMetatdata";
 export default function Footer(){
     return(
         
-        <footer className=" bg-gray-900 text-center text-white mix-blend-difference">
-            <div className="container px-6 pt-6 ">
-                <div className="mb-6 flex justify-center">
+        <footer className="  text-center  mix-blend-difference">
+            <div className="container px-6 pt-6">
+                <div className="mb-6 flex justify-center mix-blend-difference">
                     <a
                         href={siteMetadata.facebookUrl}
                         type="button"
-                        className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                        className="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal  transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                         data-te-ripple-init
-                        data-te-ripple-color="light">
+                        data-te-ripple-color="dark">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="mx-auto h-full w-4"
@@ -25,7 +25,7 @@ export default function Footer(){
                     <a
                         href={siteMetadata.email}
                         type="button"
-                        className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                        className="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                         data-te-ripple-init
                         data-te-ripple-color="light">
                         <svg
@@ -43,7 +43,7 @@ export default function Footer(){
                     <a
                         href={siteMetadata.twitter}
                         type="button"
-                        className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                        className="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal  transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                         data-te-ripple-init
                         data-te-ripple-color="light">
                         <svg
@@ -59,7 +59,7 @@ export default function Footer(){
                     <a
                         href={siteMetadata.linkedin}
                         type="button"
-                        className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                        className="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                         data-te-ripple-init
                         data-te-ripple-color="light">
                         <svg
@@ -75,7 +75,7 @@ export default function Footer(){
                     <a
                         href={siteMetadata.github}
                         type="button"
-                        className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                        className="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal  transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                         data-te-ripple-init
                         data-te-ripple-color="light">
                         <svg
@@ -91,7 +91,7 @@ export default function Footer(){
                     <a
                         href={siteMetadata.instagramUrl}
                         type="button"
-                        className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                        className="m-1 h-9 w-9 rounded-full border-2 uppercase leading-normal  transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                         data-te-ripple-init
                         data-te-ripple-color="light">
                         <svg
@@ -104,13 +104,15 @@ export default function Footer(){
                         </svg>
                     </a>
                 </div>
+                
             </div>
             <div
                 className="p-4 text-center ">
-                    © 2023 Copyright: 
+                    © 2023 Copyright :  
                 <a className="text-whitehite" href={siteMetadata.siteUrl}
                 >{siteMetadata.title}</a>
             </div>
+            
         </footer>
 
     );
