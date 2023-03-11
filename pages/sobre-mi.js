@@ -3,15 +3,15 @@ import { getFilesBySlug } from "@/lib/mdx";
 
 const DEFAULT_LAYOUT = 'AuthorLayout';
 
-export async function getStaticProps(){
+export async function getStaticProps() {
     const authorDetails = await getFilesBySlug('authors', ['tafur'])
-    return{ props: {authorDetails}}
+    return { props: { authorDetails } }
 }
 
-export default function SobreMi({authorDetails}){
-    const {mdxSource, frontMatter} = authorDetails
+export default function SobreMi({ authorDetails }) {
+    const { mdxSource, frontMatter } = authorDetails
 
-    return(
+    return (
         <MDXLayoutRender
             layout={frontMatter.layout || DEFAULT_LAYOUT}
             mdxSource={mdxSource}

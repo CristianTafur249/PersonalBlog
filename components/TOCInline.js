@@ -5,14 +5,14 @@ const TOInline = ({
     toHeading = 6,
     asDisclosure = false,
     exclude = '',
-})=>{
+}) => {
     const re = Array.isArray(exclude)
-    ? new RegExp('^(' + exclude.join('|') + ')$', 'i')
-    : new RegExp('^(' + exclude + ')$', 'i')
+        ? new RegExp('^(' + exclude.join('|') + ')$', 'i')
+        : new RegExp('^(' + exclude + ')$', 'i')
 
     const filterredToc = toc.filter(
         (heading) =>
-        heading.depth >= fromHeading && heading.depth <= toHeading && !re.test(heading.value)
+            heading.depth >= fromHeading && heading.depth <= toHeading && !re.test(heading.value)
     )
 
     const tocList = (
@@ -31,7 +31,7 @@ const TOInline = ({
                     <summary className="ml-16 pb-2 text-xl font-bold">Tabla de contenido</summary>
                     <div className="ml-6"> {tocList}</div>
                 </details>
-            ) :(
+            ) : (
                 tocList
             )}
         </>
