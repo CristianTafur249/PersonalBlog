@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Paginatioon({ totalPages, currentPage }) {
+export default function Pagination({ totalPages, currentPage }) {
     const prevPage = parseInt(currentPage) - 1 > 0
     const nextPage = parseInt(currentPage) + 1 <= parseInt(totalPages)
     return (
