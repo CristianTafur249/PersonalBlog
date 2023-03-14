@@ -13,7 +13,7 @@ export default function FourZeroFour() {
                         404
                     </p>
                     <h1 className="text-3xl mix-blend-difference mt-4 font-extrabold leading-9 tracking-tight  sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-                        Pagina no Escontrada
+                        Página no Encontrada
                     </h1>
                     <p className="mt-6 text-base leading-7 ">
                         Lo siento, no podemos encontrar la pagina que buscas

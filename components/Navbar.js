@@ -9,7 +9,9 @@ import ThemeSwitch from "./ThemeSwitch";
 const navigation = [
   { name: 'Inicio', href: '/' },
   { name: 'Blogs', href: './blog' },
+  {name: 'Etiquetas', href: './tags'},
   { name: 'Sobre mi', href: './sobre-mi' },
+  
 ];
 
 function className(...classes) {

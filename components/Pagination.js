@@ -29,11 +29,8 @@ export default function Pagination({ totalPages, currentPage }) {
                         <button rel="sigiente">Siguiente</button>
                     </Link>
                 )
-
                 }
-
             </nav>
-
         </div>
     );
 }
