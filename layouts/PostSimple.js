@@ -3,11 +3,11 @@ import SectionContainer from "@/components/SectionContainer";
 import { BlogSEO } from "@/components/SEO";
 import siteMetadata from "@/data/siteMetatdata";
 import formatDate from "@/lib/utils/formatDate";
-import next from "next";
 import Link from "next/link";
 
 export default function PostLayout({ frontmatter, authorDetails, siguiente, anterior, children }) {
     const { date, title } = frontmatter;
+
     return (
         <SectionContainer>
             <BlogSEO url={`${siteMetadata.siteUrl}/blog/${frontmatter.slug}`} {...frontmatter} />

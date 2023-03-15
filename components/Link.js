@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 const CustomLink = ({ href, ...rest }) => {
     const isInternalLink = href && href.startsWith('/')
     const isAnchortLink = href && href.startsWith('#')
@@ -6,7 +7,7 @@ const CustomLink = ({ href, ...rest }) => {
 
     if (isInternalLink) {
         return (
-            <Link href={href}>
+            <Link href={href} legacyBehavior>
                 <a {...rest} />
             </Link>
         )

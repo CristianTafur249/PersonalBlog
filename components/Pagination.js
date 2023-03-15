@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 
 export default function Pagination({ totalPages, currentPage }) {
     const prevPage = parseInt(currentPage) - 1 > 0
@@ -8,12 +8,12 @@ export default function Pagination({ totalPages, currentPage }) {
             <nav className="flex justify-between">
                 {!prevPage && (
                     <button rel="previa" className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
-                        Pagina anterior
+                        Anterior
                     </button>
                 )}
                 {prevPage && (
                     <Link href={currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`}>
-                        <button rel="previa"></button>
+                        <button rel="previa"> Anterior</button>
                     </Link>
                 )}
                 <span>

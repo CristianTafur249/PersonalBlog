@@ -18,9 +18,9 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     return (
         <>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <section className="mb-32 text-center lg:text-left">
+                <section className="mb-32  text-center lg:text-left">
                     <div className="border-b-2 grid lg:grid-cols-2 gap-6 xl:gap-12 items-center">
-                        <div className="mb-6 lg:mb-0 py-1">
+                        <div className="mb-3 lg:mb-0 py-1">
                             <h1 className="text-5xl md:text-6xl xl:text-7xl fond-bold mix-blend-difference tracking-tight">
                                 {title}
                             </h1>
@@ -30,11 +30,13 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                                     type="text"
                                     onChange={(e) => setSearchValue(e.target.value)}
                                     placeholder="Buscar articulo"
-                                    className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                                    className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 max-input-size"
+                                    
                                 />
 
                                 <svg
                                     className="w-6"
+                                    fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -54,7 +56,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                     </div>
                 </section>
                 <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-                    {!filteredBlogPosts.length && 'No posts found.'}
+                    {!filteredBlogPosts.length && 'No se encontraron post.'}
                     {displayPosts.map((frontMatter) => {
                         const { slug, date, title, summary, tags } = frontMatter;
                         return (

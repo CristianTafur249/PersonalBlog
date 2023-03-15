@@ -7,12 +7,13 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
     return (
         <Head>
             <title>{title}</title>
-            <link rel="icon" href="/favicon.ico" />
+            <meta name="robots" content="follow, index" />
+            <link rel="icon" href={siteMetadata.siteico} />
             <meta name="description" content={description} />
             <meta name="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
             <meta name="og:type" content={ogType} />
             <meta name="og:description" content={description} />
-            <meta name="og:site_name" content={siteMetadata.siteName} />
+            <meta name="og:site_name" content={siteMetadata.site_name} />
             <meta property="og:title" content={title} />
             {ogImage.constructor.name === 'Array' ? (
                 ogImage.map(({ url }) => <meta property="og:image" content={url} key={url} />)
@@ -52,7 +53,7 @@ export const TagSEO = ({ title, descripcion }) => {
         <>
             <CommonSEO
                 title={title}
-                descripcion={descripction}
+                descripcion={descripcion}
                 ogType="website"
                 ogImage={ogImageUrl}
                 twImage={twImageUrl}
@@ -61,7 +62,7 @@ export const TagSEO = ({ title, descripcion }) => {
                 <link
                     rel="alternate"
                     type="aplication/rss +xml"
-                    title={`${description} -RSS feed`}
+                    title={`${descripcion} -RSS feed`}
                     href={`${siteMetadata.siteUrl}${router.asPath}/feed.xml`}
                 />
             </Head>
@@ -137,7 +138,7 @@ export const BlogSEO = ({
                 title={title}
                 descripcion={summary}
                 ogType="website"
-                ogImage={ogImageUrl}
+                ogImage={twImageUrl}
                 twImage={twImageUrl}
                 canonicalUrl={canonicalUrl}
             />

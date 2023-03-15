@@ -25,9 +25,6 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
   return (
     <>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Header />
       <>
@@ -81,7 +78,7 @@ export default function Home({ posts }) {
               <Link
                 href='/blog'
                 className='text-primary-500 hover:text-primary-600 dark:hover:text-primary-400'
-                aria-aria-label='Todos los Posts'
+                aria-label='Todos los Posts'
               >
                 Todos los Posts
               </Link>

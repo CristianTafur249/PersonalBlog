@@ -5,6 +5,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { current } from "tailwindcss/colors";
 import Footer from "./Footer";
 import ThemeSwitch from "./ThemeSwitch";
+import siteMetadata from "@/data/siteMetatdata";
 
 const navigation = [
   { name: 'Inicio', href: '/' },
@@ -43,12 +44,12 @@ export default function Navbar({ children }) {
                       <a href="/" >
                         <img
                           className="sm:block h-8 w-auto lg:hidden"
-                          src="/images/techcode.png"
+                          src={siteMetadata.siteLogo}
                           alt="techcode"
                         />
                         <img
                           className="hidden h-8 min-w-min w-auto lg:block"
-                          src="/images/techcode.png"
+                          src={siteMetadata.siteLogo}
                           alt="techcode"
                         />
                       </a>
