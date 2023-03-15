@@ -5,6 +5,7 @@ import { formatSlug, getAllFilesMetadata, getFiles, getFilesBySlug } from "@/lib
 import fs from 'fs'
 
 const DEFAULT_LAYOUT = 'PostLayout'
+
 export async function getStaticPaths() {
     const posts = getFiles('blog');
     return {
@@ -55,7 +56,7 @@ export default function Bñog({ post, authorDetails, anterior, posterior }) {
             ) : (
                 <div className="mt-24 text-center">
                     <PageTitle>
-                        Em Costruccion {' '}
+                        En Costruccion {' '}
                         <span role="img" aria-label="roadwork sign">
                             🚧
                         </span>

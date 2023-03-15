@@ -26,7 +26,7 @@ const TOInline = ({
     )
     return (
         <>
-            {isDisclosure ? (
+            {asDisclosure ? (
                 <details open>
                     <summary className="ml-16 pb-2 text-xl font-bold">Tabla de contenido</summary>
                     <div className="ml-6"> {tocList}</div>

@@ -2,7 +2,7 @@ import PageTitle from "@/components/PageTitle";
 import SectionContainer from "@/components/SectionContainer";
 import { BlogSEO } from "@/components/SEO";
 import Tag from "@/components/Tag";
-import Link from "next/link";
+import Link from "@/components/Link";
 import Image from "@/components/Image";
 import siteMetadata from "@/data/siteMetatdata";
 

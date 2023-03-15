@@ -3,7 +3,7 @@ import SectionContainer from "@/components/SectionContainer";
 import { BlogSEO } from "@/components/SEO";
 import siteMetadata from "@/data/siteMetatdata";
 import formatDate from "@/lib/utils/formatDate";
-import Link from "next/link";
+import Link from "@/components/Link";
 
 export default function PostLayout({ frontmatter, authorDetails, siguiente, anterior, children }) {
     const { date, title } = frontmatter;
