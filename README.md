@@ -1,6 +1,5 @@
 ![techcode-banner](/public/static/images/ThecCode.png)
 
-<img src="/public/static/images/ThecCode.png" alt="techcode-banner">
 
 # TechCode
 
@@ -25,11 +24,28 @@ En este blog, encontrarás una variedad de temas relacionados con la tecnología
 
 Este blog es un proyecto personal, pero siempre estoy abierto/a a colaboraciones y contribuciones de la comunidad. Si tienes una idea para un artículo, sugerencia o simplemente quieres compartir tus pensamientos, ¡házmelo saber!
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Stack
 
-## Getting Started
+ThechCode usa:
 
-First, run the development server:
+- React
+- Next.js
+- Tailwindcss
+- MDX
+
+Y es hosteado en Vercel
+
+Es un proyecto [Next.js](https://nextjs.org/) que inicia usando [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Caracteristicas
+
+- Vista amable en moviles.
+- Tema claro y oscuro.
+- Soporta el uso de etiqutas, ademas, estas se mostraran en una pagina.
+
+## Como iniciar
+
+Para empezar, ejecuta en la linea de comandos:
 
 ```bash
 npm run dev
@@ -39,15 +55,21 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+abre [http://localhost:3000](http://localhost:3000) En tu navegador preferido para ver los resultados.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Podras empezar a editar el `pages/index.js`. Este se actualizará automaticamente.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Extenciones a editar
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+`data/siteMetadata.json` - Contiene la mayoria de la informacion del sitio.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+`public/static` - Almacena las imagenes estaticas.
+
+`css/` - Contienes los estilos usados en el sitio.
+
+`layouts` - Contiene las plantillas que usarás en el sitio.
+
+`pages` - Tiene la ruta de las pagina. Lee [Next.js documentation](https://nextjs.org/docs) Para más informacion.
 
 ## Learn More
 
