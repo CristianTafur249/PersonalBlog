@@ -10,7 +10,7 @@ const siteMetadata = {
     siteUrl: 'https://thechcode.netlify.app/',
     instagramUrl:'https://www.instagram.com/tafur0011/',
     facebookUrl: 'https://www.facebook.com/cristiandavid.tafurcampo',
-    socialBanner: '/static/images/TechCode.png',
+    socialBanner: '/static/images/TechCode1.png',
     siteRepo:'https://github.com/CristianTafur249/blog-personal.git',
     siteLogo: '/static/images/techcode.png',
     siteico: '/static/favicon/favicon.ico',
