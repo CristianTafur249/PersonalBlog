@@ -15,10 +15,11 @@ export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider attribute='class' defaultTheme={siteMetadata.theme}>
       <Head>
+        <meta name="google-site-verification" content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       {isDevelopment && isSocket && <ClientReload />}
-      <Analytics/>
+      <Analytics />
       <Navbar>
         <Component {...pageProps} />
       </Navbar>

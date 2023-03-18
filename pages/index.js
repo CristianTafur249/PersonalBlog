@@ -26,7 +26,6 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <Header />
       <>
         <div className='mx-auto my-auto pb-12 max-w-7xl px-6 lg:px-8'>
           <div className='mx-auto mt-10 grid max-w-2xl  grid-cols-1 gap-y-16 gap-x-8 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2'>

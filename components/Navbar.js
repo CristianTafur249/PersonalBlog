@@ -12,7 +12,7 @@ const navigation = [
   { name: 'Inicio', href: '/' },
   { name: 'Blogs', href: '/blog' },
   { name: 'Etiquetas', href: '/tags' },
-  { name: 'Sobre mi', href: '/sobre-mi' },
+  { name: 'About', href: '/sobre-mi' },
 
 ];
 
@@ -41,7 +41,7 @@ export default function Navbar({ children }) {
                     </Disclosure.Button>
                   </div>
                   <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                    <div className="flex flex-shrink-0 items-center ">
+                    <div className="flex flex-shrink-0 items-center  mix-blend-color-burn">
                       <a href="/" >
                         <img
                           className="sm:block h-8 w-auto lg:hidden"
@@ -94,6 +94,7 @@ export default function Navbar({ children }) {
             </>
           )}
         </Disclosure>
+        <Header/>
       </header>
       <main className="mt-3">{children}</main>
 
