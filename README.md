@@ -1,8 +1,29 @@
-![techcode-banner](/static/images/ThecCode.png)
+![techcode-banner](/public/static/images/ThecCode.png)
 
-#TechCode
+<img src="/public/static/images/ThecCode.png" alt="techcode-banner">
 
-Tech
+# TechCode
+
+TechCode es un blog personal dedicado a la tecnología y el código. En este espacio, encontrarás contenido sobre desarrollo de software, programación, tecnología, noticias de la industria y más.
+
+¡Gracias por visitar TechCode! Espero que disfrutes del contenido y te animes a participar en la conversación. Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto conmigo.
+
+## Contenido
+
+En este blog, encontrarás una variedad de temas relacionados con la tecnología y el código, incluyendo:
+
+<ul>
+<li>Desarrollo de software</li>
+<li>Programación</li>
+<li>Tecnología</li>
+<li>Noticias de la industria</li>
+<li>Tutoriales y guías</li>
+<li>Herramientas y recursos</li>
+</ul>
+
+## Contribuciones
+
+Este blog es un proyecto personal, pero siempre estoy abierto/a a colaboraciones y contribuciones de la comunidad. Si tienes una idea para un artículo, sugerencia o simplemente quieres compartir tus pensamientos, ¡házmelo saber!
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
