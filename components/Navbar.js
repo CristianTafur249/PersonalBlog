@@ -22,7 +22,7 @@ function className(...classes) {
 
 export default function Navbar({ children }) {
   return (
-    < >
+    <SectionContainer >
       <header className="mix-blend-difference">
         <Disclosure as="nav" className='bg-gray-800 '>
           {({ open }) => (
@@ -61,10 +61,7 @@ export default function Navbar({ children }) {
                           <a
                             key={item.name}
                             href={item.href}
-                            className={className(
-                              item.current ? 'text-white dark:bg-gray-900 dark:text-white' : 'text-white dark:text-gray-300 hover:bg-gray-700 hover:text-white',
-                              'text-white rounded-md px-3 py-2 text-sm font-medium'
-                            )}
+                            className='text-white hover:bg-gray-900 rounded-md px-3 py-2 text-sm font-medium'
                             aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
@@ -86,10 +83,7 @@ export default function Navbar({ children }) {
                       key={item.name}
                       as="a"
                       href={item.href}
-                      className={className(
-                        item.current ? ' dark:bg-gray-900 dark:text-white' : 'dark:text-gray-300 hover:bg-gray-700 hover:text-white',
-                        'block rounded-md px-3 py-2 text-base font-medium'
-                      )}
+                      className='text-white hover:bg-gray-100 hover:text-gray-900 block rounded-md px-3 py-2 text-base font-medium'
                       aria-current={item.current ? 'page' : undefined}
                     >
                       {item.name}
@@ -104,6 +98,6 @@ export default function Navbar({ children }) {
       <main className="mt-3">{children}</main>
 
       <Footer />
-    </>
+    </SectionContainer>
   );
 }

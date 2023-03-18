@@ -33,7 +33,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                                     type="text"
                                     onChange={(e) => setSearchValue(e.target.value)}
                                     placeholder="Buscar articulo"
-                                    className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 max-input-size"
+                                    className="block w-full rounded-md border  border-gray-700 dark:bg-gray-800 dark:text-gray-50 caret-pi px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 max-input-size"
 
                                 />
 
