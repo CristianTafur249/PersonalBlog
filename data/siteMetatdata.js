@@ -1,3 +1,5 @@
+const { analyticsId } = require("@/next.config");
+
 const siteMetadata = {
     site_name: 'Tafur Blog',
     theme: 'system',
@@ -17,6 +19,10 @@ const siteMetadata = {
     twitter: 'https://twitter.com/Cristia16195614',
     linkedin: 'https://www.linkedin.com/in/cristaf/',
     locale: 'es-CO',
-    github:'https://github.com/CristianTafur249/'
+    github:'https://github.com/CristianTafur249/',
+    analytics: {
+        googleAnalyticsId: '',
+
+    },
 };
 module.exports = siteMetadata

@@ -6,7 +6,7 @@ import '@/styles/blogs.css'
 import '@/styles/author.css'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
-import GAScrip from '@/components/analitics/Google'
+import Analytics from '@/components/analitics/Analytics'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       {isDevelopment && isSocket && <ClientReload />}
-      <GAScrip/>
+      <Analytics/>
       <Navbar>
         <Component {...pageProps} />
       </Navbar>
