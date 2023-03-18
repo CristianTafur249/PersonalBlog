@@ -19,9 +19,12 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
         <>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <section className="mb-32  text-center lg:text-left">
-                    <div className="border-b-2 grid lg:grid-cols-2 gap-6 xl:gap-12 items-center">
+                    <div
+                        className=" grid lg:grid-cols-2 gap-6 xl:gap-12 items-center"
+                        style={{ borderColor: '#ccc' , borderBottom: '1px solid #ccc'}}
+                    >
                         <div className="mb-3 lg:mb-0 py-1">
-                            <h1 className="text-5xl md:text-6xl xl:text-7xl fond-bold mix-blend-difference tracking-tight">
+                            <h1 className="text-white  text-5xl md:text-6xl xl:text-7xl fond-bold mix-blend-difference tracking-tight">
                                 {title}
                             </h1>
                             <div className="relative flex w-full flex-nowrap items-stretch">
@@ -31,7 +34,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                                     onChange={(e) => setSearchValue(e.target.value)}
                                     placeholder="Buscar articulo"
                                     className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 max-input-size"
-                                    
+
                                 />
 
                                 <svg
@@ -56,7 +59,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                     </div>
                 </section>
                 <div className="mx-auto mt-0 grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-                    {!filteredBlogPosts.length && 'No se encontraron post.'}
+                    {!filteredBlogPosts.length && 'No se encontraron publicaciones.'}
                     {displayPosts.map((frontMatter) => {
                         const { slug, date, title, summary, tags } = frontMatter;
                         return (
@@ -92,10 +95,10 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                     })}
                 </div>
                 {pagination && pagination.totalPages > 1 && !searchValue && (
-                <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
-            )}
+                    <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
+                )}
             </div>
-            
+
         </>
     )
 }

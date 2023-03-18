@@ -6,7 +6,7 @@ const siteMetadata = {
     headerTitle: ' The TechCode ',
     description: 'Código, tecnología y programación',
     language: 'es-ES',
-    email: 'cristiantafur@gmail.com',
+    email: 'cristian2191970@correo.uis.edu.co',
     siteUrl: '',
     instagramUrl:'https://www.instagram.com/tafur0011/',
     facebookUrl: 'https://www.facebook.com/cristiandavid.tafurcampo',

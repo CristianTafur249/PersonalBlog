@@ -3,8 +3,8 @@ import siteMetadata, { siteUrl } from "@/data/siteMetatdata";
 export default function Footer() {
     return (
 
-        <footer className="  text-center">
-            <div className="container px-6 pt-6">
+        <footer className=" bg-gray-900 mix-blend-difference text-center">
+            <div className=" container px-6 pt-6">
                 <div className="mb-6 flex justify-center text-gray-50 mix-blend-difference">
                     <a
                         href={siteMetadata.facebookUrl}
@@ -23,7 +23,7 @@ export default function Footer() {
                     </a>
 
                     <a
-                        href={siteMetadata.email}
+                        href={`mailto:${siteMetadata.email}`}
                         type="button"
                         className="m-1 h-9 w-9 rounded-full border-2  uppercase leading-normal transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                         data-te-ripple-init
@@ -107,7 +107,7 @@ export default function Footer() {
 
             </div>
             <div
-                className="p-4 text-center ">
+                className="p-4 text-center text-gray-50">
                 Cristian Tafur ∘ © 2023 ∘
                 <a className="text-whitehite" href={siteMetadata.siteUrl}
                 >{siteMetadata.title}</a>
