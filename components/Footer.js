@@ -1,9 +1,9 @@
 import siteMetadata, { siteUrl } from "@/data/siteMetatdata";
+import SectionContainer from "./SectionContainer";
 
 export default function Footer() {
     return (
-
-        <footer className=" bg-gray-900 mix-blend-difference text-center">
+        <SectionContainer>       <footer className=" bg-gray-900 mix-blend-difference text-center">
             <div className=" container px-6 pt-6">
                 <div className="mb-6 flex justify-center text-gray-50 mix-blend-difference">
                     <a
@@ -114,6 +114,8 @@ export default function Footer() {
             </div>
 
         </footer>
+        </SectionContainer>
+
 
     );
 }

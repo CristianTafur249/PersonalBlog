@@ -1,9 +1,11 @@
 import siteMetadata from "@/data/siteMetatdata";
 import colors, { gray } from "tailwindcss/colors";
+import SectionContainer from "./SectionContainer";
 
 
 export default function Header() {
     return (
+        <SectionContainer>
         <section className="mb-32 text-center lg:text-left ">
             <div
                 className=" grid lg:grid-cols-2 border-b-2 gap-6 xl:gap-12 items-center"
@@ -21,5 +23,7 @@ export default function Header() {
                 </div>
             </div>
         </section>
+        </SectionContainer>
+ 
     );
 }

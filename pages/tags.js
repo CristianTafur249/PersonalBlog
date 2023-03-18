@@ -25,7 +25,7 @@ export default function Tags({ tags }) {
                         </div>
                     </div>
                 </section>
-                <div className="grid grid-cols-2 gap-6 lg:grid-cols-6 ">
+                <div className="grid grid-cols-2 gap-6 lg:grid-cols-6 mb-20 items-center">
                     {Object.keys(tags).length === 0 && 'No se encontraron etiqutas.'}
                     {sortedTags.map((t)=>{
                         return(

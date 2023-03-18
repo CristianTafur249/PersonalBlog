@@ -22,7 +22,7 @@ function className(...classes) {
 
 export default function Navbar({ children }) {
   return (
-    <SectionContainer >
+    < >
       <header className="mix-blend-difference">
         <Disclosure as="nav" className='bg-gray-800 '>
           {({ open }) => (
@@ -104,6 +104,6 @@ export default function Navbar({ children }) {
       <main className="mt-3">{children}</main>
 
       <Footer />
-    </SectionContainer>
+    </>
   );
 }
