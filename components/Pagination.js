@@ -8,12 +8,12 @@ export default function Pagination({ totalPages, currentPage }) {
             <nav className="flex justify-between">
                 {!prevPage && (
                     <button rel="previa" className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
-                        Anterior
+                        {`<`} Anterior
                     </button>
                 )}
                 {prevPage && (
                     <Link href={currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`}>
-                        <button rel="previa"> Anterior</button>
+                        <button rel="previa"> {`<`} Anterior</button>
                     </Link>
                 )}
                 <span>
@@ -21,12 +21,12 @@ export default function Pagination({ totalPages, currentPage }) {
                 </span>
                 {!nextPage && (
                     <button rel="sigiente" className="cursor-auto disabled:opacity-50" disabled={!nextPage}>
-                        Siguiente
+                        Siguiente {`>`}
                     </button>
                 )}
                 {nextPage && (
                     <Link href={`/blog/page/${currentPage + 1}`}>
-                        <button rel="sigiente">Siguiente</button>
+                        <button rel="sigiente">Siguiente {`>`}</button>
                     </Link>
                 )
                 }

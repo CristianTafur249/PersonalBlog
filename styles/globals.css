@@ -2,42 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+.task-list-item::before {
+  @apply hidden;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
 .footnotes {
-  @apply pt-8 mt-12 border-t border-gray-200;
+  @apply pt-8 mt-12 border-t border-gray-200 dark:border-gray-700;
 }
 
-p {
-  @apply pt-1 pb-1 m-4;
+.csl-entry {
+  @apply my-5;
 }
-
-.dark\:container {
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .dark\:container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .dark\:container {
-    max-width: 768px;
-  }
-}
-@media (min-width: 260px) {
-  .dark\:container {
-    max-width: 260px;
-  }
-}
-.background {
-  background-image: url("https://media.licdn.com/dms/image/D4E16AQGQ4BECTKwWQA/profile-displaybackgroundimage-shrink_350_1400/0/1671630887073?e=1683763200&v=beta&t=HfpWPbMLyPzGXSbCgH65w-vjv0KtJNWZVjvaCAq2lY0");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-@media only screen and (min-width: 260px) {
-  .max-input-size {
-    max-width: 200px; /* o el tamaño máximo que quieras aplicar */
-  }
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
 }

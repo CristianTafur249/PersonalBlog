@@ -1,0 +1,64 @@
+/* .relative{
+    @apply rounded-t bg-gray-700 px-5 p-3 font-serif text-sm font-bold text-gray-200 ;
+}
+.relative + div > pre{
+    @apply mt-0 rounded-t-none;
+} */
+.markdown > div{
+    @apply rounded-t float-left  min-w-full max-w-lg mx-0 bg-gray-800 px-5 p-3 font-serif text-sm font-bold flex-auto text-gray-200 ;
+
+}
+.markdown > p {
+    @apply pt-1 pb-1 m-4;
+}
+
+.markdown > p + p {
+    @apply mt-0;
+}
+
+.markdown ul{
+    @apply mx-0 list-disc;
+}
+
+.markdown ol{
+    @apply mb-4 list-decimal;
+}
+
+.markdown li{
+    @apply mb-4 list-inside;
+}
+
+.markdown h1{
+    @apply m-0 text-5xl sm:text-4xl ;
+}
+
+.markdown h2{
+    @apply m-1 text-4xl sm:text-3xl;
+}
+
+.markdown h3{
+    @apply m-2 text-3xl sm:text-2xl;
+}
+
+.markdown h4{
+    @apply m-3 text-2xl sm:text-xl;
+}
+
+.markdown h5{
+    @apply m-3 text-xl sm:text-lg;
+}
+
+.markdown code{
+    @apply dark:bg-gray-800 text-red-500 rounded-t-none;
+}
+
+.markdown a{
+    @apply text-green-700 underline hover:text-blue-800
+}
+.markdown div > pre{
+    @apply max-w-fit px-5 font-serif text-sm overflow-auto font-bold text-gray-200 ;
+    
+}
+.markdown  div > pre > code{
+    @apply font-bold text-gray-200 float-left max-w-full ;
+}

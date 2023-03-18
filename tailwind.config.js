@@ -28,7 +28,6 @@ module.exports = {
       '6xl': '4rem',
     },
     screens: {
-      dark: { raw: '(prefers-color-scheme: dark)' },
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',

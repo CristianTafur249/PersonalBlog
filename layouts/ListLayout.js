@@ -55,13 +55,13 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         </div>
                     </div>
                 </section>
-                <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                <div className="mx-auto mt-0 grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                     {!filteredBlogPosts.length && 'No se encontraron post.'}
                     {displayPosts.map((frontMatter) => {
                         const { slug, date, title, summary, tags } = frontMatter;
                         return (
 
-                            <article key={slug} className="border-gray-400 flex max-w-xl flex-col items-start justify-between" >
+                            <article key={slug} className="bg-gray-500 flex max-w-xl flex-col items-start justify-between" >
                                 <div className="flex text-gray-500 items-center grap-x-4 text-xs ">
                                     <time dateTime={date}>
                                         {formatDate(date)}
@@ -91,10 +91,11 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         )
                     })}
                 </div>
-            </div>
-            {pagination && pagination.totalPages > 1 && !searchValue && (
+                {pagination && pagination.totalPages > 1 && !searchValue && (
                 <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
             )}
+            </div>
+            
         </>
     )
 }

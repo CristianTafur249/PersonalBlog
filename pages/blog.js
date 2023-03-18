@@ -3,7 +3,7 @@ import siteMetadata from "@/data/siteMetatdata";
 import ListLayout from "@/layouts/ListLayout";
 import { getAllFilesMetadata } from "@/lib/mdx";
 
-export const POSTS_PER_PAGE = 5;
+export const POSTS_PER_PAGE = 6;
 
 export async function getStaticProps() {
     const posts = await getAllFilesMetadata('blog');
@@ -23,7 +23,7 @@ export default function Blog({ posts, initialDisplayPosts, pagination }) {
                 posts={posts}
                 initialDisplayPosts={initialDisplayPosts}
                 pagination={pagination}
-                title="Todos los Posts"
+                title="Publicaciones"
             />
         </>
     )

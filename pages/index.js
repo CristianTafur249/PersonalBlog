@@ -29,11 +29,7 @@ export default function Home({ posts }) {
       <Header />
       <>
         <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-          <p className='mt-2 text-lg leading-8 ligth:text-gray-600 '>
-            Publicaciones recientes
-          </p>
-
-          <div className='mx-auto mt-10 grid max-w-2xl  grid-cols-1 gap-y-16 gap-x-8 border-t-2 border-gray-300 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
+          <div className='mx-auto mt-10 grid max-w-2xl  grid-cols-1 gap-y-16 gap-x-8 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
             {!posts.length && 'No post found.'}
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { slug, date, title, summary, tags } = frontMatter
@@ -53,7 +49,7 @@ export default function Home({ posts }) {
                   </div>
                   <div className='group relative'>
                     <h3 className='mt-3 text-lg font-semibold leading-6  group-hover:text-green-600'>
-                      <a href={slug}>
+                      <a href={`/blog/${slug}`}>
                         <span className='absolute inset-0' />
                         {title}
                       </a>

@@ -4,15 +4,16 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { current } from "tailwindcss/colors";
 import Footer from "./Footer";
+import SectionContainer from "./SectionContainer";
 import ThemeSwitch from "./ThemeSwitch";
 import siteMetadata from "@/data/siteMetatdata";
 
 const navigation = [
   { name: 'Inicio', href: '/' },
-  { name: 'Blogs', href: './blog' },
-  {name: 'Etiquetas', href: './tags'},
-  { name: 'Sobre mi', href: './sobre-mi' },
-  
+  { name: 'Blogs', href: '/blog' },
+  { name: 'Etiquetas', href: '/tags' },
+  { name: 'Sobre mi', href: '/sobre-mi' },
+
 ];
 
 function className(...classes) {
@@ -21,7 +22,7 @@ function className(...classes) {
 
 export default function Navbar({ children }) {
   return (
-    <>
+    <SectionContainer >
       <header className="mix-blend-difference">
         <Disclosure as="nav" className='bg-gray-800 '>
           {({ open }) => (
@@ -61,8 +62,8 @@ export default function Navbar({ children }) {
                             key={item.name}
                             href={item.href}
                             className={className(
-                              item.current ? 'dark:bg-gray-900 dark:text-white' : 'dark:text-gray-300 hover:bg-gray-700 hover:text-white',
-                              'rounded-md px-3 py-2 text-sm font-medium'
+                              item.current ? 'text-white dark:bg-gray-900 dark:text-white' : 'text-white dark:text-gray-300 hover:bg-gray-700 hover:text-white',
+                              'text-white rounded-md px-3 py-2 text-sm font-medium'
                             )}
                             aria-current={item.current ? 'page' : undefined}
                           >
@@ -79,14 +80,14 @@ export default function Navbar({ children }) {
               </div>
 
               <Disclosure.Panel className="sm:hidden">
-                <div className="space-y-1 px-2 pt-2 pb-3">
+                <div className="space-y-1 px-2 pt-2 pb-3 dark:text-white">
                   {navigation.map((item) => (
                     <Disclosure.Button
                       key={item.name}
                       as="a"
                       href={item.href}
                       className={className(
-                        item.current ? 'dark:bg-gray-900 dark:text-white' : 'dark:text-gray-300 hover:bg-gray-700 hover:text-white',
+                        item.current ? ' dark:bg-gray-900 dark:text-white' : 'dark:text-gray-300 hover:bg-gray-700 hover:text-white',
                         'block rounded-md px-3 py-2 text-base font-medium'
                       )}
                       aria-current={item.current ? 'page' : undefined}
@@ -100,10 +101,9 @@ export default function Navbar({ children }) {
           )}
         </Disclosure>
       </header>
-      <main className="mb-auto">{children}</main>
-      <div className='flex justify-center'>
-        <Footer />
-      </div>
-    </>
+      <main className="mt-3">{children}</main>
+
+      <Footer />
+    </SectionContainer>
   );
 }

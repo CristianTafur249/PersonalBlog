@@ -38,7 +38,7 @@ export async function getStaticProps({ params }) {
     return { props: { post, authorDetails, anterior, posterior } }
 
 }
-export default function Bñog({ post, authorDetails, anterior, posterior }) {
+export default function Blog({ post, authorDetails, anterior, posterior }) {
     const { mdxSource, toc, frontMatter } = post;
 
     return (
