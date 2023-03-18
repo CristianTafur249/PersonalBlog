@@ -5,25 +5,25 @@ import SectionContainer from "./SectionContainer";
 
 export default function Header() {
     return (
-        <SectionContainer>
-        <section className=" text-center lg:text-left ">
+        <>
+        <section className=" mx-auto max-w-3xl xl:max-w-full text-center lg:text-left ">
             <div
                 className=" grid lg:grid-cols-2 border-b-2 gap-6 xl:gap-12 items-center"
                 style={{ borderColor: '#ccc' , borderBottom: '1px solid #ccc'}}
             >
                 <div className="mb-6 lg:mb-0">
-                    <h2 className="text-5xl text-gray-50  md:text-6xl xl:text-7xl fond-bold mix-blend-difference tracking-tight">
+                    <h2 className="text-5xl text-gray-50  md:text-6xl xl:text-6xl 2xl:text-10xl fond-bold  tracking-tight">
                         {siteMetadata.title}
                     </h2>
                 </div>
-                <div className="mb-6 lg:mb-0">
-                    <p className="text-lg">
+                <div className="mb-6 lg:mb-0 ">
+                    <p className="text-lg text-gray-50 md:text-xl xl:text-xl 2xl:text-6xl">
                         {siteMetadata.description}
                     </p>
                 </div>
             </div>
         </section>
-        </SectionContainer>
+        </>
  
     );
 }

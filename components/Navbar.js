@@ -4,7 +4,6 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { current } from "tailwindcss/colors";
 import Footer from "./Footer";
-import SectionContainer from "./SectionContainer";
 import ThemeSwitch from "./ThemeSwitch";
 import siteMetadata from "@/data/siteMetatdata";
 
@@ -22,8 +21,8 @@ function className(...classes) {
 
 export default function Navbar({ children }) {
   return (
-    <SectionContainer >
-      <header className="mix-blend-difference">
+    <div className="max-h-full" >
+      <header className=" mix-blend-difference">
         <Disclosure as="nav" className='bg-gray-800 '>
           {({ open }) => (
             <>
@@ -44,7 +43,7 @@ export default function Navbar({ children }) {
                     <div className="flex flex-shrink-0 items-center  mix-blend-color-burn">
                       <a href="/" >
                         <img
-                          className="sm:block h-8 w-auto lg:hidden"
+                          className="sm:block h-8 w-auto  lg:hidden"
                           src={siteMetadata.siteLogo}
                           alt="techcode"
                         />
@@ -61,7 +60,7 @@ export default function Navbar({ children }) {
                           <a
                             key={item.name}
                             href={item.href}
-                            className='text-white hover:bg-gray-900 rounded-md px-3 py-2 text-sm font-medium'
+                            className='text-white hover:bg-gray-900 rounded-md px-3 py-2 text-sm md:text-xl xl:text-xl 2xl:text-5xl font-medium'
                             aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
@@ -70,7 +69,7 @@ export default function Navbar({ children }) {
                       </div>
                     </div>
                   </div>
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                  <div className="absolute inset-y-0 right-0 flex items-center justify-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <ThemeSwitch />
                   </div>
                 </div>
@@ -94,11 +93,13 @@ export default function Navbar({ children }) {
             </>
           )}
         </Disclosure>
-        <Header/>
+        <Header />
       </header>
-      <main className="mt-3">{children}</main>
+      <main className="mt-3 mb-8 mx-auto my-auto">
+        {children}
+      </main>
 
       <Footer />
-    </SectionContainer>
+    </div>
   );
 }
