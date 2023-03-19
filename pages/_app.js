@@ -9,11 +9,13 @@ import Head from 'next/head'
 import AdSense from '@/components/analitics/AdSense'
 import React from 'react'
 import { GAScrip, logPageView } from '@/components/analitics/Google'
+import Script from 'next/script'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 class App extends React.Component {
+
   componentDidMount() {
     GAScrip()
     logPageView()
@@ -26,14 +28,13 @@ class App extends React.Component {
         <Head>
           <meta name="google-site-verification" content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5012441343452330"
-            crossorigin="anonymous"></script>
+          <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5012441343452330"
+            crossorigin="anonymous"></Script>
         </Head>
+        <AdSense/>
         {isDevelopment && isSocket && <ClientReload />}
         <Navbar>
-          <AdSense />
           <Component {...pageProps} />
-          <AdSense />
         </Navbar>
       </ThemeProvider>
     )
