@@ -21,7 +21,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                 <section className="mb-32  text-center lg:text-left">
                     <div
                         className=" grid  gap-6 xl:gap-12 mx-auto items-center"
-                        style={{ borderColor: '#ccc' , borderBottom: '1px solid #ccc'}}
+                        style={{ borderColor: '#ccc', borderBottom: '1px solid #ccc' }}
                     >
                         <div className="mb-3 lg:mb-0 py-1">
                             <h1 className="text-white  text-3xl md:text-6xl xl:text-5xl   2xl:text-7xl fond-bold mix-blend-difference tracking-tight">
@@ -58,6 +58,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         </div>
                     </div>
                 </section>
+                <AdSense />
                 <div className="ml-36 mt-0 grid max-w-2xl xl:max-w-full  xl:max-h-full items-center justify-items-center grid-cols-1 gap-y-6 gap-x-8 sm:pt-16 lg:mx-0 lg:max-w-full lg:grid-cols-2">
                     {!filteredBlogPosts.length && 'No se encontraron publicaciones.'}
                     {displayPosts.map((frontMatter) => {

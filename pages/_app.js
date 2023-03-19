@@ -6,24 +6,37 @@ import '@/styles/blogs.css'
 import '@/styles/author.css'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
-import Analytics from '@/components/analitics/Analytics'
+import AdSense from '@/components/analitics/AdSense'
+import React from 'react'
+import { GAScrip, logPageView } from '@/components/analitics/Google'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
-export default function App({ Component, pageProps }) {
-  return (
-    <ThemeProvider attribute='class' defaultTheme={siteMetadata.theme}>
-      <Head>
-        <meta name="google-site-verification" content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-      </Head>
-      {isDevelopment && isSocket && <ClientReload />}
-      <Analytics />
-      <Navbar>
-        <Component {...pageProps} />
-      </Navbar>
-    </ThemeProvider>
+class App extends React.Component {
+  componentDidMount() {
+    GAScrip()
+    logPageView()
+  }
 
-  )
+  render() {
+    const { Component, pageProps } = this.props
+    return (
+      <ThemeProvider attribute='class' defaultTheme={siteMetadata.theme}>
+        <Head>
+          <meta name="google-site-verification" content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y" />
+          <meta content="width=device-width, initial-scale=1" name="viewport" />
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5012441343452330"
+            crossorigin="anonymous"></script>
+        </Head>
+        {isDevelopment && isSocket && <ClientReload />}
+        <Navbar>
+          <AdSense />
+          <Component {...pageProps} />
+          <AdSense />
+        </Navbar>
+      </ThemeProvider>
+    )
+  }
 }
+export default App;
