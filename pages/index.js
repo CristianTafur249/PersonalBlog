@@ -59,7 +59,7 @@ export default function Home({ posts }) {
                   </div>
                   <div className='text-blue-500 hover:text-green-400 mt-10'>
                     <p>
-                      <a href={slug}>Leer más...</a>
+                      <a href={`/blog/${slug}`}>Leer más...</a>
                     </p>
                   </div>
                 </article>
