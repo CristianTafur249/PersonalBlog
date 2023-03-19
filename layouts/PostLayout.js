@@ -83,7 +83,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                             </dd>
                         </dl>
                         <div className="divide-y xl:col-span-3 xl:row-span-2 xl:pb-0">
-                            <div className="prose max-w-lg pt-10 pb-8 markdown">
+                            <div className="prose sm:max-w-sm pt-10 pb-8 markdown">
                                 {children}
                             </div>
 

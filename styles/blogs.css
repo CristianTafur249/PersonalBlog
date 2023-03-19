@@ -5,7 +5,7 @@
     @apply mt-0 rounded-t-none;
 } */
 .markdown > div {
-  @apply rounded-t float-left  min-w-full max-w-lg mx-0 bg-gray-800 px-5 p-3 font-serif text-sm font-bold flex-auto text-gray-200;
+  @apply rounded-t float-left w-full  mx-0 bg-gray-800 px-5 p-3 font-serif text-sm font-bold flex-auto text-gray-200;
 }
 .markdown > p {
   @apply pt-1 pb-1 m-4;
@@ -44,11 +44,11 @@
   @apply text-green-700 underline hover:text-blue-800;
 }
 .markdown div > pre {
-  @apply max-w-fit px-5 font-serif text-sm overflow-auto font-bold text-gray-200;
+  @apply  px-5 font-serif text-sm overflow-auto font-bold text-gray-200;
 }
 .markdown table {
   @apply max-w-full table-auto;
 }
-.markdown div > pre > code {
-  @apply font-bold text-gray-200 float-left max-w-full;
+.markdown pre > code {
+  @apply font-bold text-gray-200 float-left ;
 }
