@@ -3,8 +3,8 @@ import SectionContainer from "./SectionContainer";
 
 export default function Footer() {
     return (
-        <>
-            <footer className=" bg-gray-900 mx-auto max-w-3xl xl:max-w-6xl t mix-blend-difference text-center md:text-xl xl:text-xl 2xl:text-5xl">
+        <SectionContainer>
+            <footer className=" bg-gray-900 mx-auto max-w-3xl xl:max-w-6xl max-h-min t mix-blend-difference text-center md:text-xl xl:text-xl 2xl:text-5xl">
                 <div className=" container px-6 pt-6">
                     <div className="mb-6 flex justify-center text-gray-50 mix-blend-difference">
                         <a
@@ -85,7 +85,7 @@ export default function Footer() {
                 </div>
 
             </footer>
-        </>
+        </SectionContainer>
 
 
     );

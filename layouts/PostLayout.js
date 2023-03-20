@@ -83,7 +83,8 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                             </dd>
                         </dl>
                         <div className="divide-y xl:col-span-3 xl:row-span-2 xl:pb-0">
-                            <div className="prose sm:max-w-sm mb-4 pt-10 pb-8 markdown ">
+                            <div className="prose sm:max-w-sm mb-4 pt-10 pb-8 markdown lg:max-w-6xl ">
+                                
                                 {children}
                             </div>
 
@@ -97,13 +98,13 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                         </div>
 
                         <footer className="mt-4">
-                            <div className="divide-x divide-gray-500  text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
+                            <div className=" divide-x divide-gray-500  text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                                 {tags && (
-                                    <div className="py-4 xl:py-8">
+                                    <div className="py-4 xl:py-8 ">
                                         <h2 className="text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400">
                                             Tags
                                         </h2>
-                                        <div className="flex flex-wrap">
+                                        <div className="grid ">
                                             {tags.map((tag) => (
                                                 <Tag key={tag} text={tag} />
                                             ))}

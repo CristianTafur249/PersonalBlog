@@ -42,7 +42,14 @@
   @apply mt-0;
 }
 .markdown ul {
-  @apply mx-0 list-disc;
+  @apply mx-4 list-disc;
+}
+.markdown img {
+  @apply xl:max-w-lg;
+}
+.markdown strong,
+.markdown em{
+  @apply font-bold text-green-700;
 }
 .markdown ol {
   @apply mb-4 list-decimal;
