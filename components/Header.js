@@ -17,7 +17,7 @@ export default function Header() {
                     </h2>
                 </div>
                 <div className="mb-6 lg:mb-0 ">
-                    <p className="text-lg text-gray-50 md:text-xl xl:text-xl 2xl:text-6xl">
+                    <p className="text-lg text-gray-50 sm:text-lg md:text-xl xl:text-xl 2xl:text-6xl">
                         {siteMetadata.description}
                     </p>
                 </div>
