@@ -15,17 +15,17 @@ export default function Tags({ tags }) {
     return (
         <>
             <PageSEO title={`Tags - ${siteMetadata.author}`} description="Etiqutas de lo que blogueo" />
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto my-auto w-4/5  px-6 lg:px-8">
                 <section className="mb-32 text-center lg:text-left">
                     <div className="border-b-2 grid lg:grid-cols-2 gap-6 xl:gap-12 items-center">
                         <div className="mb-6 lg:mb-0 py-1">
-                            <h1 className="text-5xl md:text-6xl xl:text-7xl fond-bold mix-blend-difference tracking-tight">
+                            <h1 className="text-4xl md:text-5xl xl:text-6xl fond-bold mix-blend-difference tracking-tight">
                                 Etiquetas
                             </h1>
                         </div>
                     </div>
                 </section>
-                <div className="grid grid-cols-2 gap-6 lg:grid-cols-6 mb-20 justify-items-center items-center">
+                <div className="grid grid-cols-2 gap-6 lg:grid-cols-6 mb-20 justify-items-center items-center text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
                     {Object.keys(tags).length === 0 && 'No se encontraron etiqutas.'}
                     {sortedTags.map((t)=>{
                         return(

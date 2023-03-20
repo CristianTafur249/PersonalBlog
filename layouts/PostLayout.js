@@ -17,13 +17,14 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
     const { slug, fileName, date, title, images, tags } = frontMatter;
 
     return (
-        <SectionContainer>
+        <>
             <BlogSEO
                 url={`${siteMetadata.siteUrl}/blog/${slug}`}
                 authorDetails={authorDetails}
                 {...frontMatter}
                 title={`${title} | Blog`}
             />
+            <div className="mx-auto my-auto lg:w-3/4 xl:w-1/2">
             <article>
                 <div className="xl:divide-y  xl:divide-gray-700">
                     <header className="pt-6 xl:pb-6">
@@ -83,8 +84,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                             </dd>
                         </dl>
                         <div className="divide-y xl:col-span-3 xl:row-span-2 xl:pb-0">
-                            <div className="prose sm:max-w-sm mb-4 pt-10 pb-8 markdown lg:max-w-6xl ">
-                                
+                            <div className="prose mb-4 pt-10 pb-8 markdown">
                                 {children}
                             </div>
 
@@ -148,6 +148,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                     </div>
                 </div>
             </article>
-        </SectionContainer>
+            </div>
+        </>
     )
 }

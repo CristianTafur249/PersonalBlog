@@ -4,6 +4,9 @@
 .relative + div > pre{
     @apply mt-0 rounded-t-none;
 } */
+.markdown{
+  @apply mx-auto my-auto sm:w-11/12 xl:w-5/6 text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl;
+}
 .avisoCookies {
   display: block;
   background-color: #ffffff;
@@ -33,7 +36,7 @@
   @apply rounded-t float-left w-full  mx-0 bg-gray-800 px-5 p-3 font-serif text-sm font-bold flex-auto text-gray-200;
 }
 .markdown > p {
-  @apply pt-1 pb-1 m-4;
+  @apply pt-1 pb-1 m-4 leading-loose ;
 }
 .markdown > p > b {
   @apply text-red-800 dark:text-red-500 underline;
@@ -45,11 +48,14 @@
   @apply mx-4 list-disc;
 }
 .markdown img {
-  @apply xl:max-w-lg;
+  @apply lg:w-4/5 m-auto;
+}
+.markdown section {
+  @apply w-full justify-items-center items-center;
 }
 .markdown strong,
 .markdown em{
-  @apply font-bold text-green-700;
+  @apply font-bold mr-0 ml-0 text-green-700;
 }
 .markdown ol {
   @apply mb-4 list-decimal;
@@ -58,25 +64,25 @@
   @apply mb-4 list-inside;
 }
 .markdown h1 {
-  @apply m-0 text-5xl sm:text-4xl;
+  @apply m-0 text-4xl sm:text-5xl;
 }
 .markdown h2 {
-  @apply m-1 text-4xl sm:text-3xl;
+  @apply m-1 text-3xl sm:text-4xl lg:text-5xl;
 }
 .markdown h3 {
-  @apply m-2 text-3xl sm:text-2xl;
+  @apply m-2 text-3xl sm:text-3xl lg:text-4xl;
 }
 .markdown h4 {
-  @apply m-3 text-2xl sm:text-xl;
+  @apply m-3 text-xl sm:text-2xl lg:text-3xl;
 }
 .markdown h5 {
-  @apply m-3 text-xl sm:text-lg;
+  @apply m-3 text-lg sm:text-xl lg:text-2xl;
 }
 .markdown code {
   @apply dark:bg-gray-800 text-red-500 rounded-t-none;
 }
 .markdown a {
-  @apply text-blue-800 dark:text-green-500 underline hover:text-purple-800;
+  @apply text-blue-800 pr-4 dark:text-green-500 underline hover:text-purple-800;
 }
 .markdown div > pre {
   @apply px-5 font-serif text-sm overflow-auto font-bold text-gray-200;
