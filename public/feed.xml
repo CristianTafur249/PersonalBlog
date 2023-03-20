@@ -14,10 +14,20 @@
     <guid>https://thechcode.netlify.app//blog/por-qué-elegir-linux</guid>
     <title>¿Por qué elegir Linux?</title>
     <link>https://thechcode.netlify.app//blog/por-qué-elegir-linux</link>
-    <description>Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.</description>
+    <description>Linux es un sistema operativo de código abierto que se ha vuelto cada vez más popular en los últimos años. Ofrece una amplia gama de ventajas en  comparación con otros sistemas operativos, como ser gratuito y de código abierto, tener un rendimiento seguro y confiable y proporcionar a los  usuarios una gran flexibilidad. </description>
     <pubDate>Mon, 20 Mar 2023 00:00:00 GMT</pubDate>
     <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
     <category>Linux</category><category>Sistema operativo</category><category>Código abierto</category><category>Kernel</category><category>Software libre</category>
+  </item>
+
+  <item>
+    <guid>https://thechcode.netlify.app//blog/github-markdown-guide</guid>
+    <title>Markdown Guide</title>
+    <link>https://thechcode.netlify.app//blog/github-markdown-guide</link>
+    <description>Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.</description>
+    <pubDate>Fri, 11 Oct 2019 00:00:00 GMT</pubDate>
+    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
+    <category>github</category><category>guide</category>
   </item>
 
     </channel>

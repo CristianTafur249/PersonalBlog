@@ -27,14 +27,14 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={'Inicio'} description={siteMetadata.description} />
       <>
-        <div className='mx-auto my-auto pb-12 max-w-7xl px-6 lg:px-8'>
-          <div className='mx-auto mt-10 grid max-w-2xl  grid-cols-1 gap-y-16 gap-x-8 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2'>
+        <div className='mx-auto my-auto pb-12 w-3/4 px-6 lg:px-8'>
+          <div className='mx-auto mt-6 grid max-w-2xl  grid-cols-1 gap-y-16 gap-x-8 pt-6 sm:pt-6 lg:mx-0 lg:max-w-none lg:grid-cols-2'>
             {!posts.length && 'No se encontraron publicaciones.'}
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { slug, date, title, summary, tags } = frontMatter
               return (
-                <article key={slug} className=' border-gray-400  flex max-w-xl flex-col items-start justify-between'>
-                  <div className='flex text-gray-500 items-center grap-x-4 text-xs'>
+                <article key={slug} className=' border-gray-400 max-w-xl flex-col items-start justify-between'>
+                  <div className=' text-gray-500 items-center grap-x-4 text-xs'>
                     <time dateTime={date}>
                       {formatDate(date)}
                     </time>
@@ -56,12 +56,11 @@ export default function Home({ posts }) {
                     <p className='mt-5 text-sm leading-6 text-gray-500 line clam-3'>
                       {summary}
                     </p>
-                  </div>
-                  <div className='text-blue-500 hover:text-green-400 mt-10'>
-                    <p>
+                    <p className='text-blue-500 hover:text-green-400 mt-5'>
                       <a href={`/blog/${slug}`}>Leer más...</a>
                     </p>
                   </div>
+                  
                 </article>
               )
 
