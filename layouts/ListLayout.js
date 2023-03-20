@@ -24,7 +24,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         style={{ borderColor: '#ccc', borderBottom: '1px solid #ccc' }}
                     >
                         <div className="mb-3 lg:mb-0 py-1">
-                            <h1 className="text-white  text-3xl md:text-6xl xl:text-5xl   2xl:text-7xl fond-bold mix-blend-difference tracking-tight">
+                            <h1 className="text-white  text-3xl md:text-5xl xl:text-6xl   2xl:text-6xl fond-bold mix-blend-difference tracking-tight">
                                 {title}
                             </h1>
                             <div className="relative flex flex-nowrap items-stretch">
@@ -65,7 +65,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         return (
 
                             <article key={slug} className="bg-gray-500 flex max-w-xl  xl:max-w-3xl xl:max-h-3xl 2xl:ma 2xl: flex-col items-start justify-between" >
-                                <div className="flex text-gray-500 leading-tight items-center grap-x-4 text-xs xl:text-xl 2xl:text-5xl ">
+                                <div className=" text-gray-500 leading-tight items-center grap-x-4 text-xs xl:text-lg 2xl:text-2xl ">
                                     <time dateTime={date}>
                                         {formatDate(date)}
                                     </time>
