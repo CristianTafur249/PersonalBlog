@@ -44,6 +44,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
     "mdx-bundler": "^9.2.1",
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",

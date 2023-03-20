@@ -5,12 +5,13 @@ const AdSense = () => {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }, []);
 
+
   return (
     <ins
       className="adsbygoogle"
       style={{ display: 'block' }}
-      data-ad-client="your-client-id"
-      data-ad-slot="your-slot-id"
+      data-ad-client="ca-pub-5012441343452330"
+      data-ad-slot="5012441343452330"
       data-ad-format="auto"
       data-full-width-responsive="true"
     />

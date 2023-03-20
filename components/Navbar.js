@@ -6,6 +6,8 @@ import { current } from "tailwindcss/colors";
 import Footer from "./Footer";
 import ThemeSwitch from "./ThemeSwitch";
 import siteMetadata from "@/data/siteMetatdata";
+import Link from "./Link";
+import Image from "./Image";
 
 const navigation = [
   { name: 'Inicio', href: '/' },
@@ -41,18 +43,22 @@ export default function Navbar({ children }) {
                   </div>
                   <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                     <div className="flex flex-shrink-0 items-center  mix-blend-color-burn">
-                      <a href="/" >
-                        <img
+                      <Link href="/" >
+                        <Image
                           className="sm:block h-8 w-auto  lg:hidden"
                           src={siteMetadata.siteLogo}
+                          width={30}
+                          height={30}
                           alt="techcode"
                         />
-                        <img
+                        <Image
                           className="hidden h-8 min-w-min w-auto lg:block"
                           src={siteMetadata.siteLogo}
+                          width={30}
+                          height={30}
                           alt="techcode"
                         />
-                      </a>
+                      </Link>
                     </div>
                     <div className="hidden sm:block sm:ml-6">
                       <div className="flex space-x-4">

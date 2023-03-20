@@ -9,8 +9,8 @@ export const GAScrip = () => {
 }
 
 export const logPageView = () => {
-    const cookies = new Cookies();
-    cookies.set('_ga_98D755MZH9', { path: '/', SameSite: 'none', secure: true });
+    const cookies = new Cookies();/* 
+    cookies.set('_ga_98D755MZH9', { path: '/', SameSite: 'none', secure: true }); */
     ReactGA.set({ page: window.location.pathname });
     ReactGA.pageview(window.location.pathname);
 }

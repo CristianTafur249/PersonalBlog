@@ -1,5 +1,6 @@
 import SectionContainer from "@/components/SectionContainer"
 import { PageSEO } from "@/components/SEO"
+import Link from "next/link"
 
 export default function cookies() {
     return (
@@ -64,7 +65,7 @@ export default function cookies() {
                     <p>Usted puede eliminar y bloquear todas las cookies de este sitio, pero parte del sitio no funcionará o la calidad de la página web puede verse afectada.</p>
 
                     <p>Si tiene cualquier duda acerca de nuestra política de cookies, puede contactar con esta página web a través de nuestros canales de Contacto.</p>
-                    <a href="/">Regresar</a>
+                    <Link href="/">Regresar</Link>
                 </div>
             </SectionContainer>
 

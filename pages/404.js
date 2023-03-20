@@ -1,6 +1,6 @@
 import { PageSEO } from "@/components/SEO";
 import siteMetadata from "@/data/siteMetatdata";
-
+import Link from 'next/link';
 
 
 export default function FourZeroFour() {
@@ -19,13 +19,13 @@ export default function FourZeroFour() {
                         Lo siento, no podemos encontrar la pagina que buscas
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6" >
-                        <a
+                        <Link
                             href="/"
                             className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             Volver al inicio
 
-                        </a>
+                        </Link>
 
                     </div>
 

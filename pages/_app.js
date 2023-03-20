@@ -28,14 +28,16 @@ class App extends React.Component {
         <Head>
           <meta name="google-site-verification" content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
-          <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5012441343452330"
-            crossorigin="anonymous"></Script>
+
         </Head>
-        <AdSense/>
+        <script
+          async
+          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
         {isDevelopment && isSocket && <ClientReload />}
         <Navbar>
           <Component {...pageProps} />
-          <Cookies/>
+          <Cookies />
         </Navbar>
       </ThemeProvider>
     )
