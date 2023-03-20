@@ -30,10 +30,11 @@ class App extends React.Component {
           <meta content="width=device-width, initial-scale=1" name="viewport" />
 
         </Head>
-        <script
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-98D755MZH9"></Script>
+        <Script
           async
           src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
+        ></Script>
         {isDevelopment && isSocket && <ClientReload />}
         <Navbar>
           <Component {...pageProps} />
