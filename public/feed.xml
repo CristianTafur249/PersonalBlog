@@ -20,15 +20,5 @@
     <category>Linux</category><category>Sistema operativo</category><category>Código abierto</category><category>Kernel</category><category>Software libre</category>
   </item>
 
-  <item>
-    <guid>https://thechcode.netlify.app//blog/introducing-tailwind-nextjs-starter-blog</guid>
-    <title>Introducing Tailwind Nextjs Starter Blog</title>
-    <link>https://thechcode.netlify.app//blog/introducing-tailwind-nextjs-starter-blog</link>
-    <description>Looking for a performant, out of the box template, with all the best in web technology to support your blogging needs? Checkout the Tailwind Nextjs Starter Blog template.</description>
-    <pubDate>Tue, 12 Jan 2021 00:00:00 GMT</pubDate>
-    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
-    <category>next-js</category><category>tailwind</category><category>guide</category>
-  </item>
-
     </channel>
   </rss>
