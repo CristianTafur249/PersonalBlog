@@ -3,13 +3,13 @@ import Navbar from '@/components/Navbar'
 import siteMetadata from '@/data/siteMetatdata'
 import '@/styles/globals.css'
 import '@/styles/blogs.css'
-import '@/styles/author.css'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import AdSense from '@/components/analitics/AdSense'
 import React from 'react'
 import { GAScrip, logPageView } from '@/components/analitics/Google'
 import Script from 'next/script'
+import Cookies from '@/components/Cookies'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
@@ -35,6 +35,7 @@ class App extends React.Component {
         {isDevelopment && isSocket && <ClientReload />}
         <Navbar>
           <Component {...pageProps} />
+          <Cookies/>
         </Navbar>
       </ThemeProvider>
     )

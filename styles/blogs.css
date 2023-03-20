@@ -4,11 +4,39 @@
 .relative + div > pre{
     @apply mt-0 rounded-t-none;
 } */
+.avisoCookies {
+  display: block;
+  background-color: #ffffff;
+  padding: 20px;
+  width: calc(100% - 40px);
+  max-width: 300px;
+  line-height: 150%;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 100;
+  padding-top: 60px;
+  text-align: center;
+}
+.fondo{
+  display: block;
+  background: rgba (1,1,1,.20);
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
 .markdown > div {
   @apply rounded-t float-left w-full  mx-0 bg-gray-800 px-5 p-3 font-serif text-sm font-bold flex-auto text-gray-200;
 }
 .markdown > p {
   @apply pt-1 pb-1 m-4;
+}
+.markdown > p > b {
+  @apply text-red-800 dark:text-red-500 underline;
 }
 .markdown > p + p {
   @apply mt-0;
@@ -41,14 +69,14 @@
   @apply dark:bg-gray-800 text-red-500 rounded-t-none;
 }
 .markdown a {
-  @apply text-green-700 underline hover:text-blue-800;
+  @apply text-blue-800 dark:text-green-500 underline hover:text-purple-800;
 }
 .markdown div > pre {
-  @apply  px-5 font-serif text-sm overflow-auto font-bold text-gray-200;
+  @apply px-5 font-serif text-sm overflow-auto font-bold text-gray-200;
 }
 .markdown table {
   @apply max-w-full table-auto;
 }
 .markdown pre > code {
-  @apply font-bold text-gray-200 float-left ;
+  @apply font-bold text-gray-200 float-left;
 }

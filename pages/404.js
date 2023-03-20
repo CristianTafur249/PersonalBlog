@@ -6,7 +6,7 @@ import siteMetadata from "@/data/siteMetatdata";
 export default function FourZeroFour() {
     return (
         <>
-            <PageSEO title={`Pagina no encontrada - ${siteMetadata.title}`} />
+            <PageSEO title={`Pagina no encontrada - ${siteMetadata.site_name}`} />
             <main className=" t grid min-w-full min-h-full place-items-center mix-blend-difference py-24 px-6 sm:py-32 lg:px-8 ">
                 <div className="text-center">
                     <p className="text-6xl  font-semibold text-yellow-400">

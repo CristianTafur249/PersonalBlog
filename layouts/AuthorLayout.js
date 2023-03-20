@@ -35,7 +35,7 @@ export default function AutorLayout({ children, frontMatter }) {
                         </div>
                     </div>
                     <div>
-                        <div className="prose grid grid-cols-1 pt-8 pb-8 gap-8 m-2 max-w-none .markdown">
+                        <div className="prose grid grid-cols-1 pt-8 pb-8 gap-8 m-2 max-w-none markdown">
                             {children}
                         </div>
                     </div>
