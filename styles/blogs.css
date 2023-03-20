@@ -44,8 +44,8 @@
 .markdown ul {
   @apply mx-4 list-disc;
 }
-.markdown img {
-  @apply xl:max-w-lg;
+.markdown  img {
+  @apply xl:max-w-xl ;
 }
 .markdown strong,
 .markdown em{
