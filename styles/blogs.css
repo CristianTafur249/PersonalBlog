@@ -5,7 +5,7 @@
     @apply mt-0 rounded-t-none;
 } */
 .markdown{
-  @apply mx-auto my-auto sm:w-11/12 xl:w-5/6 text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl;
+  @apply mx-auto my-auto sm:w-11/12 xl:w-5/6 text-sm sm:text-base md:text-xl;
 }
 .avisoCookies {
   display: block;
@@ -67,16 +67,16 @@
   @apply m-0 text-4xl sm:text-5xl;
 }
 .markdown h2 {
-  @apply m-1 text-3xl sm:text-4xl lg:text-5xl;
+  @apply m-1 text-3xl sm:text-4xl ;
 }
 .markdown h3 {
-  @apply m-2 text-3xl sm:text-3xl lg:text-4xl;
+  @apply m-2 text-3xl ;
 }
 .markdown h4 {
-  @apply m-3 text-xl sm:text-2xl lg:text-3xl;
+  @apply m-3 text-xl ;
 }
 .markdown h5 {
-  @apply m-3 text-lg sm:text-xl lg:text-2xl;
+  @apply m-3 text-lg ;
 }
 .markdown code {
   @apply dark:bg-gray-800 text-red-500 rounded-t-none;

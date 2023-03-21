@@ -1,6 +1,7 @@
+import Script from 'next/script';
 import React, { useEffect } from 'react';
 
-const AdSense = () => {
+export const AdSense = () => {
   useEffect(() => {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }, []);
@@ -18,4 +19,7 @@ const AdSense = () => {
   );
 };
 
-export default AdSense;
+export const Adense = () => {
+  <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5012441343452330"
+     crossorigin="anonymous"></Script>
+}
