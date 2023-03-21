@@ -35,7 +35,6 @@ class App extends React.Component {
         <Head>
           <meta name="google-site-verification" content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
-          
         </Head>
         <Analitics/>
         <Script
