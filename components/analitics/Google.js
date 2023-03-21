@@ -4,17 +4,26 @@ import Cookies from 'universal-cookie'
 import Script from 'next/script'
 import siteMetadata from '@/data/siteMetatdata'
 
-const ANALYTICS_ID = 'G-98D755MZH9'
+const ANALYTICS_ID = siteMetadata.analytics.googleAnalyticsId
 
 export const GAScrip = () => {
     ReactGA.initialize(ANALYTICS_ID)
 }
 
 export const logPageView = () => {
-    ReactGA.set({ page: window.location.pathname });
-    ReactGA.pageview(window.location.pathname);
+  const pagePath = window.location.pathname;
+  ReactGA.set({ page: pagePath, start_time: new Date().getTime() });
+  ReactGA.pageview(pagePath);
 }
-
+export const logPageTime = (category, variable, value) => {
+  ReactGA.timing({
+    category: category,
+    variable: variable,
+    value: value,
+    label: window.location.pathname,
+    startTime: new Date().getTime() - value // tiempo de permanencia en la página
+  });
+}
 
 
 export const GAcript = () => {
@@ -30,8 +39,14 @@ export const GAcript = () => {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${siteMetadata.analytics.googleAnalyticsId}', {
+            gtag('config', '${siteMetadata.analytics.googleAnalyticsId}',{
               page_path: window.location.pathname,
+              'timing_complete': {
+                'name': 'load_time',
+                'value': performance.now(),
+                'event_category': 'page_load',
+                'event_label': window.location.pathname
+              }
             });
         `}
       </Script>

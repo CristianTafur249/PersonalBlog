@@ -20,15 +20,5 @@
     <category>Linux</category><category>Sistema operativo</category><category>Código abierto</category><category>Kernel</category><category>Software libre</category>
   </item>
 
-  <item>
-    <guid>https://thechcode.netlify.app//blog/github-markdown-guide</guid>
-    <title>Markdown Guide</title>
-    <link>https://thechcode.netlify.app//blog/github-markdown-guide</link>
-    <description>Markdown cheatsheet for all your blogging needs - headers, lists, images, tables and more! An illustrated guide based on GitHub Flavored Markdown.</description>
-    <pubDate>Fri, 11 Oct 2019 00:00:00 GMT</pubDate>
-    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
-    <category>github</category><category>guide</category>
-  </item>
-
     </channel>
   </rss>

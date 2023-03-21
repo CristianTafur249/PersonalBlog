@@ -7,7 +7,7 @@ import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import AdSense from '@/components/analitics/AdSense'
 import React from 'react'
-import {  GAScrip, logPageView } from '@/components/analitics/Google'
+import {  GAScrip, logPageTime, logPageView } from '@/components/analitics/Google'
 import Script from 'next/script'
 import Cookies from '@/components/Cookies'
 import ReactGA from 'react-ga';
@@ -20,12 +20,12 @@ const isSocket = process.env.SOCKET
 
 class App extends React.Component {
 
-  /* componentDidMount() {
+  componentDidMount() {
     GAScrip()
     logPageView()
-    ReactGA.initialize('G-98D755MZH9');
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  } */
+    const timeOnPage = new Date().getTime() - performance.timing.navigationStart;
+    logPageTime('Page', 'Time', timeOnPage);
+  }
 
   render() {
     const { Component, pageProps } = this.props

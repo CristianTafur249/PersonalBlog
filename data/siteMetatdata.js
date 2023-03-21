@@ -21,7 +21,7 @@ const siteMetadata = {
     locale: 'es-CO',
     github:'https://github.com/CristianTafur249/',
     analytics: {
-        googleAnalyticsId: 'G-98D755MZH9',
+        googleAnalyticsId: "G-98D755MZH9",
 
     },
 };
