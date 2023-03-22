@@ -4,6 +4,7 @@ import Image from "next/image";
 
 export default function AutorLayout({ children, frontMatter }) {
     const { name, avatar, ocupation, email, twitter, linkedin, github } = frontMatter
+    const isAboveTheFold = true;
     return (
         <>
 
@@ -24,8 +25,10 @@ export default function AutorLayout({ children, frontMatter }) {
                                 src={avatar}
                                 alt="avatar"
                                 width={192}
+                                priority={isAboveTheFold}
                                 height={192}
-                                className="h-48 w-48 rounded-full border shadow-2xl shadow-gray-500"
+                                loading={isAboveTheFold ? "eager" : "lazy"}
+                                className="h-48 w-48 rounded-full border shadow-2xl shadow-gray-500 object-cover"
                             />
                             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
                                 {name}

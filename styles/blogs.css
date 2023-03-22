@@ -7,6 +7,12 @@
 .markdown{
   @apply mx-auto my-auto sm:w-11/12 xl:w-5/6 text-sm sm:text-base md:text-xl;
 }
+.titulo{
+  line-height: normal;
+}
+.markdown div > div  > a{
+  @apply text-gray-50;
+}
 .avisoCookies {
   display: block;
   background-color: #ffffff;

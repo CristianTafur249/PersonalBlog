@@ -16,7 +16,7 @@ export default function Tags({ tags }) {
         <>
             <PageSEO title={`Tags - ${siteMetadata.author}`} description="Etiqutas de lo que blogueo" />
             <div className="mx-auto my-auto w-4/5  px-6 lg:px-8">
-                <section className="mb-32 text-center lg:text-left">
+                <section className="mb-16 text-center lg:text-left">
                     <div className="border-b-2 grid lg:grid-cols-2 gap-6 xl:gap-12 items-center">
                         <div className="mb-6 lg:mb-0 py-1">
                             <h1 className="text-4xl md:text-5xl xl:text-6xl fond-bold mix-blend-difference tracking-tight">
@@ -25,12 +25,12 @@ export default function Tags({ tags }) {
                         </div>
                     </div>
                 </section>
-                <div className="grid grid-cols-2 gap-6 lg:grid-cols-6 mb-20 justify-items-center items-center text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+                <div className="grid grid-cols-2 gap-6 lg:grid-cols-5 mb-20 justify-items-start items-center text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
                     {Object.keys(tags).length === 0 && 'No se encontraron etiqutas.'}
                     {sortedTags.map((t)=>{
                         return(
-                            <div key={t} className="-mt-2 mb-2 mr-5">
-                                <Tag text={t} className="mt-2 mb-2 mr-5"/>
+                            <div key={t} className="-mt-2 mb-2 w-full mr-5">
+                                <Tag text={t} className="mt-2 mb-2 w-full mr-5"/>
                                 <Link
                                 href={`/tags/${t}`}
                                 className="-ml-2 text-sm font-semibold uppercase"

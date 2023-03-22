@@ -1,13 +1,14 @@
-import { useEffect } from 'react'
+import { setCookie } from 'nookies'
+import React from 'react'
 import ReactGA from 'react-ga'
-import Cookies from 'universal-cookie'
 import Script from 'next/script'
 import siteMetadata from '@/data/siteMetatdata'
+import Cookies from 'js-cookie'
 
 const ANALYTICS_ID = siteMetadata.analytics.googleAnalyticsId
 
 export const GAScrip = () => {
-    ReactGA.initialize(ANALYTICS_ID)
+  ReactGA.initialize(ANALYTICS_ID)
 }
 
 export const logPageView = () => {
@@ -26,7 +27,10 @@ export const logPageTime = (category, variable, value) => {
 }
 
 
+
 export const GAcript = () => {
+
+
   return (
     <>
       <Script
