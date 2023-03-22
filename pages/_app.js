@@ -17,16 +17,7 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 const handleSetCookie = async () => {
-  let dic={
-    _ga_98D755MZH9:"GS1.1.1679448866.4.1.1679448963.0.0.0",
-    _gat:"1",
-    _ga:"GA1.1.740928458.1679201760",
-    _gid:"GA1.3.76255144.1679448865",
-  }
-  for (let clave in dic) {
-    console.log(clave + ": " + dic[clave]);
-    Cookies.set(clave , diccionario[clave], { SameSite: 'None', Secure: true });
-  }
+  
   const cookieValue = Cookies.get('SL_G_WPT_TO');
   Cookies.set('SL_G_WPT_TO', cookieValue, { SameSite: 'None', Secure: true });
 };
