@@ -13,7 +13,7 @@ const discussUrl = (slug) =>
     )}`
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
-export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
+export default function PostLayout({ frontMatter, authorDetails, posterior, Anterior, children }) {
     const { slug, fileName, date, title, images, tags } = frontMatter;
 
     return (
@@ -86,50 +86,41 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                                 <div className="prose mb-4 pt-10 pb-8 markdown">
                                     {children}
                                 </div>
-                                <div className=" divide-y lg:divide-gray-600 justify-self-center text-center text-gray-900 pt-6 pb-6 text-sm dark:text-white w-full xl:text-xl">
-                                        <Link href={discussUrl(slug)} rel="nofollow">
-                                            {'Discuss on Twitter'}
-                                        </Link>
-                                        {` • `}
-                                        <Link href={editUrl(fileName)}>{'View on GitHub'}</Link>
-                                    </div>
-
-
                             </div>
 
                             <footer className="mt-4">
                                 <div className=" divide-x divide-gray-500  text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                                     {tags && (
                                         <div className="py-4 xl:py-8 ">
-                                            <h2 className="text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400">
+                                            <h2 className="text-xs mb-10 mx-auto text-center my-auto uppercase tracking-wide text-gray-600 dark:text-gray-400">
                                                 Tags
                                             </h2>
-                                            <div className="grid ">
+                                            <div className="grid grid-cols-1 text-center  lg:grid-cols-2">
                                                 {tags.map((tag) => (
                                                     <Tag key={tag} text={tag} />
                                                 ))}
                                             </div>
                                         </div>
                                     )}
-                                    {(next || prev) && (
-                                        <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
-                                            {prev && (
-                                                <div>
-                                                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                                                        Previous Article
+                                    {(posterior || Anterior) && (
+                                        <div className="flex w-full mx-auto justify-items-center py-4 xl:block xl:space-y-8 xl:py-8">
+                                            {Anterior && (
+                                                <div className="mx-auto">
+                                                    <h2 className="text-xs  uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                                                        Articulo Anterior
                                                     </h2>
                                                     <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                                                        <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
+                                                        <Link href={`/blog/${Anterior.slug}`}>{Anterior.title}</Link>
                                                     </div>
                                                 </div>
                                             )}
-                                            {next && (
-                                                <div>
+                                            {posterior && (
+                                                <div className="mx-auto">
                                                     <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                                                        Next Article
+                                                        Articulo siguiente
                                                     </h2>
                                                     <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                                                        <Link href={`/blog/${next.slug}`}>{next.title}</Link>
+                                                        <Link href={`/blog/${posterior.slug}`}>{posterior.title}</Link>
                                                     </div>
                                                 </div>
                                             )}
