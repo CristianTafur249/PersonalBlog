@@ -4,14 +4,18 @@
 .relative + div > pre{
     @apply mt-0 rounded-t-none;
 } */
-.markdown{
+.markdown {
   @apply mx-auto my-auto sm:w-11/12 xl:w-5/6 text-sm sm:text-base md:text-xl;
 }
-.titulo{
+.titulo {
   line-height: normal;
 }
-.markdown div > div  > a{
+.markdown div > div > a {
   @apply text-gray-50;
+}
+.laybl {
+  display: grid;
+  grid-template-rows: repeat(auto, 1fr);
 }
 .avisoCookies {
   display: block;
@@ -28,9 +32,9 @@
   padding-top: 60px;
   text-align: center;
 }
-.fondo{
+.fondo {
   display: block;
-  background: rgba (1,1,1,.20);
+  background: rgba (1, 1, 1, 0.2);
   position: fixed;
   z-index: 99;
   width: 100%;
@@ -42,7 +46,7 @@
   @apply rounded-t float-left w-full  mx-0 bg-gray-800 px-5 p-3 font-serif text-sm font-bold flex-auto text-gray-200;
 }
 .markdown > p {
-  @apply pt-1 pb-1 m-4 leading-loose ;
+  @apply pt-1 pb-1 m-4 leading-loose;
 }
 .markdown > p > b {
   @apply text-red-800 dark:text-red-500 underline;
@@ -60,7 +64,7 @@
   @apply w-full justify-items-center items-center;
 }
 .markdown strong,
-.markdown em{
+.markdown em {
   @apply font-bold mr-0 ml-0 text-green-700;
 }
 .markdown ol {
@@ -73,16 +77,16 @@
   @apply m-0 text-4xl sm:text-5xl;
 }
 .markdown h2 {
-  @apply m-1 text-3xl sm:text-4xl ;
+  @apply m-1 text-3xl sm:text-4xl;
 }
 .markdown h3 {
-  @apply m-2 text-3xl ;
+  @apply m-2 text-3xl;
 }
 .markdown h4 {
-  @apply m-3 text-xl ;
+  @apply m-3 text-xl;
 }
 .markdown h5 {
-  @apply m-3 text-lg ;
+  @apply m-3 text-lg;
 }
 .markdown code {
   @apply dark:bg-gray-800 text-red-500 rounded-t-none;
