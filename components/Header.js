@@ -13,11 +13,11 @@ export default function Header() {
                     style={{ borderColor: '#ccc', borderBottom: '1px solid #ccc' }}
                 >
                     <div className="mb-6 lg:mb-0">
-                        <h2 className="text-5xl text-gray-50  md:text-6xl xl:text-6xl 2xl:text-10xl fond-bold  tracking-tight">
+                        <h1 className="text-5xl text-gray-50  md:text-6xl xl:text-6xl 2xl:text-10xl fond-bold  tracking-tight">
                             <Link href='/'>
                                 {siteMetadata.title}
                             </Link>
-                        </h2>
+                        </h1>
                     </div>
                     <div className="mb-6 lg:mb-0 ">
                         <p className="text-lg text-gray-50 sm:text-lg md:text-xl xl:text-xl 2xl:text-6xl">
