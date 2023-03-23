@@ -5,13 +5,10 @@ import '@/styles/globals.css'
 import '@/styles/blogs.css'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
-import AdSense from '@/components/analitics/AdSense'
 import React from 'react'
 import { GAScrip, logPageTime, logPageView } from '@/components/analitics/Google'
 import Script from 'next/script'
 import Cookies from '@/components/Cookies'
-import Cookie from 'js-cookie';
-import { Analitics } from '@/components/analitics/Analitiscs'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
