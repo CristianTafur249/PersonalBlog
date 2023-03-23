@@ -42,7 +42,7 @@ class App extends React.Component {
           <meta name="google-site-verification" content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
         </Head>
-        <Analitics />
+        
         <Script
           async
           src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"

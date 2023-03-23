@@ -1,5 +1,6 @@
 {
   "name": "personalblog-jams1",
+  "author": "Cristian Tafur",
   "version": "0.1.0",
   "private": true,
   "scripts": {

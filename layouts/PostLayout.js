@@ -13,7 +13,7 @@ const discussUrl = (slug) =>
     )}`
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
-export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
+export default function PostLayout({ frontMatter, authorDetails, posterior, anterior, children }) {
     const { slug, fileName, date, title, images, tags } = frontMatter;
 
     return (
@@ -44,10 +44,11 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                                 </div>
                             </div>
                         </header>
+
                         <div
-                            className="divide-y  pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
+                            className="divide-y laybl pb-8 xl:divide-y-0"
                         >
-                            <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
+                            <dl className="pt-6 my-16 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
                                 <dt className="sr-only">Autor</dt>
                                 <dd>
                                     <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
@@ -56,10 +57,10 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                                                 {author.avatar && (
                                                     <Image
                                                         src={author.avatar}
-                                                        width={38}
-                                                        height={38}
+                                                        width={40}
+                                                        height={40}
                                                         alt="avatar"
-                                                        className="h-10 w-10 rounded-full"
+                                                        className="h-14 w-14 rounded-full"
                                                     />
                                                 )}
                                                 <dl className="whitespace-nowrap text-sm font-medium leading-5">
@@ -82,66 +83,58 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                                     </ul>
                                 </dd>
                             </dl>
-                            <div className="divide-y xl:col-span-3 xl:row-span-2 w-full mx-auto xl:pb-0">
+                            <div className="divide-y chil xl:col-span-3 xl:row-span-2 w-full mx-auto xl:pb-0">
                                 <div className="prose mb-4 pt-10 pb-8 markdown">
                                     {children}
                                 </div>
-                                <div className=" divide-y lg:divide-gray-600 justify-self-center text-center text-gray-900 pt-6 pb-6 text-sm dark:text-white w-full xl:text-xl">
-                                        <Link href={discussUrl(slug)} rel="nofollow">
-                                            {'Discuss on Twitter'}
-                                        </Link>
-                                        {` • `}
-                                        <Link href={editUrl(fileName)}>{'View on GitHub'}</Link>
-                                    </div>
-
-
                             </div>
 
                             <footer className="mt-4">
+
                                 <div className=" divide-x divide-gray-500  text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                                     {tags && (
-                                        <div className="py-4 xl:py-8 ">
-                                            <h2 className="text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400">
+                                        <div className="py-4 xl:py-8 mb-14">
+                                            <h2 className="text-xs mb-10 mx-auto text-center my-auto uppercase tracking-wide text-gray-600 dark:text-gray-400">
                                                 Tags
                                             </h2>
-                                            <div className="grid ">
+                                            <div className="grid grid-cols-1 text-center ">
                                                 {tags.map((tag) => (
                                                     <Tag key={tag} text={tag} />
                                                 ))}
                                             </div>
                                         </div>
                                     )}
-                                    {(next || prev) && (
-                                        <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
-                                            {prev && (
-                                                <div>
-                                                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                                                        Previous Article
+                                    {(posterior || anterior) && (
+                                        <div className="flex w-full mt-5 mb-10 mx-auto justify-items-center py-4 xl:block xl:space-y-8 xl:py-8">
+                                            {anterior && (
+                                                <div className="mx-auto">
+                                                    <h2 className="text-xs  uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                                                        Articulo anterior
                                                     </h2>
                                                     <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                                                        <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
+                                                        <Link href={`/blog/${anterior.slug}`}>{anterior.title}</Link>
                                                     </div>
                                                 </div>
                                             )}
-                                            {next && (
-                                                <div>
+                                            {posterior && (
+                                                <div className="mx-auto">
                                                     <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                                                        Next Article
+                                                        Articulo siguiente
                                                     </h2>
                                                     <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                                                        <Link href={`/blog/${next.slug}`}>{next.title}</Link>
+                                                        <Link href={`/blog/${posterior.slug}`}>{posterior.title}</Link>
                                                     </div>
                                                 </div>
                                             )}
                                         </div>
                                     )}
                                 </div>
-                                <div className="mt-4 pt-4 xl:pt-8">
+                                <div className=" pt-4 mt-5 xl:pt-8">
                                     <Link
                                         href="/blog"
                                         className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                                     >
-                                        &larr; Back to the blog
+                                        &larr; Volver a los blogs
                                     </Link>
                                 </div>
                             </footer>
