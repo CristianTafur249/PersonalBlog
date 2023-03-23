@@ -9,7 +9,7 @@ const siteMetadata = {
     description: 'Código, tecnología y programación',
     language: 'es-ES',
     email: 'cristian2191970@correo.uis.edu.co',
-    siteUrl: 'https://thechcode.netlify.app',
+    siteUrl: 'https://www.thechcode.netlify.app',
     instagramUrl:'https://www.instagram.com/tafur0011/',
     facebookUrl: 'https://www.facebook.com/cristiandavid.tafurcampo',
     socialBanner: '/static/images/TechCode1.png',
