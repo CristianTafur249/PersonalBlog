@@ -37,7 +37,7 @@ export const PageSEO = ({ title, description }) => {
     return (
         <CommonSEO
             title={title}
-            descripcion={description}
+            description={description}
             ogType="website"
             ogImage={ogImageUrl}
             twImage={twImageUrl}
@@ -45,7 +45,7 @@ export const PageSEO = ({ title, description }) => {
     )
 }
 
-export const TagSEO = ({ title, descripcion }) => {
+export const TagSEO = ({ title, description }) => {
     const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
     const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
     const router = useRouter();
@@ -53,7 +53,7 @@ export const TagSEO = ({ title, descripcion }) => {
         <>
             <CommonSEO
                 title={title}
-                descripcion={descripcion}
+                description={description}
                 ogType="website"
                 ogImage={ogImageUrl}
                 twImage={twImageUrl}
@@ -62,7 +62,7 @@ export const TagSEO = ({ title, descripcion }) => {
                 <link
                     rel="alternate"
                     type="aplication/rss +xml"
-                    title={`${descripcion} -RSS feed`}
+                    title={`${description} -RSS feed`}
                     href={`${siteMetadata.siteUrl}${router.asPath}/feed.xml`}
                 />
             </Head>
@@ -136,7 +136,7 @@ export const BlogSEO = ({
         <>
             <CommonSEO
                 title={title}
-                descripcion={summary}
+                description={summary}
                 ogType="website"
                 ogImage={twImageUrl}
                 twImage={twImageUrl}
