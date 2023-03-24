@@ -5,6 +5,7 @@ import Tag from "@/components/Tag";
 import Link from "@/components/Link";
 import Image from "@/components/Image";
 import siteMetadata from "@/data/siteMetatdata";
+import InicioPost from "@/components/Iniciopost";
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blog/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -137,6 +138,7 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
                                         &larr; Volver a los blogs
                                     </Link>
                                 </div>
+                                <InicioPost/>
                             </footer>
                         </div>
                     </div>

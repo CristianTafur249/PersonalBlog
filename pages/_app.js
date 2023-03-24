@@ -9,6 +9,7 @@ import React from 'react'
 import { GAScrip, logPageTime, logPageView } from '@/components/analitics/Google'
 import Script from 'next/script'
 import Cookies from '@/components/Cookies'
+import  Scrolbr  from '@/components/Scrolbr'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
@@ -45,7 +46,10 @@ class App extends React.Component {
           src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         ></Script>
         {isDevelopment && isSocket && <ClientReload />}
+        
+        
         <Navbar>
+        <Scrolbr/>
           <Component {...pageProps} />
           <Cookies />
         </Navbar>

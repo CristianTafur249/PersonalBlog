@@ -10,7 +10,7 @@ export default function Footer() {
                         <a
                             href={`mailto:${siteMetadata.email}`}
                             type="button"
-                            className="m-1 h-9 w-9  rounded-full border-2 lg:h-14 xl:w-14 lg:border-2 xl:border-4 uppercase leading-normal transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="m-1 h-9 w-9 ava  rounded-full border-2 lg:h-14 xl:w-14 lg:border-2 xl:border-4 uppercase leading-normal transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <svg
@@ -28,12 +28,12 @@ export default function Footer() {
                         <a
                             href={siteMetadata.twitter}
                             type="button"
-                            className="m-1 h-9 w-9 rounded-full border-2 lg:h-14 xl:w-14 lg:border-2 xl:border-4 uppercase leading-normal  transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="ava m-1 h-9 w-9 rounded-full border-2 lg:h-14 xl:w-14 lg:border-2 xl:border-4 uppercase leading-normal  transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="mx-auto h-full xl:w-8 w-4"
+                                className=" mx-auto h-full xl:w-8 w-4"
                                 fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path
@@ -44,7 +44,7 @@ export default function Footer() {
                         <a
                             href={siteMetadata.linkedin}
                             type="button"
-                            className="m-1 h-9 w-9 rounded-full border-2 lg:h-14 xl:w-14 lg:border-2 xl:border-4 uppercase leading-normal transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="m-1 h-9 w-9 ava  rounded-full border-2 lg:h-14 xl:w-14 lg:border-2 xl:border-4 uppercase leading-normal transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <svg
@@ -60,7 +60,7 @@ export default function Footer() {
                         <a
                             href={siteMetadata.github}
                             type="button"
-                            className="m-1 h-9 w-9 rounded-full border-2 lg:h-14 xl:w-14 lg:border-2 xl:border-4 uppercase leading-normal  transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                            className="m-1 h-9 w-9 ava  rounded-full border-2 lg:h-14 xl:w-14 lg:border-2 xl:border-4 uppercase leading-normal  transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <svg

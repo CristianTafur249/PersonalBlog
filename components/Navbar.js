@@ -23,9 +23,10 @@ function className(...classes) {
 
 export default function Navbar({ children }) {
   return (
-    <div className="max-h-full " >
-      <header >
-        <Disclosure as="nav" className='bg-gray-800 '>
+    <div className="" >
+      <header  >
+        <div className="fixed w-full top-0 z-10">
+        <Disclosure as="nav" className='bg-gray-800  '>
           {({ open }) => (
             <>
               <div className="text-black dark:text-white  mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -66,7 +67,7 @@ export default function Navbar({ children }) {
                           <a
                             key={item.name}
                             href={item.href}
-                            className='transition ease-in-out duration-700
+                            className='transition ease-in-out duration-1000
                             hover:border-b-2 hover:border-green-500
                             hover:text-green-400 border-b-2
                             border-gray-800 text-primary-50
@@ -109,8 +110,13 @@ export default function Navbar({ children }) {
             </>
           )}
         </Disclosure>
-        <Header />
+        </div>
+       
       </header>
+      <div className="mt-20">
+
+       <Header />
+      </div>
       <main className="mt-3 mb-8 mx-auto my-auto">
         {children}
       </main>
