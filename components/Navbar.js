@@ -23,12 +23,12 @@ function className(...classes) {
 
 export default function Navbar({ children }) {
   return (
-    <div className="max-h-full" >
-      <header className=" mix-blend-difference">
+    <div className="max-h-full " >
+      <header >
         <Disclosure as="nav" className='bg-gray-800 '>
           {({ open }) => (
             <>
-              <div className="text-black dark:text-white mix-blend-difference mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+              <div className="text-black dark:text-white  mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex items-center justify-between h-16">
                   <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                     {/* Boton de menú de celular */}
@@ -42,10 +42,10 @@ export default function Navbar({ children }) {
                     </Disclosure.Button>
                   </div>
                   <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                    <div className="flex flex-shrink-0 items-center  mix-blend-color-burn">
+                    <div className="flex flex-shrink-0 items-center mix-blend-s">
                       <Link href="/" >
                         <Image
-                          className="sm:block h-8 w-auto  lg:hidden"
+                          className="sm:block h-8 w-auto lg:hidden"
                           src={siteMetadata.siteLogo}
                           width={30}
                           height={30}
@@ -66,7 +66,13 @@ export default function Navbar({ children }) {
                           <a
                             key={item.name}
                             href={item.href}
-                            className='text-white hover:bg-gray-900 rounded-md px-3 py-2 text-sm md:text-xl xl:text-xl 2xl:text-5xl font-medium'
+                            className='transition ease-in-out duration-700
+                            hover:border-b-2 hover:border-green-500
+                            hover:text-green-400 border-b-2
+                            border-gray-800 text-primary-50
+                           hover:bg-gray-900 rounded-md px-3 
+                            py-2 text-sm md:text-xl xl:text-xl 2xl:text-5xl 
+                            font-sans'
                             aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
@@ -88,7 +94,11 @@ export default function Navbar({ children }) {
                       key={item.name}
                       as="a"
                       href={item.href}
-                      className='text-white hover:bg-gray-100 hover:text-gray-900 block rounded-md px-3 py-2 text-base font-medium'
+                      className='transition ease-in-out duration-700
+                      hover:border-b-2 hover:border-gray-500 
+                      border-b-2 border-gray-500 
+                      text-white hover:bg-gray-100 hover:text-gray-900 
+                      block rounded-md px-3 py-2 text-base font-medium'
                       aria-current={item.current ? 'page' : undefined}
                     >
                       {item.name}
@@ -104,7 +114,7 @@ export default function Navbar({ children }) {
       <main className="mt-3 mb-8 mx-auto my-auto">
         {children}
       </main>
-
+      
       <Footer />
     </div>
   );

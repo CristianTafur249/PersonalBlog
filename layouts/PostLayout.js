@@ -24,7 +24,7 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
                 {...frontMatter}
                 title={`${title} | Blog`}
             />
-            <div className="mx-auto my-auto lg:w-3/4 xl:w-1/2">
+            <div className="mx-auto my-auto w-5/6">
                 <article>
                     <div className="xl:divide-y  xl:divide-gray-700">
                         <header className="pt-6 xl:pb-6">
@@ -99,13 +99,13 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
                                             </h2>
                                             <div className="grid grid-cols-1 text-center ">
                                                 {tags.map((tag) => (
-                                                    <Tag key={tag} text={tag} />
+                                                    <Tag clas={"transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full mx-auto mt-2 mb-2 text-center  py-1.5 px-3 font-medium text-green-700 hover:border-gray-700 hover:text-blue-700"}  key={tag} text={tag} />
                                                 ))}
                                             </div>
                                         </div>
                                     )}
                                     {(posterior || anterior) && (
-                                        <div className="flex w-full mt-5 mb-10 mx-auto justify-items-center py-4 xl:block xl:space-y-8 xl:py-8">
+                                        <div className="flex w-full mt-5 mb-10 mx-auto  justify-items-center py-4 xl:block xl:space-y-8 xl:py-8">
                                             {anterior && (
                                                 <div className="mx-auto">
                                                     <h2 className="text-xs  uppercase tracking-wide text-gray-500 dark:text-gray-400">

@@ -1,6 +1,6 @@
 import SectionContainer from "@/components/SectionContainer";
 import { PageSEO } from "@/components/SEO";
-import Image from "next/image";
+import Image from "@/components/Image"; 
 
 export default function AutorLayout({ children, frontMatter }) {
     const { name, avatar, ocupation, email, twitter, linkedin, github } = frontMatter
@@ -20,27 +20,30 @@ export default function AutorLayout({ children, frontMatter }) {
                         </h2>
                     </div>
                     <div className=' mx-auto mt-10 grid   grid-cols-1 gap-y-16 gap-x-8  pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2'>
-                        <div className="flex flex-col items-center pt-8">
+                        <div className=" mx-auto my-auto flex-col justify-items-center pt-8">
                             <Image
                                 src={avatar}
                                 alt="avatar"
-                                width={192}
+                                width={198}
                                 priority={isAboveTheFold}
-                                height={192}
+                                height={198}
                                 loading={isAboveTheFold ? "eager" : "lazy"}
-                                className="h-48 w-48 rounded-full border shadow-2xl shadow-gray-500 object-cover"
+                                className="m-auto rounded-full border ava object-cover"
                             />
-                            <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
+                            <h3 className="pt-4 m-auto pb-2 text-2xl font-bold leading-8 text-center tracking-tight">
                                 {name}
                             </h3>
-                            <div className="dark:text-white text-gray-700">
+                            <div className="m-auto text-center dark:text-white text-gray-700">
                                 {ocupation}
                             </div>
-                            <div>
+                            <div className="text-center">
                                 <a
                                     href={twitter}
                                     type="button"
-                                    className="m-1 h-9 w-9 rounded-full border-2 lg:h-14 xl:w-14 lg:border-2 xl:border-4 uppercase leading-normal  transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                                    className="m-1 h-9 w-9 rounded-full border-2 lg:h-14 xl:w-14 
+                                    lg:border-2 xl:border-4 uppercase leading-normal  transition 
+                                    duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 
+                                    focus:outline-none focus:ring-0"
                                     data-te-ripple-init
                                     data-te-ripple-color="light">
                                     <svg
@@ -87,7 +90,7 @@ export default function AutorLayout({ children, frontMatter }) {
                             </div>
                         </div>
                         <div>
-                            <div className="prose grid grid-cols-1 pt-8 pb-8 gap-8 m-2 max-w-none markdown">
+                            <div className="prose w-2/3 pt-8 pb-8 gap-8 markdownau">
                                 {children}
                             </div>
                         </div>

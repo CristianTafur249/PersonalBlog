@@ -7,11 +7,24 @@
 .markdown {
   @apply mx-auto my-auto sm:w-11/12 xl:w-5/6 text-sm sm:text-base md:text-xl;
 }
+.markdownau {
+  line-height: 2;
+  margin-bottom: 10px;
+}
+.hed {
+  text-shadow: 2px 2px 0px rgba(22, 222, 222, 5);
+}
+.ava{
+shadow: 2px 2px 0px rgba(22, 222, 222, 5);
+}
 .titulo {
   line-height: normal;
 }
 .markdown div > div > a {
   @apply text-gray-50;
+}
+.tag {
+  font-size: 9px;
 }
 .laybl {
   display: grid;

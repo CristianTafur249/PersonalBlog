@@ -25,15 +25,15 @@ export default function Tags({ tags }) {
                         </div>
                     </div>
                 </section>
-                <div className="grid grid-cols-2 gap-6 lg:grid-cols-5 mb-20 justify-items-start items-center text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+                <div className=" rounded-full grid grid-cols-2 gap-6 lg:grid-cols-3 mb-20 justify-items-start items-center text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
                     {Object.keys(tags).length === 0 && 'No se encontraron etiqutas.'}
                     {sortedTags.map((t)=>{
                         return(
-                            <div key={t} className="-mt-2 mb-2 w-full mr-5">
-                                <Tag text={t} className="mt-2 mb-2 w-full mr-5"/>
+                            <div key={t} className="-mt-2 m-auto  mb-2 w-full mr-5">
+                                <Tag text={t} clas='transition ease-in-out duration-700 hover:border-b-2 mx-2 rounded-full relative z-10  m-auto my-1 p-1 text-center text-green-700 hover:border-gray-800 hover:text-blue-800'/>
                                 <Link
                                 href={`/tags/${t}`}
-                                className="-ml-2 text-sm font-semibold uppercase"
+                                className="-ml-2 font-semibold uppercase"
                                 >
                                     {`(${tags[t]})`}
                                 </Link>

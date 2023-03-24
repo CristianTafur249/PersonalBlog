@@ -15,6 +15,9 @@ module.exports = {
   ],
 
   darkMode: 'class',
+  variants: {
+    borderWidth: ['responsive', 'hover', 'focus'],
+  },
   theme: {
     fontSize: {
       xs: '0.75rem',

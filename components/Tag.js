@@ -1,10 +1,10 @@
 const { default: Link } = require("next/link")
 
 
-const Tag = ({ text }) => {
+const Tag = ({ text ,clas}) => {
     return (
         <Link href={`/tags/${text}`} legacyBehavior>
-            <a className="relative z-10 rounded-full  py-1.5 px-3 font-medium text-green-700 hover:text-blue-400">
+            <a className={clas}>
                 {text.split(" ").join('-')}
             </a>
         </Link>
