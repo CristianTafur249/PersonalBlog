@@ -59,30 +59,30 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                     </div>
                 </section>
                 <div className="mx-auto my-auto pb-12 w-3/4 px-6 lg:px-8">
-                    <div className="mx-auto mt-6 grid   gap-y-16 gap-x-8 pt-6 sm:pt-6 lg:mx-0 lg:max-w-none ">
+                    <div className="mx-auto mt-6  w-full   gap-y-16 gap-x-8 pt-6 sm:pt-6 lg:mx-0 lg:max-w-none ">
                         {!filteredBlogPosts.length && 'No se encontraron publicaciones.'}
                         {displayPosts.map((frontMatter) => {
                             const { slug, date, title, summary, tags } = frontMatter;
                             return (
-                                <article key={slug} className=' transition ease-in-out duration-700  p-5 rounded-md  items-start dark:hover:bg-gray-800 hover:bg-gray-300 border-gray-400 justify-between'>
-                                    <div className=' text-gray-500 items-center group-hover:text-blue-700 grap-x-4 text-xs'>
+                                <article key={slug} className='shadow-primary-200 transition ease-in-out duration-700  mb-8 p-5 rounded-md hover:bg-gray-300 dark:hover:bg-gray-800 border-gray-400 items-start justify-between'>
+                                    <div className=' text-gray-500 items-center grap-x-4 text-xs group-hover:text-blue-700'>
                                         <time dateTime={date}>
                                             {formatDate(date)}
                                         </time>
                                     </div>
-                                    <div className='group relative'>
-                                        <h3 className='mt-3 text-lg font-semibold leading-6 mb-3  group-hover:text-green-600'>
+                                    <div className='group relative '>
+                                        <h3 className='mt-3 text-lg mb-3 font-semibold leading-6  group-hover:text-green-600'>
                                             <a href={`/blog/${slug}`}>
-                                                <span className='absolute inset-0' />
+                                                <span className='absolute inset-0 ' />
                                                 {title}
                                             </a>
                                         </h3>
-                                        <div className='justify-center mb-3'>
+                                        <div className=' justify-start mb-3 flex flex-wrap'>
                                             {tags.map((tag) => (
-                                                <Tag clas={"transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full hover:font-bold   m-auto ml-3  my-1 p-2 text-center  border-green-700 text-green-700 hover:border-gray-800 hover:text-blue-800 dark:hover:border-gray-50 dark:hover:text-blue-50 "} key={tag} text={tag} />
+                                                <Tag clas={"transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full m-auto ml-3 my-1 p-2 text-center  border-green-700 text-green-700 hover:border-gray-800 hover:text-blue-800 dark:hover:border-gray-50 dark:hover:text-blue-50 "} key={tag} text={tag} />
                                             ))}
                                         </div>
-                                        <p className='mt-1 dark:group-hover:text-blue-700 group-hover:text-purple-700 text-sm leading-6 text-gray-500 line clam-3'>
+                                        <p className='mt-1 text-sm leading-6 text-gray-600 line clam-3 '>
                                             {summary}
                                         </p>
 

@@ -113,8 +113,7 @@ export default function Navbar({ children }) {
         </div>
        
       </header>
-      <div className="mt-20">
-
+      <div className="mt-20 w-full">
        <Header />
       </div>
       <main className="mt-3 mb-8 mx-auto my-auto">
