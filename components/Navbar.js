@@ -24,7 +24,7 @@ function className(...classes) {
 
 export default function Navbar({ children }) {
   return (
-    <div className="" >
+    <div>
       <header  >
         <div className="fixed w-full top-0 z-10">
           <Disclosure as="nav" className='bg-gray-800 '>
@@ -117,7 +117,7 @@ export default function Navbar({ children }) {
       <div className="mt-20 w-full">
         <Header />
       </div>
-      <main className="mt-3 mb-8 mx-auto my-auto">
+      <main className="mt-3 mb-8 mx-auto w-full my-auto">
         {children}
       </main>
 

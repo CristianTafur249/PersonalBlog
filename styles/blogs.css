@@ -90,7 +90,7 @@
   @apply m-0 text-4xl sm:text-5xl;
 }
 .markdown h2 {
-  @apply m-1 text-3xl sm:text-4xl;
+  @apply m-1 text-3xl sm:text-4xl text-center;
 }
 .markdown h3 {
   @apply m-2 text-3xl;

@@ -7,7 +7,7 @@ import SectionContainer from "./SectionContainer";
 export default function Header() {
     return (
         <>
-            <section className=" mx-auto my-auto max-w-7xl xl:max-w-full text-center lg:text-left ">
+            <section className=" mx-auto my-auto w-full xl:max-w-full text-center lg:text-left ">
                 <div
                     className=" grid lg:grid-cols-2 border-b-2 gap-6 xl:gap-12 items-center"
                     style={{ borderColor: '#ccc', borderBottom: '1px solid #ccc' }}

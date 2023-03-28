@@ -18,27 +18,27 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     return (
         <>
             <div className="mx-auto my-auto px-6 lg:px-8">
-                <section className="mx-auto my-auto w-4/5 text-center lg:text-left">
+                <section className="mx-auto my-auto  text-center lg:text-left">
                     <div
-                        className=" grid  gap-6 xl:gap-12 mx-auto items-center"
+                        className=" grid w-full gap-6 xl:gap-12 mx-auto items-center"
                         style={{ borderColor: '#ccc', borderBottom: '1px solid #ccc' }}
                     >
                         <div className="mb-3 lg:mb-0 py-1">
-                            <h1 className="dark:text-white  text-3xl md:text-6xl xl:text-5xl   2xl:text-7xl fond-bold tracking-tight">
+                            <h1 className="dark:text-white  text-3xl md:text-6xl xl:text-5xl  w-full 2xl:text-7xl fond-bold tracking-tight">
                                 {title}
                             </h1>
-                            <div className="relative flex w-full items-stretch">
+                            <div className="relative flex w-2/4 items-stretch">
                                 <input
                                     aria-label="Buscar articulo"
                                     type="text"
                                     onChange={(e) => setSearchValue(e.target.value)}
                                     placeholder="Buscar articulo"
-                                    className="block rounded-md border w-1/2 border-gray-700 dark:bg-gray-800 dark:text-gray-50 px-3 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 "
+                                    className="block rounded-md border w-2/5 border-gray-700 dark:bg-gray-800 dark:text-gray-50 px-3 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 "
 
                                 />
 
                                 <svg
-                                    className="w-8 "
+                                    className="w-6 "
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
@@ -58,7 +58,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         </div>
                     </div>
                 </section>
-                <div className="mx-auto my-auto pb-12 w-3/4 px-6 lg:px-8">
+                <div className="mx-auto my-auto pb-12 w-full px-6 lg:px-8">
                     <div className="mx-auto mt-6  w-full   gap-y-16 gap-x-8 pt-6 sm:pt-6 lg:mx-0 lg:max-w-none ">
                         {!filteredBlogPosts.length && 'No se encontraron publicaciones.'}
                         {displayPosts.map((frontMatter) => {
