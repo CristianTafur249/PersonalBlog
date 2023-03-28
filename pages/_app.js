@@ -9,13 +9,13 @@ import React from 'react'
 import { GAScrip, logPageTime, logPageView } from '@/components/analitics/Google'
 import Script from 'next/script'
 import Cookies from '@/components/Cookies'
-import  Scrolbr  from '@/components/Scrolbr'
+import Scrolbr from '@/components/Scrolbr'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 const handleSetCookie = async () => {
-  
+
   const cookieValue = Cookies.get('SL_G_WPT_TO');
   Cookies.set('SL_G_WPT_TO', cookieValue, { SameSite: 'None', Secure: true });
 };
@@ -23,33 +23,28 @@ const handleSetCookie = async () => {
 
 class App extends React.Component {
 
-  componentDidMount() {
+  /* componentDidMount() {
     handleSetCookie
     GAScrip()
     logPageView()
     const timeOnPage = new Date().getTime() - performance.timing.navigationStart;
     logPageTime('Page', 'Time', timeOnPage);
-  }
-
+  } */
   render() {
     const { Component, pageProps } = this.props
-
     return (
       <ThemeProvider attribute='class' defaultTheme={siteMetadata.theme}>
         <Head>
           <meta name="google-site-verification" content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
         </Head>
-        
         <Script
           async
           src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         ></Script>
         {isDevelopment && isSocket && <ClientReload />}
-        
-        
         <Navbar>
-        <Scrolbr/>
+          <Scrolbr />
           <Component {...pageProps} />
           <Cookies />
         </Navbar>

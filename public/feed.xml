@@ -6,9 +6,19 @@
       <language>es-ES</language>
       <managingEditor>cristian2191970@correo.uis.edu.co (Cristian Tafur)</managingEditor>
       <webMaster>cristian2191970@correo.uis.edu.co (Cristian Tafur)</webMaster>
-      <lastBuildDate>Tue, 21 Mar 2023 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Tue, 28 Mar 2023 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://thechcode.netlify.app/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://thechcode.netlify.app/blog/como-instalar-ubuntu</guid>
+    <title>¿Como instalar ubuntu?</title>
+    <link>https://thechcode.netlify.app/blog/como-instalar-ubuntu</link>
+    <description>Ubuntu es una distribución popular de Linux. Para instalarlo, necesitas un DVD o USB con el archivo ISO y al menos 5 GB de espacio libre en el disco duro. Inserta el DVD o USB, reinicia y cambia el orden de arranque en la BIOS o UEFI. Reinicia de nuevo y selecciona “Instalar Ubuntu”. Elige el idioma, tipo de instalación, si quieres descargar actualizaciones y cómo particionar el disco duro. Puedes borrar todo e instalar Ubuntu, instalarlo junto a Windows o crear particiones manualmente. Si no estás seguro, elige la opción más sencilla.</description>
+    <pubDate>Tue, 28 Mar 2023 00:00:00 GMT</pubDate>
+    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
+    <category>Linux</category><category>Sistema operativo</category><category>Instalacion</category><category>Software libre</category>
+  </item>
+
   <item>
     <guid>https://thechcode.netlify.app/blog/beneficios-seguridad</guid>
     <title>Explorando los beneficios de seguridad de elegir un sistema operativo Linux</title>
