@@ -4,9 +4,9 @@ import SectionContainer from "./SectionContainer";
 export default function Footer() {
     return (
         <>
-            <footer className=" bg-gray-900 mx-auto max-w-3xl xl:max-w-6xl max-h-min t mix-blend-difference text-center md:text-xl xl:text-xl 2xl:text-5xl">
+            <footer className=" bg-transparentauto mx-auto max-w-3xl xl:max-w-6xl max-h-min t  text-center md:text-xl xl:text-xl 2xl:text-5xl">
                 <div className=" container px-6 pt-6">
-                    <div className="mb-6 flex justify-center text-gray-50 mix-blend-difference">
+                    <div className="mb-6 flex justify-center dark:text-gray-50 ">
                         <a
                             href={`mailto:${siteMetadata.email}`}
                             type="button"
@@ -78,7 +78,7 @@ export default function Footer() {
 
                 </div>
                 <div
-                    className="p-4 text-center text-gray-50">
+                    className="p-4 text-center dark:text-gray-50">
                     Cristian Tafur ∘ © 2023 ∘
                     <a className="text-whitehite" href={siteMetadata.siteUrl}
                     >{siteMetadata.title}</a>

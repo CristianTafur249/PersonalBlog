@@ -43,7 +43,7 @@ export default function Navbar({ children }) {
                         )}
                       </Disclosure.Button>
                     </div>
-                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start w-full">
+                    <div className="flex flex-1 items-center justify-start sm:items-stretch sm:justify-start w-full">
                       <div className="flex flex-shrink-0 items-center mix-blend-s">
                         <Link href="/" >
                           <Image
@@ -62,7 +62,7 @@ export default function Navbar({ children }) {
                           />
                         </Link>
                       </div>
-                      <div className="hidden sm:block sm:ml-6">
+                      <div className="hidden sm:block sm:ml-6 ">
                         <div className="flex space-x-4">
                           {navigation.map((item) => (
                             <a
@@ -71,8 +71,8 @@ export default function Navbar({ children }) {
                               className='transition ease-in-out duration-1000
                             hover:border-b-2 hover:border-green-500
                             hover:text-green-400 border-b-2
-                            border-gray-800 text-primary-50
-                           hover:bg-gray-900 rounded-md px-3 
+                            border-transparent text-primary-50
+                           hover:bg-gray-900 rounded-md px-3 w-full
                             py-2 text-sm md:text-xl xl:text-xl 2xl:text-5xl 
                             font-sans'
                               aria-current={item.current ? 'page' : undefined}
@@ -98,7 +98,7 @@ export default function Navbar({ children }) {
                         href={item.href}
                         className='transition ease-in-out duration-700
                       hover:border-b-2 hover:border-gray-500 
-                      border-b-2 border-gray-500 
+                      border-b-2 border-gray-500  
                       text-white hover:bg-gray-100 hover:text-gray-900 
                       block rounded-md px-3 py-2 text-base font-medium'
                         aria-current={item.current ? 'page' : undefined}
@@ -117,11 +117,12 @@ export default function Navbar({ children }) {
       <div className="mt-20 w-full">
         <Header />
       </div>
-      <main className="mt-3 mb-8 mx-auto w-full my-auto">
+      <main className="mt-3 mb-36 mx-auto w-full my-auto">
         {children}
       </main>
-
+      <div className=" bottom-0   left-0 right-0">
       <Footer />
+      </div>
     </div>
   );
 }
