@@ -1,4 +1,4 @@
-const projectData =[
+const projectData = [
     {
         title: 'ThecCode',
         description: `TechCode es un blog personal dedicado a la tecnología y el código. En este espacio, encontrarás contenido sobre desarrollo de software, programación, tecnología, noticias de la industria y más.

@@ -86,7 +86,8 @@
 .markdown li {
   @apply mb-4 list-inside;
 }
-.markdown h1 {
+.markdown h1,
+.markdownau h1 {
   @apply m-0 text-4xl sm:text-5xl;
 }
 .markdown h2 {

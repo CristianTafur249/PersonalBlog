@@ -85,7 +85,7 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
                                 </dd>
                             </dl>
                             <div className="divide-y chil xl:col-span-3 xl:row-span-2 w-full mx-auto xl:pb-0">
-                                <div className="prose mb-4 pt-10 pb-8 markdown">
+                                <div className="prose mt-10 mb-4 pt-10 pb-8 markdown">
                                     {children}
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
                                             </h2>
                                             <div className="grid grid-cols-1 text-center ">
                                                 {tags.map((tag) => (
-                                                    <Tag clas={"transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full mx-auto mt-2 mb-2 text-center  py-1.5 px-3 font-medium text-green-700 hover:border-gray-700 hover:text-blue-700"}  key={tag} text={tag} />
+                                                    <Tag clas={"transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full mx-auto mt-2 mb-2 text-center  py-1.5 px-3 font-medium text-green-700 hover:border-gray-700 hover:text-blue-700"} key={tag} text={tag} />
                                                 ))}
                                             </div>
                                         </div>
@@ -138,7 +138,7 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
                                         &larr; Volver a los blogs
                                     </Link>
                                 </div>
-                                <InicioPost/>
+                                <InicioPost />
                             </footer>
                         </div>
                     </div>

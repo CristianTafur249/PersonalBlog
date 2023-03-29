@@ -4,7 +4,7 @@ import SectionContainer from "./SectionContainer";
 export default function Footer() {
     return (
         <>
-            <footer className=" bg-transparentauto mx-auto max-w-3xl xl:max-w-6xl max-h-min t  text-center md:text-xl xl:text-xl 2xl:text-5xl">
+            <footer className=" bg-transparentauto mx-auto max-w-3xl xl:max-w-6xl max-h-min divide-y-2 divide-gray-700  text-center md:text-xl xl:text-xl 2xl:text-5xl">
                 <div className=" container px-6 pt-6">
                     <div className="mb-6 flex justify-center dark:text-gray-50 ">
                         <a
@@ -15,7 +15,7 @@ export default function Footer() {
                             data-te-ripple-color="light">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="mx-auto h-full w-4 xl:w-8 "
+                                className="mx-auto h-full w-4 xl:w-8 transition ease-in-out duration-700 hover:text-orange-700 "
                                 fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path
@@ -33,7 +33,7 @@ export default function Footer() {
                             data-te-ripple-color="light">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className=" mx-auto h-full xl:w-8 w-4"
+                                className=" mx-auto h-full xl:w-8 w-4 transition ease-in-out duration-700 hover:text-blue-800"
                                 fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path
@@ -49,7 +49,7 @@ export default function Footer() {
                             data-te-ripple-color="light">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="mx-auto h-full xl:w-8 w-4"
+                                className="mx-auto h-full xl:w-8 w-4 transition ease-in-out duration-700 hover:text-blue-800"
                                 fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path
@@ -65,7 +65,7 @@ export default function Footer() {
                             data-te-ripple-color="light">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="mx-auto h-full xl:w-8 w-4"
+                                className="mx-auto h-full xl:w-8 w-4 transition ease-in-out duration-700 hover:text-orange-800"
                                 fill="currentColor"
                                 viewBox="0 0 24 24">
                                 <path
