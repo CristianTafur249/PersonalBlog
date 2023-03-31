@@ -8,6 +8,7 @@ twitter: https://twitter.com/Cristia16195614
 linkedin: https://www.linkedin.com/in/cristaf/
 github: https://github.com/CristianTafur249
 ---
+
 ## ¿Quien soy?
 
 Soy un estudiante de ingeniería de sistemas en la Universidad Industrial de Santander (UIS) y me apasiona el desarrollo y los retos. Desde pequeño, siempre he tenido curiosidad por entender cómo funcionan las cosas, y a medida que fui creciendo, descubrí mi amor por la tecnología y la programación.
