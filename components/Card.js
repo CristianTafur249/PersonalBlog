@@ -28,9 +28,9 @@ const Card = ({ title, description, imgSrc, href }) => {
                         />
                     ))
                 }
-                <div class="p-6">
+                <div className="p-6">
                     <h5
-                        class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                        className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                         {href ? (
                             <Link href={href} aria-label={`Link to ${title}`}>
                                 {title}
@@ -39,12 +39,13 @@ const Card = ({ title, description, imgSrc, href }) => {
                             title
                         )}
                     </h5>
-                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                    <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                         {description}
                     </p>
                     {href && (
                         <Link
                             href={href}
+                            className="text-primary-700"
                             aria-label={`Link to ${title}`}
                         >
                             Ver más &rarr;
