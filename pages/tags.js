@@ -19,9 +19,9 @@ export default function Tags({ tags }) {
                 <section className="mb-16 text-center lg:text-left">
                     <div className="border-b-2 grid lg:grid-cols-2 gap-6 xl:gap-12 items-center">
                         <div className="mb-6 lg:mb-0 py-1">
-                            <h1 className="text-4xl md:text-5xl xl:text-6xl fond-bold mix-blend-difference tracking-tight">
+                            <h2 className="text-4xl md:text-5xl xl:text-6xl fond-bold mix-blend-difference tracking-tight">
                                 Etiquetas
-                            </h1>
+                            </h2>
                         </div>
                     </div>
                 </section>

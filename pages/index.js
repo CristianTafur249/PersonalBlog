@@ -22,8 +22,8 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={'Inicio'} description={siteMetadata.description} />
       <>
-        <div className='mx-auto my-auto pb-12 w-11/12 px-6 lg:px-8'>
-          <div className='mx-auto mt-6  w-full   gap-y-16 gap-x-8 pt-6 sm:pt-6 lg:mx-0 lg:max-w-none '>
+        <div className='mx-auto my-auto pb-12 w-11/12 xl:w-4/6  px-6 lg:px-8'>
+          <div className='mx-auto mt-6  w-full  gap-y-16 gap-x-8 pt-6 sm:pt-6 lg:mx-0 lg:max-w-none '>
             {!posts.length && 'No se encontraron publicaciones.'}
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { slug, date, title, summary, tags } = frontMatter

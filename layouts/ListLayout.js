@@ -24,9 +24,9 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         style={{ borderColor: '#ccc', borderBottom: '1px solid #ccc' }}
                     >
                         <div className="mb-3 lg:mb-0 py-1">
-                            <h1 className="dark:text-white  text-3xl md:text-6xl xl:text-5xl  w-full 2xl:text-7xl fond-bold tracking-tight">
+                            <h2 className="dark:text-white  text-3xl md:text-6xl xl:text-5xl  w-full 2xl:text-7xl fond-bold tracking-tight">
                                 {title}
-                            </h1>
+                            </h2>
                             <div className="relative flex w-2/4 items-stretch">
                                 <input
                                     aria-label="Buscar articulo"
@@ -58,13 +58,13 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         </div>
                     </div>
                 </section>
-                <div className="mx-auto my-auto pb-12 w-full px-6 lg:px-8">
-                    <div className="mx-auto mt-6  w-full   gap-y-16 gap-x-8 pt-6 sm:pt-6 lg:mx-0 lg:max-w-none ">
+                <div className="mx-auto my-auto pb-12 w-full px-6  lg:px-8">
+                    <div className=" mt-6   xl:w-4/6 justify-items-center  gap-y-16 gap-x-8 pt-6 sm:pt-6 mx-auto lg:max-w-none ">
                         {!filteredBlogPosts.length && 'No se encontraron publicaciones.'}
                         {displayPosts.map((frontMatter) => {
                             const { slug, date, title, summary, tags } = frontMatter;
                             return (
-                                <article key={slug} className='shadow-primary-200 transition ease-in-out duration-700  mb-8 p-5 rounded-md hover:bg-gray-300 dark:hover:bg-gray-800 border-gray-400 items-start justify-between'>
+                                <article key={slug} className='shadow-primary-200 mx-auto transition ease-in-out duration-700  mb-8 p-5 rounded-md hover:bg-gray-300 dark:hover:bg-gray-800 border-gray-400 items-start justify-between'>
                                     <div className=' text-gray-500 items-center grap-x-4 text-xs group-hover:text-blue-700'>
                                         <time dateTime={date}>
                                             {formatDate(date)}
