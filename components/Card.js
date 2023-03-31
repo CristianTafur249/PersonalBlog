@@ -48,7 +48,7 @@ const Card = ({ title, description, imgSrc, href }) => {
                             className="text-primary-700"
                             aria-label={`Link to ${title}`}
                         >
-                            Ver más &rarr;
+                            Ir &rarr;
                         </Link>
                     )}
 
