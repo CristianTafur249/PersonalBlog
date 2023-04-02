@@ -26,7 +26,8 @@ export default function Cookies() {
     useEffect(() => {
         if (!localStorage.getItem('cookies-aceptadas')) {
             setShowCookies(true);
-
+        } else {
+        dataLayer.push({'event': 'cookies-aceptadas'})
         }
     }, [])
 
