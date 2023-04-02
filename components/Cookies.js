@@ -33,11 +33,13 @@ export default function Cookies() {
     const handleAcceptCookies = () => {
         localStorage.setItem('cookies-aceptadas', true);
         setShowCookies(false);
-    
+
     }
 
     return (
         <>
+
+            {!showCookies && <Analitics />}
             {showCookies && (
                 <div className='avisoCookies block shadow-xl shadow-gray-700 dark:shadow-gray-600 dark:bg-gray-300'>
                     <Image alt="galleta" height={100} width={100} className='max-w-px absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2/3' src="/static/images/cookie.svg" />
@@ -48,7 +50,6 @@ export default function Cookies() {
                 </div>
             )}
             {showCookies && <div className="fondo"></div>}
-            {!showCookies && <Analitics />}
         </>
 
     )

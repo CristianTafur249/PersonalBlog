@@ -6,7 +6,7 @@ import '@/styles/blogs.css'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import React from 'react'
-import { GAScrip, logPageTime, logPageView } from '@/components/analitics/Google'
+import { GAScrip, initGTM, logPageTime, logPageView } from '@/components/analitics/Google'
 import Script from 'next/script'
 import Cookies from '@/components/Cookies'
 import Scrolbr from '@/components/Scrolbr'
@@ -23,13 +23,13 @@ const handleSetCookie = async () => {
 
 class App extends React.Component {
 
-  /* componentDidMount() {
+  componentDidMount() {
     handleSetCookie
-    GAScrip()
+    initGTM()
     logPageView()
     const timeOnPage = new Date().getTime() - performance.timing.navigationStart;
-    logPageTime('Page', 'Time', timeOnPage);
-  } */
+    /* logPageTime('Page', 'Time', timeOnPage); */
+  }
   render() {
     const { Component, pageProps } = this.props
     return (
@@ -38,10 +38,6 @@ class App extends React.Component {
           <meta name="google-site-verification" content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
         </Head>
-        <Script
-          async
-          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></Script>
         {isDevelopment && isSocket && <ClientReload />}
         <Navbar>
           <Scrolbr />
