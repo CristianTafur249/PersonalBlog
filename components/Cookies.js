@@ -33,6 +33,7 @@ export default function Cookies() {
     const handleAcceptCookies = () => {
         localStorage.setItem('cookies-aceptadas', true);
         setShowCookies(false);
+        dataLayer.push({'event': 'cookies-aceptadas'})
 
     }
 
