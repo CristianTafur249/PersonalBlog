@@ -64,10 +64,12 @@
 .markdown > p > b {
   @apply text-red-800 dark:text-red-500 underline;
 }
-.markdown > p + p {
-  @apply mt-0;
+
+.markdown > p >img+ a {
+  @apply text-center font-extralight;
 }
-.markdown ul {
+.markdown ul, 
+.markdown ol{
   @apply mx-4 list-disc;
 }
 .markdown img {
