@@ -5,7 +5,7 @@ import Script from 'next/script'
 import siteMetadata from '@/data/siteMetatdata'
 import Cookies from 'js-cookie'
 
-export const GTM_ID = 'GTM-MB5QVWF';
+export const GTM_ID = 'GTM-MB5QVWF'
 const ANALYTICS_ID = siteMetadata.analytics.googleAnalyticsId
 
 /* export const GAScrip = () => {
@@ -13,35 +13,35 @@ const ANALYTICS_ID = siteMetadata.analytics.googleAnalyticsId
 } */
 export const initGTM = () => {
   if (typeof window !== 'undefined') {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
-    document.body.appendChild(script);
+    const script = document.createElement('script')
+    script.async = true
+    script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`
+    document.body.appendChild(script)
 
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || []
     window.gtag = function () {
-      window.dataLayer.push(arguments);
-    };
-    window.gtag('js', new Date());
-    window.gtag('config', GTM_ID);
+      window.dataLayer.push(arguments)
+    }
+    window.gtag('js', new Date())
+    window.gtag('config', GTM_ID)
   }
-};
+}
 
 export const logPageView = () => {
   if (typeof window !== 'undefined') {
-    pageview(window.location.pathname + window.location.search);
-    const pagePath = window.location.pathname;
-   /*  ReactGA.set({ page: pagePath, start_time: new Date().getTime() });
+    pageview(window.location.pathname + window.location.search)
+    const pagePath = window.location.pathname
+    /*  ReactGA.set({ page: pagePath, start_time: new Date().getTime() });
     ReactGA.pageview(pagePath); */
   }
-};
+}
 
 export const pageview = (url) => {
   window.dataLayer.push({
     event: 'pageview',
     pagePath: url,
-  });
-};
+  })
+}
 
 /* export const logPageTime = (category, variable, value) => {
   ReactGA.timing({
@@ -53,14 +53,10 @@ export const pageview = (url) => {
   });
 } */
 
-
-
 export const GAcript = () => {
-
-
   return (
     <>
-    {/* <noscript dangerouslySetInnerHTML={{__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB5QVWF" height="0" width="0" style="display:none;visibility:hidden"></iframe>`}} />
+      {/* <noscript dangerouslySetInnerHTML={{__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB5QVWF" height="0" width="0" style="display:none;visibility:hidden"></iframe>`}} />
     <>
       <Script
         strategy="lazyOnload"
@@ -87,7 +83,6 @@ export const GAcript = () => {
     </>
   )
 }
-
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const logEvent = (action, category, label, value) => {

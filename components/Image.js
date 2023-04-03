@@ -1,9 +1,7 @@
 import NextImage from 'next/image'
 
 const Image = ({ ...rest }) => {
-    return (
-            <NextImage {...rest} />
-    )
+  return <NextImage {...rest} />
 }
 
-export default Image;
+export default Image

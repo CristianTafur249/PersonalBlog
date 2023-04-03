@@ -15,27 +15,27 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 const handleSetCookie = async () => {
-
-  const cookieValue = Cookies.get('SL_G_WPT_TO');
-  Cookies.set('SL_G_WPT_TO', cookieValue, { SameSite: 'None', Secure: true });
-};
-
+  const cookieValue = Cookies.get('SL_G_WPT_TO')
+  Cookies.set('SL_G_WPT_TO', cookieValue, { SameSite: 'None', Secure: true })
+}
 
 class App extends React.Component {
-
   componentDidMount() {
     handleSetCookie
     initGTM()
     logPageView()
-    const timeOnPage = new Date().getTime() - performance.timing.navigationStart;
+    const timeOnPage = new Date().getTime() - performance.timing.navigationStart
     /* logPageTime('Page', 'Time', timeOnPage); */
   }
   render() {
     const { Component, pageProps } = this.props
     return (
-      <ThemeProvider attribute='class' defaultTheme={siteMetadata.theme}>
+      <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
         <Head>
-          <meta name="google-site-verification" content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y" />
+          <meta
+            name="google-site-verification"
+            content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y"
+          />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
         </Head>
         {isDevelopment && isSocket && <ClientReload />}
@@ -48,4 +48,4 @@ class App extends React.Component {
     )
   }
 }
-export default App;
+export default App

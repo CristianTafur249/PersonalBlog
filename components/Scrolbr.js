@@ -1,27 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import ScrollProgressBar from 'react-scroll-progress-bar';
+import React, { useState, useEffect } from 'react'
+import ScrollProgressBar from 'react-scroll-progress-bar'
 
 export default function Scrolbr() {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      const position = window.pageYOffset;
-      setScrollPosition(position);
-      
-    };
+      const position = window.pageYOffset
+      setScrollPosition(position)
+    }
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <div>
-      <ScrollProgressBar  position={scrollPosition} />
-      
+      <ScrollProgressBar position={scrollPosition} />
     </div>
-  );
+  )
 }

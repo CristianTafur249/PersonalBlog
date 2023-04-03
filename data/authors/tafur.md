@@ -2,7 +2,7 @@
 name: Cristian Tafur
 avatar: /static/images/dark.png
 ocupation: Estudiante Ingenieria de Sistemas UIS
-lengs: ['JavaScrip','HTML5','CSS','SQL','Python']
+lengs: ['JavaScrip', 'HTML5', 'CSS', 'SQL', 'Python']
 email: tafurcristian196@outlook.es
 twitter: https://twitter.com/Cristia16195614
 linkedin: https://www.linkedin.com/in/cristaf/

@@ -1,4 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<sitemap><loc>https://thechcode.netlify.app/sitemap-0.xml</loc></sitemap>
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://thechcode.netlify.app/blog</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/cookies</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/proyectos</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/sobre-mi</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/blog/beneficios-seguridad</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/blog/linux-mint</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/blog/por-que-elegir-linux</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/blog/ubuntu</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags/Código abierto</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags/Instalacion</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags/Linux</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags/Kernel</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags/Privacidad</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags/Seguridad</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags/Seguridad informática</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags/Sistema operativo</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags/Software libre</loc>
+  </url>
+</urlset>

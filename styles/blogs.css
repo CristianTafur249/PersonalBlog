@@ -7,7 +7,7 @@
 .markdown {
   @apply mx-auto my-auto sm:w-11/12 xl:w-5/6 text-sm sm:text-base md:text-xl;
 }
-.markdownau p{
+.markdownau p {
   line-height: 2;
   margin-bottom: 10px;
 }
@@ -15,7 +15,7 @@
   text-shadow: 2px 2px 5px rgba(22, 222, 222, 5);
 }
 .ava {
-  box-shadow: 1px 4px 22px rgba(22, 22, 222, .4);
+  box-shadow: 1px 4px 22px rgba(22, 22, 222, 0.4);
 }
 .titulo {
   line-height: normal;
@@ -65,11 +65,11 @@
   @apply text-red-800 dark:text-red-500 underline;
 }
 
-.markdown > p >img+ a {
+.markdown > p > img + a {
   @apply text-center font-extralight;
 }
-.markdown ul, 
-.markdown ol{
+.markdown ul,
+.markdown ol {
   @apply mx-4 list-disc;
 }
 .markdown img {
