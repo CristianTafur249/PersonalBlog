@@ -1,0 +1,6 @@
+User-agent: Googlebot
+
+User-agent: *
+Allow: /
+
+Sitemap: https://thechcode.netlify.app/sitemap.xml
