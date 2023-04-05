@@ -8,7 +8,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
     <Head>
       <title>{title ? `${title} | ${siteMetadata.title}` : siteMetadata.title}</title>
       <meta name="robots" content="follow, index" />
-      <link rel="icon" href={siteMetadata.siteico} />
+      <link rel="icon" href={siteMetadata.siteico} crossOrigin="true"/>
       <meta name="description" content={description} />
       <meta name="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
       <meta name="og:type" content={ogType} />

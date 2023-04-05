@@ -64,5 +64,5 @@ const SITE_URL = process.env.SITE_URL;
   })
 
   // eslint-disable-next-line no-sync
-  fs.writeFileSync('public/sitemap.xml', formatted)
+  fs.writeFileSync('public/sitemap-1.xml', formatted)
 })()

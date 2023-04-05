@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title> The TechCode </title>
+      <link>https://thechcode.netlify.app/blog</link>
+      <description>Código, tecnología y programación</description>
+      <language>es-ES</language>
+      <managingEditor>cristian2191970@correo.uis.edu.co (Cristian Tafur)</managingEditor>
+      <webMaster>cristian2191970@correo.uis.edu.co (Cristian Tafur)</webMaster>
+      <lastBuildDate>Tue, 21 Mar 2023 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://thechcode.netlify.app/tags/seguridad/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://thechcode.netlify.app/blog/beneficios-seguridad</guid>
+    <title>Ventajas de seguridad de Linux como SO</title>
+    <link>https://thechcode.netlify.app/blog/beneficios-seguridad</link>
+    <description>Linux, sistema operativo de código abierto, ofrece rendimiento seguro y confiable, flexibilidad y es gratuito.</description>
+    <pubDate>Tue, 21 Mar 2023 00:00:00 GMT</pubDate>
+    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
+    <category>Linux</category><category>Sistema operativo</category><category>Privacidad</category><category>Seguridad</category><category>Kernel</category><category>Software libre</category>
+  </item>
+
+    </channel>
+  </rss>
