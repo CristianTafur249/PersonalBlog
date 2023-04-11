@@ -13,9 +13,9 @@ summary: 'KVM es una tecnología de virtualización de código abierto que permi
 
 KVM es una tecnología de virtualización de código abierto que permite crear y ejecutar múltiples máquinas virtuales en un servidor Linux. Para instalar KVM, se requiere que el host sea compatible con la virtualización KVM y se debe instalar el paquete KVM, configurar el entorno de virtualización y tener instalado un sistema operativo para invitados. KVM es ampliamente utilizado en entornos empresariales y de servidores web debido a su eficiencia y capacidad para alojar múltiples sistemas operativos en un solo servidor. En este blog, le guiaremos a través de los pasos necesarios para instalar KVM en su servidor Linux y comenzar a disfrutar de los beneficios de la virtualización.
 
-## Prerequisitos
+## Prerrequisito
 
-Para instalar KVM, se debe tener como principal pre-requisito que el host sea compatible con la virtualización KVM. Para revisar si esto es compatible, se debe utilizar el comando:
+Para instalar KVM, se debe tener como principal prerrequisito que el host sea compatible con la virtualización KVM. Para revisar si esto es compatible, se debe utilizar el comando:
 
 ```
 grep -Eoc '(vmx|svm)' /proc/cpuinfo
@@ -23,7 +23,7 @@ grep -Eoc '(vmx|svm)' /proc/cpuinfo
 
 Si la CPU admite la virtualización de hardware, el comando generará un número mayor que cero, que es la cantidad de núcleos de CPU. De lo contrario, si la salida es 0 la CPU no admite la virtualización de hardware.
 
-Para verificar si VT está habilitado en el BIOS, use la herramienta `kvm-ok` Ingrese los siguientes comandos como root o usuario con privilegios sudo para instalar el `cpu-checker` que incluye el comando `kvm-ok`
+Para verificar si VT está habilitado en el BIOS, use la herramienta `kvm-ok` Ingrese los siguientes comandos como root o usuario con _privilegios sudo_ para instalar el `cpu-checker` que incluye el comando `kvm-ok`
 
 ```
 sudo apt update
@@ -40,7 +40,7 @@ kvm-ok
 
 SI la función de virtualización del procesador no está deshabilitada en el DIOS, la salida es parecida a esta:
 
-![kvm-ok](/static/images/kvm-ok.png)
+![kvm-ok](/static/images/instalacion-kvm/kvm-ok.png)
 
 De lo contrario, el comando se imprimirá y aparecerá un mensaje de error similar al siguiente:
 
@@ -55,6 +55,7 @@ Una vez confirmado lo anterior se puede seguir con el proceso de instalación, p
 ```
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager
 ```
+![](/static/images/instalacion-kvm/installKVM.png)
 
 En el cual encontramos que:
 
@@ -65,13 +66,14 @@ En el cual encontramos que:
 - **virtinst:** un conjunto de herramientas de línea de comandos para crear máquinas virtuales.
 - **virt-manager:** una interfaz GUI fácil de usar y soporte de utilidad de línea de comandos para administrar máquinas virtuales a través de libvirt.
 
-Ejecutado el anterior comando procedemosa verificar si la instalacion fue hecha correctamente utilizando el comando:
+Ejecutado el anterior comando procedemos a verificar si la instalación fue hecha correctamente utilizando el comando:
 
 ```
 sudo systemctl is-active libvirtd
 ```
+![](/static/images/instalacion-kvm/isActive.png)
 
-Para poder crear y administrar maquinas virtuales se debe agregar el usuario a los grupos libvirt y kvm de la siguiente forma:
+Para poder crear y administrar máquinas virtuales se debe agregar el usuario a los grupos libvirt y kvm de la siguiente forma:
     
     ```
     sudo usermod -aG libvirt $USER
@@ -80,7 +82,7 @@ Para poder crear y administrar maquinas virtuales se debe agregar el usuario a l
     sudo usermod -aG kvm $USER
     ```
 
-    ![](/static/images/USER.png)
+    ![](/static/images/instalacion-kvm/USER.png)
 	Donde $USER es la variable de entorno que contiene al usuario actual.
 
 Al finalizar la instalación reiniciamos el computador para evitar problemas con el servicio de arranque de KVM.
