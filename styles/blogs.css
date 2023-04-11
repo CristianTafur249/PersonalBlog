@@ -56,7 +56,7 @@
   left: 0;
 }
 .markdown > div {
-  @apply rounded-t float-left w-full  mx-0 bg-gray-800 px-5 p-3 font-serif text-sm font-bold flex-auto text-gray-200;
+  @apply float-left w-full  mx-0  px-5 p-3 font-serif text-sm font-bold flex-auto text-gray-200;
 }
 .markdown > p {
   @apply pt-1 pb-1 m-4 leading-loose;
@@ -73,7 +73,7 @@
   @apply mx-4 list-disc;
 }
 .markdown img {
-  @apply lg:w-4/5 m-auto;
+  @apply lg:w-4/5 m-auto p-5;
 }
 .markdown section {
   @apply w-full justify-items-center items-center;
@@ -111,11 +111,11 @@
   @apply text-blue-800 pr-4 dark:text-green-500 underline hover:text-purple-800;
 }
 .markdown div > pre {
-  @apply px-5 font-serif text-sm overflow-auto font-bold text-gray-200;
+  @apply px-5 rounded-t bg-gray-800 font-serif text-sm overflow-auto font-bold text-gray-200;
 }
 .markdown table {
   @apply max-w-full table-auto;
 }
 .markdown pre > code {
-  @apply font-bold text-gray-200 float-left;
+  @apply  p-3 font-bold text-gray-200 float-left;
 }

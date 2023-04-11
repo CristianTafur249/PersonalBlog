@@ -46,7 +46,7 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
               </div>
             </header>
 
-            <div className="divide-y laybl pb-8 xl:divide-y-0">
+            <div className="mx-auto px-3 my-auto  justify-center divide-y  pb-8 xl:divide-y-0">
               <dl className="pt-6 my-16 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
                 <dt className="sr-only">Autor</dt>
                 <dd>

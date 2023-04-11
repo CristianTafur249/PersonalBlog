@@ -6,9 +6,19 @@
       <language>es-ES</language>
       <managingEditor>cristian2191970@correo.uis.edu.co (Cristian Tafur)</managingEditor>
       <webMaster>cristian2191970@correo.uis.edu.co (Cristian Tafur)</webMaster>
-      <lastBuildDate>Sun, 02 Apr 2023 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Mon, 10 Apr 2023 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://thechcode.netlify.app/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://thechcode.netlify.app/blog/instalacion-kvm</guid>
+    <title>¿Cómo instalar Kvm en Ubuntu?</title>
+    <link>https://thechcode.netlify.app/blog/instalacion-kvm</link>
+    <description>KVM es una tecnología de virtualización de código abierto que permite crear y ejecutar múltiples máquinas virtuales en un servidor Linux.</description>
+    <pubDate>Mon, 10 Apr 2023 00:00:00 GMT</pubDate>
+    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
+    <category>Linux</category><category>Virtualizacion</category><category>Kvm</category><category>Software libre</category>
+  </item>
+
   <item>
     <guid>https://thechcode.netlify.app/blog/linux-mint</guid>
     <title>Linux Mint</title>
