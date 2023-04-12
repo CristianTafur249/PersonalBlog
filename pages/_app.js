@@ -14,17 +14,12 @@ import Scrolbr from '@/components/Scrolbr'
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
-const handleSetCookie = async () => {
-  const cookieValue = Cookies.get('SL_G_WPT_TO')
-  Cookies.set('SL_G_WPT_TO', cookieValue, { SameSite: 'None', Secure: true })
-}
 
 class App extends React.Component {
   componentDidMount() {
-    handleSetCookie
     initGTM()
-    logPageView()
-    const timeOnPage = new Date().getTime() - performance.timing.navigationStart
+    logPageView()/* 
+    const timeOnPage = new Date().getTime() - performance.timing.navigationStart */
     /* logPageTime('Page', 'Time', timeOnPage); */
   }
   render() {

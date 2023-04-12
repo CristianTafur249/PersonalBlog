@@ -23,7 +23,7 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
         url={`${siteMetadata.siteUrl}/blog/${slug}`}
         authorDetails={authorDetails}
         {...frontMatter}
-        title={`${title} | Blog`}
+        title={`Blog | ${title} |`}
       />
       <div className="mx-auto my-auto w-5/6">
         <article>
@@ -93,11 +93,11 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
                       <h2 className="text-xs mb-10 mx-auto text-center my-auto uppercase tracking-wide text-gray-600 dark:text-gray-400">
                         Tags
                       </h2>
-                      <div className="grid grid-cols-1 text-center ">
+                      <div className="grid grid-cols-1 uppercase text-center ">
                         {tags.map((tag) => (
                           <Tag
                             clas={
-                              'transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full mx-auto mt-2 mb-2 text-center  py-1.5 px-3 font-medium text-green-700 hover:border-gray-700 hover:text-blue-700'
+                              ' transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full mx-auto mt-2 mb-2 text-center  py-1.5 px-3 font-medium text-green-700 hover:border-gray-700 hover:text-blue-700 '
                             }
                             key={tag}
                             text={tag}
@@ -114,17 +114,17 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
                             Articulo anterior
                           </h2>
                           <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                            <Link href={`/blog/${anterior.slug}`}>{anterior.title}</Link>
+                            <Link href={`/blog/${anterior.slug}`}>{`< ${anterior.title}`}</Link>
                           </div>
                         </div>
                       )}
                       {posterior && (
                         <div className="mx-auto">
                           <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                            Articulo siguiente
+                            Articulo siguiente{`>`}
                           </h2>
                           <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                            <Link href={`/blog/${posterior.slug}`}>{posterior.title}</Link>
+                            <Link href={`/blog/${posterior.slug}`}>{`${posterior.title} >`}</Link>
                           </div>
                         </div>
                       )}

@@ -76,7 +76,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         {title}
                       </a>
                     </h3>
-                    <div className=" justify-start mb-3 flex flex-wrap">
+                    <div className=" justify-start mb-3 flex uppercase flex-wrap">
                       {tags.map((tag) => (
                         <Tag
                           clas={
@@ -87,7 +87,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         />
                       ))}
                     </div>
-                    <p className="mt-1 text-sm leading-6 text-gray-600 line clam-3 ">{summary}</p>
+                    <p className="mt-1 text-sm leading-6 text-gray-500 line clam-3 ">{summary}</p>
                   </div>
                   <p>
                     <a className="text-blue-500 hover:text-green-400 mt-5" href={`/blog/${slug}`}>

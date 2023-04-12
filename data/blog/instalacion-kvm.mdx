@@ -4,7 +4,7 @@ date: '2023-04-10'
 lastmod: '2023-04-10'
 tags: ['Linux', 'Virtualizacion', 'Kvm', 'Software libre']
 draft: false
-images: ['']
+images: ['/static/images/instalacion-kvm/kvm-ok.png','/static/images/instalacion-kvm/installKVM.png','/static/images/instalacion-kvm/isActive.png','/static/images/instalacion-kvm/USER.png']
 authors: ['tafur']
 summary: 'KVM es una tecnología de virtualización de código abierto que permite crear y ejecutar múltiples máquinas virtuales en un servidor Linux.'
 ---
@@ -55,7 +55,7 @@ Una vez confirmado lo anterior se puede seguir con el proceso de instalación, p
 ```
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager
 ```
-![](/static/images/instalacion-kvm/installKVM.png)
+![installKVM](/static/images/instalacion-kvm/installKVM.png)
 
 En el cual encontramos que:
 
@@ -71,7 +71,7 @@ Ejecutado el anterior comando procedemos a verificar si la instalación fue hech
 ```
 sudo systemctl is-active libvirtd
 ```
-![](/static/images/instalacion-kvm/isActive.png)
+![isActive](/static/images/instalacion-kvm/isActive.png)
 
 Para poder crear y administrar máquinas virtuales se debe agregar el usuario a los grupos libvirt y kvm de la siguiente forma:
     
@@ -82,8 +82,7 @@ Para poder crear y administrar máquinas virtuales se debe agregar el usuario a 
     sudo usermod -aG kvm $USER
     ```
 
-    ![](/static/images/instalacion-kvm/USER.png)
+    ![USER](/static/images/instalacion-kvm/USER.png)
 	Donde $USER es la variable de entorno que contiene al usuario actual.
 
 Al finalizar la instalación reiniciamos el computador para evitar problemas con el servicio de arranque de KVM.
-

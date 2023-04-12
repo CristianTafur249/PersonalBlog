@@ -1,29 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react'
 import { Analitics } from './analitics/Analitiscs'
 
-function activateGoogleAdsense() {
-  window['adsbygoogle'] = window['adsbygoogle'] || []
-  window.adsbygoogle.push({
-    google_ad_client: 'ca-pub-5012441343452330',
-    enable_page_level_ads: true,
-  })
-}
-
-function activateGoogleAnalytics() {
-  window['ga-disable-G-98D755MZH9'] = false
-  window.dataLayer = window.dataLayer || []
-  function gtag() {
-    dataLayer.push(arguments)
-  }
-  gtag('js', new Date())
-  gtag('config', 'G-98D755MZH9')
-}
 
 export default function Cookies() {
   const [showCookies, setShowCookies] = useState(false)
-
+  const router = useRouter();
   useEffect(() => {
     if (!localStorage.getItem('cookies-aceptadas')) {
       setShowCookies(true)
@@ -68,7 +52,7 @@ export default function Cookies() {
           </Link>
         </div>
       )}
-      {showCookies && <div className="fondo"></div>}
+      {showCookies && (router.pathname !== '/cookies') && <div className="fondo"></div>}
     </>
   )
 }
