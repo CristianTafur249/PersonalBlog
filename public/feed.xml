@@ -6,9 +6,29 @@
       <language>es-ES</language>
       <managingEditor>cristian2191970@correo.uis.edu.co (Cristian Tafur)</managingEditor>
       <webMaster>cristian2191970@correo.uis.edu.co (Cristian Tafur)</webMaster>
-      <lastBuildDate>Tue, 11 Apr 2023 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Thu, 13 Apr 2023 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://thechcode.netlify.app/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://thechcode.netlify.app/blog/instalacion-conky</guid>
+    <title>Instalacion y configuracion de conky en ubuntu 22.04</title>
+    <link>https://thechcode.netlify.app/blog/instalacion-conky</link>
+    <description>Conky es una aplicación de código abierto para Linux que permite personalizar la apariencia y mostrar información en tiempo real del sistema de manera ligera y eficiente. Es altamente configurable y puede integrarse en el escritorio.</description>
+    <pubDate>Thu, 13 Apr 2023 00:00:00 GMT</pubDate>
+    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
+    <category>Linux</category><category>personalizacion</category><category>conky</category><category>Software libre</category>
+  </item>
+
+  <item>
+    <guid>https://thechcode.netlify.app/blog/instalacion-directorio-compartido</guid>
+    <title>Instalacion de directorios comparidos usando samba</title>
+    <link>https://thechcode.netlify.app/blog/instalacion-directorio-compartido</link>
+    <description>KVM es una tecnología de virtualización de código abierto que permite crear y ejecutar múltiples máquinas virtuales en un servidor Linux.</description>
+    <pubDate>Thu, 13 Apr 2023 00:00:00 GMT</pubDate>
+    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
+    <category>Linux</category><category>Virtualizacion</category><category>compartición de archivos</category><category>samba</category><category>servidores</category><category>Software libre</category>
+  </item>
+
   <item>
     <guid>https://thechcode.netlify.app/blog/intalacion-SO-Guest</guid>
     <title>Instalación Sistema Operativo Guest KVM</title>

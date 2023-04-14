@@ -1,0 +1,80 @@
+---
+title: "Instalacion y configuracion de conky en ubuntu 22.04"
+date: '2023-04-13'
+lastmod: '2023-04-14'
+tags: ['Linux', 'personalizacion','conky', 'Software libre']
+draft: false
+images: ''
+authors: ['tafur']
+summary: 'Conky es una aplicación de código abierto para Linux que permite personalizar la apariencia y mostrar información en tiempo real del sistema de manera ligera y eficiente. Es altamente configurable y puede integrarse en el escritorio.'
+---
+
+Si eres alguien que le gusta personalizar su escritorio de Linux, entonces es posible que hayas oído hablar de Conky. Conky es una herramienta de sistema ligera y altamente personalizable que muestra información del sistema, como el uso de CPU, la memoria RAM, la temperatura del CPU, la velocidad de la red, entre otros datos útiles.
+
+Conky es un programa de código abierto y está disponible para Linux, BSD y otros sistemas operativos similares a Unix. Se puede utilizar como una ventana independiente o se puede integrar en el escritorio como un fondo de pantalla dinámico.
+
+La gran ventaja de Conky es su alta personalización. Es posible personalizar completamente la apariencia de Conky mediante la edición de su archivo de configuración. El archivo de configuración contiene todas las opciones de personalización disponibles y es posible editarlas para ajustar Conky a tus necesidades y gustos.
+
+Otra gran ventaja de Conky es su ligereza. Conky utiliza muy pocos recursos del sistema, lo que significa que se puede ejecutar en segundo plano sin afectar el rendimiento del sistema.
+
+En resumen, Conky es una herramienta de sistema altamente personalizable y ligera que muestra información del sistema en tiempo real. Si te gusta personalizar tu escritorio de Linux, deberías darle una oportunidad a Conky y experimentar con sus opciones de personalización para hacer de tu escritorio una experiencia única y personalizada.
+
+## Instalación
+
+En este artículo, te mostraremos cómo instalar y personalizar Conky, utilizando todo lo que has visto ahora. Para comenzar, sigue los siguientes pasos:
+
+1. Abre una terminal en Ubuntu presionando `Ctrl+Alt+T` en el teclado.
+2. Actualiza el índice de paquetes de Ubuntu ejecutando el siguiente comando en la terminal:
+
+```
+sudo apt update
+```
+3. Luego, instala el paquete de Conky utilizando el siguiente comando:
+
+```
+sudo apt install conky-all
+```
+4. Una vez que se complete la instalación, puedes iniciar Conky desde la terminal ejecutando el siguiente comando:
+```
+conky
+```
+
+Así se verá después de ejecutarlo con la configuración predeterminada:
+
+![Conky](https://drive.google.com/uc?export=view&id=1ccb7YkZNXIv5Cejy1r9TYJZHCcftXwHH)
+
+Alternativamente, puedes agregar Conky a la lista de aplicaciones de inicio para que se inicie automáticamente cuando se inicie el sistema.
+
+Para hacer esto, abre la aplicación "Aplicaciones de inicio" desde el menú de aplicaciones de Ubuntu, haz clic en el botón "Agregar", ingresa un nombre para la entrada (por ejemplo, "Conky"), y en el campo "Comando", ingresa el siguiente comando:
+```
+conky
+```
+![inicio](https://drive.google.com/uc?export=view&id=1E89q5mfDGB0IWMY1zIVDE4ge8NPp5DZf)
+
+## Personalizacion
+
+Para personalizar Conky, debes editar el archivo de configuración de Conky. Aquí te presento los pasos a seguir:
+
+1. Abre la terminal y escribe el comando 
+```
+sudo vim /etc/conky/conky.conf 
+```
+
+para abrir el archivo de configuración de Conky. Si no existe, se creará un nuevo archivo.
+
+![conf](https://drive.google.com/uc?export=view&id=1F0paLEYM6bpO6dntBNUxc9jw49wGVIFb)
+
+2. Una vez abierto el archivo de configuración,entra en modo de edición, presiona la tecla `i`. Luego, realiza los cambios deseados en el archivo buscando las secciones correspondientes a las características que deseas personalizar. Por ejemplo, si deseas cambiar el color de fondo, busca la sección que comienza con own_window_colour y cambia el valor del color.
+3. Para guardar los cambios realizados, presiona Esc para salir del modo de edición. Luego, escribe `:wq` y presiona `Enter`.
+4. Para aplicar los cambios en Conky, reinicia Conky ejecutando
+```
+ killall conky
+ ```
+en la terminal. Luego ejecuta `Conky` nuevamente.
+5. Si deseas seguir personalizando Conky, repite los pasos 1 a 4 para realizar los cambios deseados.
+
+Personalmente, recomiendo utilizar este [script](https://drive.google.com/file/d/1LSddh0XbIrrXdHprFbztC_6sAYvWsPW-/view?usp=share_link).  Para usarlo, primero debes borrar todo el contenido del archivo `conky.conf` y luego copiar y pegar el script en él. Esto hará que Conky se vea así:
+
+![conky mejor](https://drive.google.com/uc?export=view&id=1f1RnRqkrjGQ--d4WF-kXlVytJzTeWGiv)
+
+Como puedes ver este es un poco más limpio y bonito.

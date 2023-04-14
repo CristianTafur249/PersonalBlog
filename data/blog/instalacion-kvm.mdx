@@ -1,21 +1,21 @@
 ---
 title: '¿Cómo instalar Kvm en Ubuntu?'
 date: '2023-04-10'
-lastmod: '2023-04-10'
+lastmod: '2023-04-13'
 tags: ['Linux', 'Virtualizacion', 'Kvm', 'Software libre']
 draft: false
-images: ['/static/images/instalacion-kvm/kvm-ok.png','/static/images/instalacion-kvm/installKVM.png','/static/images/instalacion-kvm/isActive.png','/static/images/instalacion-kvm/USER.png']
+images: ['https://drive.google.com/uc?export=view&id=1n2YicFnQCzczD4VoGfY9x9q0l36LDJ-3']
 authors: ['tafur']
 summary: 'KVM es una tecnología de virtualización de código abierto que permite crear y ejecutar múltiples máquinas virtuales en un servidor Linux.'
 ---
 
 ## Introduccion
 
-KVM es una tecnología de virtualización de código abierto que permite crear y ejecutar múltiples máquinas virtuales en un servidor Linux. Para instalar KVM, se requiere que el host sea compatible con la virtualización KVM y se debe instalar el paquete KVM, configurar el entorno de virtualización y tener instalado un sistema operativo para invitados. KVM es ampliamente utilizado en entornos empresariales y de servidores web debido a su eficiencia y capacidad para alojar múltiples sistemas operativos en un solo servidor. En este blog, le guiaremos a través de los pasos necesarios para instalar KVM en su servidor Linux y comenzar a disfrutar de los beneficios de la virtualización.
+KVM (Kernel-based Virtual Machine) es una tecnología de virtualización de código abierto que permite crear y ejecutar múltiples máquinas virtuales en un servidor Linux. Para instalar KVM, se requiere que el host sea compatible con la virtualización KVM y se debe instalar el paquete KVM, configurar el entorno de virtualización y tener instalado un sistema operativo para invitados. KVM es ampliamente utilizado en entornos empresariales y de servidores web debido a su eficiencia y capacidad para alojar múltiples sistemas operativos en un solo servidor. En este blog, le guiaremos a través de los pasos necesarios para instalar KVM en su  Linux y comenzar a disfrutar de los beneficios de la virtualización.
 
-## Prerrequisito
+## Pre-rrequisitos
 
-Para instalar KVM, se debe tener como principal prerrequisito que el host sea compatible con la virtualización KVM. Para revisar si esto es compatible, se debe utilizar el comando:
+Para instalar KVM, se debe tener como principal pre-rrequisito que el host sea compatible con la virtualización KVM. Para revisar si esto es compatible, se debe utilizar el comando:
 
 ```
 grep -Eoc '(vmx|svm)' /proc/cpuinfo
@@ -40,7 +40,7 @@ kvm-ok
 
 SI la función de virtualización del procesador no está deshabilitada en el DIOS, la salida es parecida a esta:
 
-![kvm-ok](/static/images/instalacion-kvm/kvm-ok.png)
+![kvm-ok](https://drive.google.com/uc?export=view&id=1uymAHteIXsXolraZZQRtI8YFiQ_DMDZM)
 
 De lo contrario, el comando se imprimirá y aparecerá un mensaje de error similar al siguiente:
 
@@ -55,7 +55,7 @@ Una vez confirmado lo anterior se puede seguir con el proceso de instalación, p
 ```
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager
 ```
-![installKVM](/static/images/instalacion-kvm/installKVM.png)
+![installKVM](https://drive.google.com/uc?export=view&id=1n2YicFnQCzczD4VoGfY9x9q0l36LDJ-3)
 
 En el cual encontramos que:
 
@@ -71,7 +71,7 @@ Ejecutado el anterior comando procedemos a verificar si la instalación fue hech
 ```
 sudo systemctl is-active libvirtd
 ```
-![isActive](/static/images/instalacion-kvm/isActive.png)
+![isActive](https://drive.google.com/uc?export=view&id=1vu5RZUp5yUNMvgNPXRnDQ7etF5A_XeC7)
 
 Para poder crear y administrar máquinas virtuales se debe agregar el usuario a los grupos libvirt y kvm de la siguiente forma:
     
@@ -82,7 +82,7 @@ Para poder crear y administrar máquinas virtuales se debe agregar el usuario a 
     sudo usermod -aG kvm $USER
     ```
 
-    ![USER](/static/images/instalacion-kvm/USER.png)
+    ![USER](https://drive.google.com/uc?export=view&id=1PBqYB2BC2xlQnGT2iYwF7rglU2iMPYTo)
 	Donde $USER es la variable de entorno que contiene al usuario actual.
 
 Al finalizar la instalación reiniciamos el computador para evitar problemas con el servicio de arranque de KVM.
