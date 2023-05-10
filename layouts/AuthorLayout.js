@@ -14,9 +14,9 @@ export default function AutorLayout({ children, frontMatter }) {
             className=" dark:border-gray-500 border-b-2 space-y-2 pt-6 pb-8 md:space-y-5"
             style={{ borderColor: '#ccc', borderBottom: '1px solid #ccc' }}
           >
-            <h2 className="text-2xl font- leading-9 tracking-tight sm:leading-10 md:text-5xl lg:text-6xl md:leading-14">
+            <h1 className="dark:text-white  md:text-6xl text-4xl w-full 2xl:text-7xl fond-bold tracking-tight">
               Sobre nosotros
-            </h2>
+            </h1>
           </div>
           <div className=" mx-auto mt-10 grid   grid-cols-1 gap-y-16 gap-x-8 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className=" mx-auto my-auto flex-col justify-items-center pt-8">

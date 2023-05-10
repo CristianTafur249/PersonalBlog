@@ -24,9 +24,9 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             style={{ borderColor: '#ccc', borderBottom: '1px solid #ccc' }}
           >
             <div className="mb-3 lg:mb-0 py-1">
-              <h2 className="dark:text-white  text-3xl md:text-6xl xl:text-5xl  w-full 2xl:text-7xl fond-bold tracking-tight">
+              <h1 className="dark:text-white  md:text-6xl text-4xl w-full 2xl:text-7xl fond-bold tracking-tight">
                 {title}
-              </h2>
+              </h1>
               <div className="relative flex w-2/4 items-stretch">
                 <input
                   aria-label="Buscar articulo"

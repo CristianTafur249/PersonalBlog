@@ -14,7 +14,7 @@ export default function Header() {
           <div className="mb-6 lg:mb-0 ">
             <h1 className=" hed text-5xl text-gray-900 dark:text-gray-50 m-auto md:text-3xl xl:text-7xl 2xl:text-8xl fond-bold  tracking-tight">
               <Link
-                className=" hover:uppercase transition-colors animate-pulse ease-in-out duration-1000 "
+                className="siteT transition-colors animate-pulse ease-in-out duration-1000 "
                 href="/"
               >
                 {siteMetadata.title}

@@ -90,7 +90,7 @@
 }
 .markdown h1,
 .markdownau h2 {
-  @apply m-0 text-4xl sm:text-5xl ;
+  @apply m-0 text-4xl sm:text-5xl;
 }
 .markdown h2 {
   @apply m-1 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-center;
@@ -117,5 +117,5 @@
   @apply max-w-full table-auto;
 }
 .markdown pre > code {
-  @apply  p-3 font-bold text-gray-200 float-left;
+  @apply p-3 font-bold text-gray-200 float-left;
 }
