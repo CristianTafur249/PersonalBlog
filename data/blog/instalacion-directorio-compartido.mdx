@@ -1,8 +1,9 @@
 ---
-title: "¿Como Instalar directorios comparidos usando samba?"
+title: '¿Como Instalar directorios comparidos usando samba?'
 date: '2023-04-13'
 lastmod: '2023-04-13'
-tags: ['Linux', 'Virtualizacion', 'compartición de archivos','samba', 'servidores', 'Software libre']
+tags:
+  ['Linux', 'Virtualizacion', 'compartición de archivos', 'samba', 'servidores', 'Software libre']
 draft: false
 images: ['https://drive.google.com/uc?export=view&id=1r7dEeA1XG8hxLMjiNYbY6lssi8CDP-oh']
 authors: ['tafur']
@@ -14,45 +15,55 @@ summary: 'KVM es una tecnología de virtualización de código abierto que permi
 Samba, una herramienta que permite compartir archivos e impresoras entre sistemas operativos diferentes en una red local. Samba es especialmente útil en entornos de red mixtos, donde se utilizan sistemas operativos distintos como Linux, Windows y MacOS.
 
 ## Compartir archivos
-Para compartir archivos desde la VTM al sistema anfitrión, puedes utilizar el protocolo SMB/CIFS a través de Samba. Para ello, sigue los siguientes pasos: 
+
+Para compartir archivos desde la VTM al sistema anfitrión, puedes utilizar el protocolo SMB/CIFS a través de Samba. Para ello, sigue los siguientes pasos:
+
 1. Instala Samba en la VTM:
+
 ```
 sudo apt-get install samba
 ```
+
 2. Crea un directorio que quieres compartir en la VTM:
-``` 
-sudo mkdir /home/<nombre_directorio> 
+
 ```
-3. Configura los permisos para el directorio que se va a compartir: 
-```
-sudo chmod 777 /home/<nombre_directorio> 
+sudo mkdir /home/<nombre_directorio>
 ```
 
+3. Configura los permisos para el directorio que se va a compartir:
+
+```
+sudo chmod 777 /home/<nombre_directorio>
+```
 
 4. Edita el archivo de configuración de Samba:
- ```
- sudo nano /etc/samba/smb.conf 
+
 ```
+sudo nano /etc/samba/smb.conf
+```
+
 5. Añade al final del archivo la siguiente sección:
+
 ```
 [nombre_compartido]
     path = /home/<nombre_directorio>
     read only = no
 ```
+
 ![configuración Samba](https://drive.google.com/uc?export=view&id=1XzFg3pQ8dS-E6cJ6N9Mic96N-EGH9Mrk)
 
-Reemplaza _{`<nombre_compartido>`}_ por el nombre que quieras darle a la carpeta compartida y _{`<nombre_directorio>`}_por el nombre del directorio que acabas de crear.
+Reemplaza _{`<nombre_compartido>`}_ por el nombre que quieras darle a la carpeta compartida y \_{`<nombre_directorio>`}\_por el nombre del directorio que acabas de crear.
 
 6. Guarda y cierra el archivo de configuración.
 7. Reinicia el servicio de Samba para aplicar los cambios:
 
-``` 
+```
 sudo service smbd restart
 ```
-![restart](https://drive.google.com/uc?export=view&id=1zU8ZSD2FBUGnb-5sg3Marh-7Wog5VQmq)
-8. En el sistema anfitrión, abre un explorador de archivos y escribe en la barra de direcciones:
 
-*\ \ {`<ip_de_la_vtm>`} \ \ {`<nombre_compartido>`}* 
+![restart](https://drive.google.com/uc?export=view&id=1zU8ZSD2FBUGnb-5sg3Marh-7Wog5VQmq) 8. En el sistema anfitrión, abre un explorador de archivos y escribe en la barra de direcciones:
+
+_\ \ {`<ip_de_la_vtm>`} \ \ {`<nombre_compartido>`}_
 Reemplaza _{`<ip_de_la_vtm>`}_ por la dirección IP de la VTM y _{`<nombre_compartido>`}_ por el nombre que le has dado a la carpeta compartida en el archivo de configuración.
 
 9. Se te pedirá un nombre de usuario y contraseña. Introduce las credenciales de un usuario de la VTM con acceso al directorio que se ha compartido.
@@ -62,6 +73,7 @@ Para agregar usuarios usa:
 ```
 sudo smbpasswd -a vttafur
 ```
+
 10. Aparecerá la carpeta compartida en el explorador de archivos del sistema anfitrión. Puedes copiar y pegar archivos en esta carpeta.
 
 ![img anfi](https://drive.google.com/uc?export=view&id=1r7dEeA1XG8hxLMjiNYbY6lssi8CDP-oh)

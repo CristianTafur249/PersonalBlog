@@ -34,7 +34,7 @@ export default function AutorLayout({ children, frontMatter }) {
               </h3>
               <div className="m-auto text-center dark:text-white text-gray-700">{ocupation}</div>
               <div className="m-auto tracking-widest">
-                <p className="m-auto text-center dark:text-white text-gray-700">
+                <p className="m-auto siteT text-center dark:text-white text-gray-700">
                   {' '}
                   Lenguajes manejados:
                 </p>
@@ -104,7 +104,7 @@ export default function AutorLayout({ children, frontMatter }) {
               </div>
             </div>
             <div>
-              <div className="prose w-2/3 pt-8 pb-8 gap-8 markdownau">{children}</div>
+              <div className=" prose w-2/3 pt-8 pb-8 gap-8 markdownau">{children}</div>
             </div>
           </div>
         </SectionContainer>

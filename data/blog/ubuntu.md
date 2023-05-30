@@ -2,7 +2,7 @@
 title: '¿Qué es Ubuntu y por qué deberías instalarlo?'
 date: '2023-03-28'
 lastmod: '2023-04-02'
-tags: ['Linux', 'Sistema operativo', 'Instalacion','Ubuntu', 'Software libre']
+tags: ['Linux', 'Sistema operativo', 'Instalacion', 'Ubuntu', 'Software libre']
 draft: false
 summary: 'Ubuntu es un sistema operativo seguro, personalizable y fácil de usar basado en Linux, compatible con Windows y Mac, y ofrece miles de aplicaciones gratuitas y de código abierto.'
 images: ['https://th.bing.com/th/id/OIP.jDZUUJ-SI40qN6C7eNBxQwHaEK?pid=ImgDet&rs=1']

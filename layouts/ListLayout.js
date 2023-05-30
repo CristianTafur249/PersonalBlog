@@ -18,7 +18,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
   return (
     <>
       <div className="mx-auto my-auto px-6 lg:px-8">
-        <section className="mx-auto my-auto  text-center lg:text-left">
+        <section className="mb-16 text-center lg:text-left">
           <div
             className=" grid w-full gap-6 xl:gap-12 mx-auto items-center"
             style={{ borderColor: '#ccc', borderBottom: '1px solid #ccc' }}
