@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title> The TechCode </title>
+      <link>https://thechcode.netlify.app/blog</link>
+      <description>Código, tecnología y programación</description>
+      <language>es-ES</language>
+      <managingEditor>cristian2191970@correo.uis.edu.co (Cristian Tafur)</managingEditor>
+      <webMaster>cristian2191970@correo.uis.edu.co (Cristian Tafur)</webMaster>
+      <lastBuildDate>Tue, 23 May 2023 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://thechcode.netlify.app/tags/wifi/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://thechcode.netlify.app/blog/conectar-wifi-uis</guid>
+    <title>¿Como Conectarse a la red WIFI de la UIS en linux?</title>
+    <link>https://thechcode.netlify.app/blog/conectar-wifi-uis</link>
+    <description>La red Wireless de la UIS provee acceso a servicios para los usuarios Wifi de la universidad. La página también proporciona información detallada sobre cómo configurar diferentes dispositivos móviles y equipos de cómputo para acceder a la red Wi-Fi “ComunidadUIS”.</description>
+    <pubDate>Tue, 23 May 2023 00:00:00 GMT</pubDate>
+    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
+    <category>UIS</category><category>WIFI</category><category>Conexión</category><category>linux</category>
+  </item>
+
+    </channel>
+  </rss>
