@@ -7,7 +7,7 @@ const projectData = [
   },{
     title: 'CUSOL web',
     description: `CUSOL WEB: Plataforma vital para la comunidad universitaria del software libre en UIS. Su creación se orienta a la promoción y difusión.`,
-    imgSrc: '/static/images/CUSOL WEB.png',
+    imgSrc: '/static/images/CUSOL_WEB.png',
     href: 'https://cusol.uis.edu.co/',
   },
 ]
