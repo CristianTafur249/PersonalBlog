@@ -1,6 +1,6 @@
 module.exports = {
     siteUrl: process.env.SITE_URL || 'https://ejemplo.com',
-    exclude: ['/cookies', '/blog/page/*',  ],
+    exclude: ['/cookies', '/blog/page/*', '/404',  ],
     changefreq: 'weekly',
     autoLastmod: true,
     generateIndexSitemap: true,
@@ -16,7 +16,12 @@ module.exports = {
     sitemapSize: 7000,
     generateRobotsTxt: true,
     robotsTxtOptions: {
-      
+      policies: [
+        {
+          userAgent: '*',
+          allow: '/pages',
+        },
+      ],
       additionalSitemaps: [
         'https://thechcode.netlify.app/feed.xml',
       ],
