@@ -1,0 +1,3 @@
+# Permitir acceso a sitemaps
+/sitemap.xml 200
+/feed.xml 200
