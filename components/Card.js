@@ -3,7 +3,7 @@ import Image from './Image'
 
 const Card = ({ title, description, imgSrc, href }) => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center m-5">
       <div
         className={`${
           imgSrc && 'h-full'

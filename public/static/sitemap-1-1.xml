@@ -33,10 +33,6 @@
   </url>
 
   <url>
-    <loc>https://thechcode.netlify.app/blog/conectar-wifi-uis</loc>
-  </url>
-
-  <url>
     <loc>https://thechcode.netlify.app/blog/instalacion-conky</loc>
   </url>
 
@@ -73,19 +69,19 @@
   </url>
 
   <url>
-    <loc>https://thechcode.netlify.app/tags/conky</loc>
-  </url>
-
-  <url>
     <loc>https://thechcode.netlify.app/tags/código-abierto</loc>
   </url>
 
   <url>
-    <loc>https://thechcode.netlify.app/tags/escritorio</loc>
+    <loc>https://thechcode.netlify.app/tags/conky</loc>
   </url>
 
   <url>
     <loc>https://thechcode.netlify.app/tags/instalacion</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags/escritorio</loc>
   </url>
 
   <url>
