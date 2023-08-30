@@ -61,19 +61,19 @@
   </url>
 
   <url>
-    <loc>https://thechcode.netlify.app/tags/compartición-de-archivos</loc>
-  </url>
-
-  <url>
     <loc>https://thechcode.netlify.app/tags/conexión</loc>
   </url>
 
   <url>
-    <loc>https://thechcode.netlify.app/tags/código-abierto</loc>
+    <loc>https://thechcode.netlify.app/tags/compartición-de-archivos</loc>
   </url>
 
   <url>
     <loc>https://thechcode.netlify.app/tags/conky</loc>
+  </url>
+
+  <url>
+    <loc>https://thechcode.netlify.app/tags/código-abierto</loc>
   </url>
 
   <url>
@@ -125,11 +125,11 @@
   </url>
 
   <url>
-    <loc>https://thechcode.netlify.app/tags/ubuntu</loc>
+    <loc>https://thechcode.netlify.app/tags/software-libre</loc>
   </url>
 
   <url>
-    <loc>https://thechcode.netlify.app/tags/software-libre</loc>
+    <loc>https://thechcode.netlify.app/tags/ubuntu</loc>
   </url>
 
   <url>
@@ -137,10 +137,10 @@
   </url>
 
   <url>
-    <loc>https://thechcode.netlify.app/tags/wifi</loc>
+    <loc>https://thechcode.netlify.app/tags/virtualizacion</loc>
   </url>
 
   <url>
-    <loc>https://thechcode.netlify.app/tags/virtualizacion</loc>
+    <loc>https://thechcode.netlify.app/tags/wifi</loc>
   </url>
 </urlset>

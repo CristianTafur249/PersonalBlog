@@ -1,6 +1,6 @@
 module.exports = {
     siteUrl: process.env.SITE_URL || 'https://ejemplo.com',
-    exclude: ['/cookies', '/blog/page/*', '/404',  ],
+    exclude: ['/cookies', '/blog/page/*', '/tags/*',  ],
     changefreq: 'weekly',
     autoLastmod: true,
     generateIndexSitemap: true,
@@ -20,6 +20,7 @@ module.exports = {
         {
           userAgent: '*',
           allow: '/',
+          disallow:'/tags/*'
         },
       ],
       additionalSitemaps: [
