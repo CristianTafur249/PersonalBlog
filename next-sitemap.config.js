@@ -14,7 +14,7 @@ module.exports = {
         }
       },
     sitemapSize: 7000,
-    generateRobotsTxt: true,
+    generateRobotsTxt: false,
     robotsTxtOptions: {
       
       additionalSitemaps: [

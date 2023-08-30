@@ -3,7 +3,6 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://thechcode.netlify.app
 
 # Sitemaps
 Sitemap: https://thechcode.netlify.app/sitemap.xml
