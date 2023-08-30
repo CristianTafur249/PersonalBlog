@@ -1,7 +1,9 @@
 module.exports = {
     siteUrl: process.env.SITE_URL || 'https://ejemplo.com',
-    changefreq: 'daily',
-    priority: 0.5,
+    exclude: ['/cookies', '/blog/page/*',  ],
+    changefreq: 'weekly',
+    autoLastmod: true,
+    generateIndexSitemap: true,
     transform: async (config, path) => {
         return {
           loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
@@ -11,6 +13,12 @@ module.exports = {
           alternateRefs: config.alternateRefs ?? [],
         }
       },
-    sitemapSize: 5000,
+    sitemapSize: 7000,
     generateRobotsTxt: true,
+    robotsTxtOptions: {
+      
+      additionalSitemaps: [
+        'https://thechcode.netlify.app/feed.xml',
+      ],
+    },
 };

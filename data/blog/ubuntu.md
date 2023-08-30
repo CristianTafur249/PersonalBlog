@@ -4,7 +4,7 @@ date: '2023-03-28'
 lastmod: '2023-04-02'
 tags: ['Linux', 'Sistema operativo', 'Instalacion', 'Ubuntu', 'Software libre']
 draft: false
-summary: 'Ubuntu es un sistema operativo seguro, personalizable y fácil de usar basado en Linux, compatible con Windows y Mac, y ofrece miles de aplicaciones gratuitas y de código abierto.'
+summary: 'Ubuntu es Sistema operativo seguro, personalizable y amigable basado en Linux. Compatible con Windows y Mac, con miles de apps gratuitas de código abierto.'
 images: ['https://th.bing.com/th/id/OIP.jDZUUJ-SI40qN6C7eNBxQwHaEK?pid=ImgDet&rs=1']
 authors: ['tafur']
 ---
