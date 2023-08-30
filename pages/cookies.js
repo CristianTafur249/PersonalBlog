@@ -5,7 +5,9 @@ import Link from 'next/link'
 export default function cookies() {
   return (
     <>
+
       <PageSEO title={'Aviso de Privacidad'} />
+      <meta name="robots" content="noindex"></meta>
 
       <SectionContainer>
         <div
