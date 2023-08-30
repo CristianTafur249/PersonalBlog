@@ -1,8 +1,7 @@
 # *
 User-agent: *
-Allow: /
+Allow: /pages
 
-# Host
 
 # Sitemaps
 Sitemap: https://thechcode.netlify.app/sitemap.xml
