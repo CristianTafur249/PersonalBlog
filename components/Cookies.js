@@ -1,13 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { Analitics } from './analitics/Analitiscs'
 
-
 export default function Cookies() {
   const [showCookies, setShowCookies] = useState(false)
-  const router = useRouter();
+  const router = useRouter()
   useEffect(() => {
     if (!localStorage.getItem('cookies-aceptadas')) {
       setShowCookies(true)
@@ -52,7 +51,7 @@ export default function Cookies() {
           </Link>
         </div>
       )}
-      {showCookies && (router.pathname !== '/cookies') && <div className="fondo"></div>}
+      {showCookies && router.pathname !== '/cookies' && <div className="fondo"></div>}
     </>
   )
 }

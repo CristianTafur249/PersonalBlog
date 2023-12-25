@@ -1,5 +1,6 @@
 import { MDXLayoutRender } from '@/components/MDXComponents'
 import { getFilesBySlug } from '@/lib/mdx'
+import PropTypes from 'prop-types'
 
 const DEFAULT_LAYOUT = 'AuthorLayout'
 
@@ -18,4 +19,8 @@ export default function SobreMi({ authorDetails }) {
       frontMatter={frontMatter}
     />
   )
+}
+
+SobreMi.propTypes = {
+  authorDetails: PropTypes.object,
 }

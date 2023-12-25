@@ -36,7 +36,7 @@ const genFrontMatter = (answers) => {
   title: ${answers.title ? answers.title : 'Untitled'}
   date: '${date}'
   tags: [${answers.tags ? tags : ''}]
-  draft: ${answers.draft === 'yes' ? true : false}
+  draft: ${answers.draft === 'yes'}
   summary: ${answers.summary ? answers.summary : ' '}
   images: []
   layout: ${answers.layout}
@@ -108,7 +108,7 @@ inquirer
       .replace(/-+/g, '-')
     const frontMatter = genFrontMatter(answers)
     if (!fs.existsSync('data/blog')) fs.mkdirSync('data/blog', { recursive: true })
-    const filePath = `data/blog/${fileName ? fileName : 'untitled'}.${
+    const filePath = `data/blog/${fileName || 'untitled'}.${
       answers.extension ? answers.extension : 'md'
     }`
     fs.writeFile(filePath, frontMatter, { flag: 'wx' }, (err) => {
