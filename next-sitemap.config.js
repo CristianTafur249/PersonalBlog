@@ -19,8 +19,7 @@ module.exports = {
       policies: [
         {
           userAgent: '*',
-          allow: '/',
-          disallow:'/tags/*'
+          allow: '/'
         },
       ],
       additionalSitemaps: [

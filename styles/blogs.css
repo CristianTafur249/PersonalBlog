@@ -7,11 +7,11 @@
 .markdown {
   @apply mx-auto my-auto sm:w-11/12 xl:w-5/6 text-sm sm:text-base md:text-xl;
 }
-.siteT{
+.siteT {
   font-family: 'Lato', sans-serif;
 }
 .markdownau p {
-  @apply mt-5 mb-5 ;
+  @apply mt-5 mb-5;
 }
 .hed {
   text-shadow: 2px 2px 5px rgba(22, 222, 222, 5);
@@ -60,7 +60,7 @@
 .markdown > div {
   @apply float-left w-full  mx-0  px-5 p-3 font-serif text-sm font-bold flex-auto text-gray-200;
 }
-.markdown  p {
+.markdown p {
   @apply pt-1 pb-1 m-4 leading-loose;
 }
 .markdown > p > b {

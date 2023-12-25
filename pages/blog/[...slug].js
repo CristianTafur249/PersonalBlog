@@ -3,6 +3,8 @@ import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { formatSlug, getAllFilesMetadata, getFiles, getFilesBySlug } from '@/lib/mdx'
 import fs from 'fs'
+import PropTypes from 'prop-types'
+
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
@@ -55,7 +57,7 @@ export default function Blog({ post, authorDetails, anterior, posterior }) {
       ) : (
         <div className="mt-24 text-center">
           <PageTitle>
-            En Costruccion{' '}
+            En Construcción{' '}
             <span role="img" aria-label="roadwork sign">
               🚧
             </span>
@@ -64,4 +66,16 @@ export default function Blog({ post, authorDetails, anterior, posterior }) {
       )}
     </>
   )
+}
+
+Blog.propTypes = {
+  post: PropTypes.object.isRequired,
+  authorDetails: PropTypes.array,
+  anterior: PropTypes.object,
+  posterior: PropTypes.object,
+}
+Blog.defaultProps = {
+  anterior: null,
+  posterior: null,
+  authorDetails: [],
 }

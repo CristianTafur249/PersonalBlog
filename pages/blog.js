@@ -2,6 +2,7 @@ import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetatdata'
 import ListLayout from '@/layouts/ListLayout'
 import { getAllFilesMetadata } from '@/lib/mdx'
+import PropTypes from 'prop-types'
 
 export const POSTS_PER_PAGE = 6
 
@@ -27,4 +28,10 @@ export default function Blog({ posts, initialDisplayPosts, pagination }) {
       />
     </>
   )
+}
+
+Blog.propTypes = {
+  posts: PropTypes.array.isRequired,
+  initialDisplayPosts: PropTypes.array.isRequired,
+  pagination: PropTypes.object.isRequired,
 }

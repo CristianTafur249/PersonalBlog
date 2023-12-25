@@ -4,6 +4,7 @@ import Image from './Image'
 import CustomLink from './Link'
 import TOInline from './TOCInline'
 import Pre from './Pre'
+import PropTypes from 'prop-types'
 export const MDXComponents = {
   Image,
   TOInline,
@@ -14,8 +15,17 @@ export const MDXComponents = {
     return <Layout {...rest} />
   },
 }
+MDXComponents.propTypes = {
+  components: PropTypes.object,
+  layout: PropTypes.string.isRequired,
+}
 export const MDXLayoutRender = ({ layout, mdxSource, ...rest }) => {
   const MDXLayout = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
 
   return <MDXLayout layout={layout} components={MDXComponents} {...rest} />
+}
+MDXLayoutRender.propTypes = {
+  href: PropTypes.string.isRequired,
+  layout: PropTypes.string.isRequired,
+  mdxSource: PropTypes.string.isRequired,
 }

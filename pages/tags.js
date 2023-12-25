@@ -4,7 +4,7 @@ import { getAllTags } from '@/lib/tags'
 import Tag from '@/components/Tag'
 import Link from 'next/link'
 import formatWord from '@/lib/utils/formatWord'
-
+import PropTypes from 'prop-types'
 export async function getStaticProps() {
   const tags = await getAllTags('blog')
 
@@ -46,3 +46,6 @@ export default function Tags({ tags }) {
     </>
   )
 }
+
+Tags.propTypes = { tags: PropTypes.object }
+Tags.defaultProps = { tags: {} }

@@ -1,13 +1,11 @@
-import { Children, Fragment } from 'react'
-import Header from './Header'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { current } from 'tailwindcss/colors'
+import { Disclosure } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Footer from './Footer'
 import ThemeSwitch from './ThemeSwitch'
 import siteMetadata from '@/data/siteMetatdata'
 import Link from './Link'
 import Image from './Image'
+import PropTypes from 'prop-types'
 
 const navigation = [
   { name: 'Inicio', href: '/' },
@@ -21,6 +19,13 @@ function className(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+/**
+ * Componente de barra de navegación.
+ *
+ * @param {Object} props - Propiedades del componente.
+ * @param {ReactNode} props.children - Contenido del componente.
+ * @returns {ReactNode} El componente de barra de navegación.
+ */
 export default function Navbar({ children }) {
   return (
     <div>
@@ -32,7 +37,7 @@ export default function Navbar({ children }) {
                 <div className="text-black dark:text-white  mx-auto px-2 sm:px-6 lg:px-8">
                   <div className="relative flex items-center justify-between h-16">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                      {/* Boton de menú de celular */}
+                      {/* Botón de menú de celular */}
                       <Disclosure.Button className="text-blue-400 inline-flex items-center justify-center p-2 rounded-md dark:text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                         <span className="sr-only">Abrir menú de inicio</span>
                         {open ? (
@@ -114,11 +119,14 @@ export default function Navbar({ children }) {
           </Disclosure>
         </div>
       </header>
-      
+
       <main className="mt-14 mb-36 mx-auto w-full my-auto">{children}</main>
       <div className=" bottom-0   left-0 right-0">
         <Footer />
       </div>
     </div>
   )
+}
+Navbar.propTypes = {
+  children: PropTypes.string.isRequired,
 }

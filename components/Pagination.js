@@ -1,5 +1,11 @@
 import Link from '@/components/Link'
+import PropTypes from 'prop-types'
 
+/**
+ * Renders a pagination component.
+ * @param {totalPages} props.totalPages - The total number of pages.
+ * @param {currentPage} props.currentPage - The current page number.
+ */
 export default function Pagination({ totalPages, currentPage }) {
   const prevPage = parseInt(currentPage) - 1 > 0
   const nextPage = parseInt(currentPage) + 1 <= parseInt(totalPages)
@@ -32,4 +38,8 @@ export default function Pagination({ totalPages, currentPage }) {
       </nav>
     </div>
   )
+}
+Pagination.propTypes = {
+  totalPages: PropTypes.number.isRequired,
+  currentPage: PropTypes.number.isRequired,
 }

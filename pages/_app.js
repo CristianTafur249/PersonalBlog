@@ -6,21 +6,19 @@ import '@/styles/blogs.css'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import React from 'react'
-import { GAScrip, initGTM, logPageTime, logPageView } from '@/components/analitics/Google'
-import Script from 'next/script'
+import { initGTM, logPageView } from '@/components/analitics/Google'
 import Cookies from '@/components/Cookies'
 import Scrolbr from '@/components/Scrolbr'
+import PropTypes from 'prop-types'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
-
 class App extends React.Component {
   componentDidMount() {
     initGTM()
-    logPageView()/* 
+    logPageView() /* 
     const timeOnPage = new Date().getTime() - performance.timing.navigationStart */
-    /* logPageTime('Page', 'Time', timeOnPage); */
   }
   render() {
     const { Component, pageProps } = this.props
@@ -42,5 +40,9 @@ class App extends React.Component {
       </ThemeProvider>
     )
   }
+}
+App.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  pageProps: PropTypes.object.isRequired,
 }
 export default App

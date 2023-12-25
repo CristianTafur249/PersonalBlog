@@ -10,7 +10,7 @@ export default function InicioPost() {
   }, [])
 
   const handleScroll = () => {
-    if (window.pageYOffset > 500) {
+    if (window.scrollY > 500) {
       setShowButton(true)
     } else {
       setShowButton(false)
@@ -25,6 +25,7 @@ export default function InicioPost() {
     <div
       className="bg-gray-500 shadow-lg hover:animate-bounce shadow-gray-400"
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
       style={{
         position: 'fixed',
         zIndex: '100',
@@ -51,4 +52,9 @@ export default function InicioPost() {
       </button>
     </div>
   )
+}
+function handleKeyDown(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    handleClick()
+  }
 }

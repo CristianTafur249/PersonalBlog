@@ -1,16 +1,9 @@
-import { setCookie } from 'nookies'
 import React from 'react'
-import ReactGA from 'react-ga'
-import Script from 'next/script'
-import siteMetadata from '@/data/siteMetatdata'
-import Cookies from 'js-cookie'
 
+import siteMetadata from '@/data/siteMetatdata'
 export const GTM_ID = 'GTM-MB5QVWF'
 const ANALYTICS_ID = siteMetadata.analytics.googleAnalyticsId
 
-/* export const GAScrip = () => {
-  ReactGA.initialize(ANALYTICS_ID)
-} */
 export const initGTM = () => {
   if (typeof window !== 'undefined') {
     const script = document.createElement('script')
@@ -30,9 +23,6 @@ export const initGTM = () => {
 export const logPageView = () => {
   if (typeof window !== 'undefined') {
     pageview(window.location.pathname + window.location.search)
-    const pagePath = window.location.pathname
-    /*  ReactGA.set({ page: pagePath, start_time: new Date().getTime() });
-    ReactGA.pageview(pagePath); */
   }
 }
 
@@ -42,16 +32,6 @@ export const pageview = (url) => {
     pagePath: url,
   })
 }
-
-/* export const logPageTime = (category, variable, value) => {
-  ReactGA.timing({
-    category: category,
-    variable: variable,
-    value: value,
-    label: window.location.pathname,
-    startTime: new Date().getTime() - value // tiempo de permanencia en la página
-  });
-} */
 
 export const GAcript = () => {
   return (
