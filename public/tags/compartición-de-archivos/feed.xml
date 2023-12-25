@@ -4,8 +4,8 @@
       <link>https://thechcode.netlify.app/blog</link>
       <description>Código, tecnología y programación</description>
       <language>es-ES</language>
-      <managingEditor>cristian2191970@correo.uis.edu.co (Cristian Tafur)</managingEditor>
-      <webMaster>cristian2191970@correo.uis.edu.co (Cristian Tafur)</webMaster>
+      <managingEditor>techcode901@gmail.com (Cristian Tafur)</managingEditor>
+      <webMaster>techcode901@gmail.com (Cristian Tafur)</webMaster>
       <lastBuildDate>Thu, 13 Apr 2023 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://thechcode.netlify.app/tags/compartición-de-archivos/feed.xml" rel="self" type="application/rss+xml"/>
       
@@ -15,7 +15,7 @@
     <link>https://thechcode.netlify.app/blog/instalacion-directorio-compartido</link>
     <description>KVM es una tecnología de virtualización de código abierto que permite crear y ejecutar múltiples máquinas virtuales en un servidor Linux.</description>
     <pubDate>Thu, 13 Apr 2023 00:00:00 GMT</pubDate>
-    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
+    <author>techcode901@gmail.com (Cristian Tafur)</author>
     <category>Linux</category><category>Virtualizacion</category><category>compartición de archivos</category><category>samba</category><category>servidores</category><category>Software libre</category>
   </item>
 

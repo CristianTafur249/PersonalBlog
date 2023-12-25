@@ -1,5 +1,6 @@
 import Link from './Link'
 import Image from './Image'
+import PropTypes from 'prop-types'
 
 const Card = ({ title, description, imgSrc, href }) => {
   return (
@@ -37,5 +38,11 @@ const Card = ({ title, description, imgSrc, href }) => {
       </div>
     </div>
   )
+}
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  imgSrc: PropTypes.string,
+  href: PropTypes.string,
 }
 export default Card

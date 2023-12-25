@@ -7,6 +7,8 @@ import { getAllTags } from '@/lib/tags'
 import fs from 'fs'
 import path from 'path'
 import formatWord from '@/lib/utils/formatWord'
+import PropTypes from 'prop-types'
+
 
 const root = process.cwd()
 
@@ -49,4 +51,8 @@ export default function Tag({ posts, tag }) {
       <ListLayout posts={posts} title={title} />
     </>
   )
+}
+Tag.propTypes = {
+  posts: PropTypes.array.isRequired,
+  tag: PropTypes.string.isRequired,
 }

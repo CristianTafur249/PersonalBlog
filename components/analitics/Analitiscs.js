@@ -7,8 +7,7 @@ export const Analitics = () => {
   return (
     <>
       <GAcript />
-      {/* 
-            <Adense/> */}
+      <Adense />
     </>
   )
 }

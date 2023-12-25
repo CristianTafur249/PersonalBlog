@@ -3,7 +3,10 @@ import React, { useEffect } from 'react'
 
 export const AdSense = () => {
   useEffect(() => {
-    ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+    if (!window.adsbygoogle) {
+      window.adsbygoogle = []
+    }
+    window.adsbygoogle.push({})
   }, [])
 
   return (
@@ -18,10 +21,10 @@ export const AdSense = () => {
   )
 }
 
-export const Adense = () => {
-  ;<Script
+export const Adense = () => (
+  <Script
     async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5012441343452330"
     crossorigin="anonymous"
   ></Script>
-}
+)

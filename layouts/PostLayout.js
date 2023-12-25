@@ -1,11 +1,11 @@
 import PageTitle from '@/components/PageTitle'
-import SectionContainer from '@/components/SectionContainer'
 import { BlogSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import Link from '@/components/Link'
 import Image from '@/components/Image'
 import siteMetadata from '@/data/siteMetatdata'
 import InicioPost from '@/components/Iniciopost'
+import PropTypes from 'prop-types'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blog/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -14,8 +14,19 @@ const discussUrl = (slug) =>
   )}`
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
+/**
+ * Renderiza el diseño para una publicación de blog.
+ *
+ * @param {Object} props - Las props del componente.
+ * @param {Object} props.frontMatter - Los metadatos de la publicación de blog.
+ * @param {Array} props.authorDetails - Los detalles del autor(es) de la publicación de blog.
+ * @param {Object} props.posterior - La publicación de blog siguiente.
+ * @param {Object} props.anterior - La publicación de blog anterior.
+ * @param {ReactNode} props.children - El contenido de la publicación de blog.
+ * @returns {ReactNode} El diseño renderizado de la publicación de blog.
+ */
 export default function PostLayout({ frontMatter, authorDetails, posterior, anterior, children }) {
-  const { slug, fileName, date, title, images, tags } = frontMatter
+  const { slug, date, title, tags } = frontMatter
 
   return (
     <>
@@ -147,4 +158,20 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
       </div>
     </>
   )
+}
+PostLayout.propTypes = {
+  frontMatter: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    tags: PropTypes.array.isRequired,
+  }).isRequired,
+  authorDetails: PropTypes.array.isRequired,
+  posterior: PropTypes.object,
+  anterior: PropTypes.object,
+  children: PropTypes.node.isRequired,
+}
+PostLayout.defaultProps = {
+  posterior: null,
+  anterior: null,
 }
