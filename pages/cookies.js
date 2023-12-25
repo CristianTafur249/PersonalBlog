@@ -5,7 +5,6 @@ import Link from 'next/link'
 export default function cookies() {
   return (
     <>
-
       <PageSEO title={'Aviso de Privacidad'} />
       <meta name="robots" content="noindex"></meta>
 
@@ -99,7 +98,7 @@ export default function cookies() {
 
           <p>
             <a
-              href="http://windows.microsoft.com/es-es/windows7/how-to-manage-cookies-in-internet-explorer-9"
+              href="https://windows.microsoft.com/es-es/windows7/how-to-manage-cookies-in-internet-explorer-9"
               target="_blank"
               rel="noopener"
             >

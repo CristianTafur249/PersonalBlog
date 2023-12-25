@@ -1,5 +1,13 @@
 import SectionContainer from './SectionContainer'
+import PropTypes from 'prop-types'
 
+/**
+ * Componente que muestra el título de una página.
+ *
+ * @param {Object} props - Las propiedades del componente.
+ * @param {ReactNode} props.children - El contenido del título.
+ * @returns {ReactNode} El componente del título de la página.
+ */
 export default function PageTitle({ children }) {
   return (
     <SectionContainer>
@@ -8,4 +16,7 @@ export default function PageTitle({ children }) {
       </div>
     </SectionContainer>
   )
+}
+PageTitle.propTypes = {
+  children: PropTypes.node.isRequired,
 }

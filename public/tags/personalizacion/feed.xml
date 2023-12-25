@@ -4,8 +4,8 @@
       <link>https://thechcode.netlify.app/blog</link>
       <description>Código, tecnología y programación</description>
       <language>es-ES</language>
-      <managingEditor>cristian2191970@correo.uis.edu.co (Cristian Tafur)</managingEditor>
-      <webMaster>cristian2191970@correo.uis.edu.co (Cristian Tafur)</webMaster>
+      <managingEditor>techcode901@gmail.com (Cristian Tafur)</managingEditor>
+      <webMaster>techcode901@gmail.com (Cristian Tafur)</webMaster>
       <lastBuildDate>Fri, 28 Apr 2023 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://thechcode.netlify.app/tags/personalizacion/feed.xml" rel="self" type="application/rss+xml"/>
       
@@ -15,7 +15,7 @@
     <link>https://thechcode.netlify.app/blog/cambiar-entorno-grafico</link>
     <description>Descubre cómo cambiar el entorno de escritorio en Ubuntu sin perder información ni aplicaciones siguiendo estos sencillos pasos y precauciones importantes.</description>
     <pubDate>Fri, 28 Apr 2023 00:00:00 GMT</pubDate>
-    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
+    <author>techcode901@gmail.com (Cristian Tafur)</author>
     <category>Linux</category><category>ubuntu</category><category>personalizacion</category><category>Escritorio</category><category>Software libre</category>
   </item>
 
@@ -25,7 +25,7 @@
     <link>https://thechcode.netlify.app/blog/instalacion-conky</link>
     <description>Personaliza y muestra información en tiempo real del sistema en Linux con Conky, una aplicación de código abierto ligera y eficiente.</description>
     <pubDate>Thu, 13 Apr 2023 00:00:00 GMT</pubDate>
-    <author>cristian2191970@correo.uis.edu.co (Cristian Tafur)</author>
+    <author>techcode901@gmail.com (Cristian Tafur)</author>
     <category>Linux</category><category>personalizacion</category><category>conky</category><category>Software libre</category>
   </item>
 

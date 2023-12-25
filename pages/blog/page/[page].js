@@ -3,6 +3,8 @@ import siteMetadata from '@/data/siteMetatdata'
 import ListLayout from '@/layouts/ListLayout'
 import { getAllFilesMetadata } from '@/lib/mdx'
 import { POSTS_PER_PAGE } from '@/pages/blog'
+import PropTypes from 'prop-types'
+
 
 export async function getStaticPaths() {
   const totalPosts = await getAllFilesMetadata('blog')
@@ -52,4 +54,12 @@ export default function PostsPage({ posts, initialDisplayPosts, pagination }) {
       />
     </>
   )
+}
+PostsPage.propTypes = {
+  posts: PropTypes.array.isRequired,
+  initialDisplayPosts: PropTypes.array.isRequired,
+  pagination: PropTypes.object,
+}
+PostsPage.defaultProps = {
+  pagination: null,
 }

@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
+/**
+ * Componente que permite cambiar el tema de la aplicación.
+ *
+ * @returns {JSX.Element} El botón para cambiar el tema.
+ */
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme, resolvedTheme } = useTheme()
