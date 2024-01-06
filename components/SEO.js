@@ -151,6 +151,7 @@ export const BlogSEO = ({
   url,
   images = [],
   canonicalUrl,
+  tags,
 }) => {
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
@@ -219,6 +220,7 @@ export const BlogSEO = ({
       <Head>
         {date && <meta property="article:published_time" content={publishedAt} />}
         {lastmod && <meta property="article:modified_time" content={modifiedAt} />}
+        {<meta name="keywords" content={tags} />}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -239,4 +241,5 @@ BlogSEO.propTypes = {
   url: PropTypes.string,
   images: PropTypes.array,
   canonicalUrl: PropTypes.string,
+  tags: PropTypes.string,
 }

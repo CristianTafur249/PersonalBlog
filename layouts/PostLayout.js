@@ -35,7 +35,8 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
         authorDetails={authorDetails}
         {...frontMatter}
         title={`Blog | ${title} |`}
-      />
+        tagsString={tags.map(tag => `"${tag}"`).join(', ')}
+        />
       <div className="mx-auto my-auto w-5/6">
         <article>
           <div className="xl:divide-y  xl:divide-gray-700">
