@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 const navigation = [
   { name: 'Inicio', href: '/' },
   { name: 'Blogs', href: '/blog' },
-  { name: 'Etiquetas', href: '/tags' },
+  { name: 'Etiquetas', href: '/etiquetas' },
   { name: 'Proyectos', href: '/proyectos' },
   { name: 'About', href: '/sobre-mi' },
 ]
