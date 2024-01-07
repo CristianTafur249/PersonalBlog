@@ -109,7 +109,7 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
                         {tags.map((tag) => (
                           <Tag
                             clas={
-                              ' transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full mx-auto mt-2 mb-2 text-center  py-1.5 px-3 font-medium text-green-700 hover:border-gray-700 hover:text-blue-700 '
+                              ' transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full mx-auto mt-2 mb-2 text-center  py-1.5 px-3 font-medium text-green-700 hover:border-gray-700 hover:text-blue-700 tag '
                             }
                             key={tag}
                             text={tag}

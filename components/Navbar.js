@@ -30,8 +30,8 @@ export default function Navbar({ children }) {
   return (
     <div>
       <header>
-        <div className="fixed w-full top-0 z-10">
-          <Disclosure as="nav" className="bg-gray-800 ">
+        <div className="fixed w-full top-0 z-50">
+          <Disclosure as="nav" className="navbar bg-gray-800  ">
             {({ open }) => (
               <>
                 <div className="text-black dark:text-white  mx-auto px-2 sm:px-6 lg:px-8">

@@ -29,7 +29,7 @@ export default function ListP({ posts, MAX_DISPLAY }) {
                 {tags.map((tag) => (
                   <Tag
                     clas={
-                      'transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full m-auto ml-2 my-1 text-center border-green-700 text-green-700 dark:text-green-500 hover:border-gray-800 hover:text-blue-800 dark:hover:border-gray-50 dark:hover:text-blue-50'
+                      'transition ease-in-out duration-700 hover:border-b-2 rounded-full m-auto z-10 ml-2 my-1 text-center border-green-700 text-green-700 dark:text-green-500 hover:border-gray-800 hover:text-blue-800 dark:hover:border-gray-50 dark:hover:text-blue-50'
                     }
                     key={tag}
                     text={tag}
