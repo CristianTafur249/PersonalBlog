@@ -1,9 +1,22 @@
-/* .relative{
-    @apply rounded-t bg-gray-700 px-5 p-3 font-serif text-sm font-bold text-gray-200 ;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.task-list-item::before {
+  @apply hidden;
 }
-.relative + div > pre{
-    @apply mt-0 rounded-t-none;
-} */
+.task-list-item {
+  @apply list-none;
+}
+.footnotes {
+  @apply pt-8 mt-12 border-t border-gray-200 dark:border-gray-700;
+}
+.csl-entry {
+  @apply my-5;
+}
+.navbar {
+  z-index: 1000;
+}
+
 .markdown {
   @apply mx-auto my-auto sm:w-11/12 xl:w-5/6 text-sm sm:text-base md:text-xl;
 }
@@ -25,9 +38,10 @@
 .markdown div > div > a {
   @apply text-gray-50;
 }
-.tag {
+/* .tag {
   font-size: 9px;
-}
+  z-index: 10;
+} */
 .laybl {
   display: grid;
   grid-template-rows: repeat(auto, 1fr);
