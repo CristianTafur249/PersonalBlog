@@ -1,5 +1,4 @@
 import { TagSEO } from '@/components/SEO'
-import siteMetadata from '@/data/siteMetatdata'
 import ListLayout from '@/layouts/ListLayout'
 import generateRss from '@/lib/generate-rss'
 import { getAllFilesMetadata } from '@/lib/mdx'
@@ -32,8 +31,8 @@ export async function getStaticProps({ params }) {
   )
   //rss
   if (filteredPosts.length > 0) {
-    const rss = generateRss(filteredPosts, `tags/${params.tag}/feed.xml`)
-    const rssPath = path.join(root, 'public', 'tags', params.tag)
+    const rss = generateRss(filteredPosts, `etiquetas/${params.tag}/feed.xml`)
+    const rssPath = path.join(root, 'public', 'etiquetas', params.tag)
     fs.mkdirSync(rssPath, { recursive: true })
     fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss)
   }
@@ -45,8 +44,8 @@ export default function Tag({ posts, tag }) {
   return (
     <>
       <TagSEO
-        title={`${tag} - ${siteMetadata.author}`}
-        description={`${tag} tags - ${siteMetadata.author}`}
+        title={`${tag}`}
+        description={`${tag} Etiquetas`}
       />
       <ListLayout posts={posts} title={title} />
     </>

@@ -12,7 +12,7 @@ import PropTypes from 'prop-types'
  */
 const Tag = ({ text, clas }) => {
   return (
-    <Link href={`/tags/${formatWord(text)}`} legacyBehavior>
+    <Link href={`/etiquetas/${formatWord(text)}`} legacyBehavior>
       <a className={clas}>{text.split(' ').join('-')}</a>
     </Link>
   )

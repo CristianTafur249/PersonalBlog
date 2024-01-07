@@ -6,7 +6,7 @@ import siteMetadata from '@/data/siteMetatdata'
 export default function Proyectos() {
   return (
     <>
-      <PageSEO title={`Proyecto | ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO title={`Proyectos`} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700 w-5/6 justify-items-center mx-auto">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="dark:text-white  md:text-6xl text-4xl w-full 2xl:text-7xl fond-bold tracking-tight">

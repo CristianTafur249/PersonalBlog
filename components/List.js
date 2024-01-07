@@ -14,7 +14,7 @@ export default function ListP({ posts, MAX_DISPLAY }) {
             key={slug}
             className="shadow-primary-200 transition ease-in-out duration-700 mb-8 p-5 rounded-md hover:bg-gray-300 dark:hover:bg-gray-800 border-gray-400 items-start justify-between"
           >
-            <div className="text-gray-500 items-center grap-x-4 text-xs group-hover:text-blue-700">
+            <div className="dark:text-gray-400 text-gray-600 items-center grap-x-4 text-xs group-hover:text-blue-700">
               <time dateTime={date}>{formatDate(date)}</time>
             </div>
             <div className="group relative">
@@ -29,17 +29,22 @@ export default function ListP({ posts, MAX_DISPLAY }) {
                 {tags.map((tag) => (
                   <Tag
                     clas={
-                      'transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full m-auto ml-2 my-1 text-center border-green-700 text-green-700 hover:border-gray-800 hover:text-blue-800 dark:hover:border-gray-50 dark:hover:text-blue-50'
+                      'transition ease-in-out duration-700 hover:border-b-2 rounded-full m-auto z-10 ml-2 my-1 text-center border-green-700 text-green-700 dark:text-green-500 hover:border-gray-800 hover:text-blue-800 dark:hover:border-gray-50 dark:hover:text-blue-50'
                     }
                     key={tag}
                     text={tag}
                   />
                 ))}
               </div>
-              <p className="mt-1 text-sm leading-6 text-gray-500 line clam-3">{summary}</p>
+              <p className="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 line clam-3">
+                {summary}
+              </p>
             </div>
             <p>
-              <a className="text-blue-500 hover:text-green-400 mt-5" href={`/blog/${slug}`}>
+              <a
+                className="text-blue-600 dark:text-blue-400 hover:text-green-400 mt-5"
+                href={`/blog/${slug}`}
+              >
                 Leer más...
               </a>
             </p>

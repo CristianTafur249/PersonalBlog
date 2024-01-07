@@ -36,3 +36,5 @@ yarn-error.log*
 
 #vscode
 .vscode
+public/
+!public/static
