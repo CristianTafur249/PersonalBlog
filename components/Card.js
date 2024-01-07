@@ -30,7 +30,11 @@ const Card = ({ title, description, imgSrc, href }) => {
           </h5>
           <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">{description}</p>
           {href && (
-            <Link href={href} className="text-primary-700" aria-label={`Link to ${title}`}>
+            <Link
+              href={href}
+              className="text-primary-700 dark:text-primary-400"
+              aria-label={`Link to ${title}`}
+            >
               Ir &rarr;
             </Link>
           )}

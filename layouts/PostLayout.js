@@ -7,11 +7,11 @@ import siteMetadata from '@/data/siteMetatdata'
 import InicioPost from '@/components/Iniciopost'
 import PropTypes from 'prop-types'
 
-const editUrl = (fileName) => `${siteMetadata.siteRepo}/blog/master/data/blog/${fileName}`
+const { siteRepo, siteUrl } = siteMetadata
+
+const editUrl = (fileName) => `${siteRepo}/blog/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
-  `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `${siteMetadata.siteUrl}/blog/${slug}`
-  )}`
+  `https://mobile.twitter.com/search?q=${encodeURIComponent(`${siteUrl}/blog/${slug}`)}`
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 /**
@@ -35,6 +35,7 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
         authorDetails={authorDetails}
         {...frontMatter}
         title={`Blog | ${title} |`}
+        tagsString={tags.map((tag) => `"${tag}"`).join(', ')}
       />
       <div className="mx-auto my-auto w-5/6">
         <article>
@@ -108,7 +109,7 @@ export default function PostLayout({ frontMatter, authorDetails, posterior, ante
                         {tags.map((tag) => (
                           <Tag
                             clas={
-                              ' transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full mx-auto mt-2 mb-2 text-center  py-1.5 px-3 font-medium text-green-700 hover:border-gray-700 hover:text-blue-700 '
+                              ' transition ease-in-out duration-700 hover:border-b-2 relative z-10 rounded-full mx-auto mt-2 mb-2 text-center  py-1.5 px-3 font-medium text-green-700 hover:border-gray-700 hover:text-blue-700 tag '
                             }
                             key={tag}
                             text={tag}

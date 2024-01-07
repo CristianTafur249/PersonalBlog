@@ -1,7 +1,6 @@
 import { ClientReload } from '@/components/ClientReload'
 import Navbar from '@/components/Navbar'
 import siteMetadata from '@/data/siteMetatdata'
-import '@/styles/globals.css'
 import '@/styles/blogs.css'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
