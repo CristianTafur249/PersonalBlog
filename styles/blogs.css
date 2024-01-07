@@ -1,9 +1,23 @@
-/* .relative{
-    @apply rounded-t bg-gray-700 px-5 p-3 font-serif text-sm font-bold text-gray-200 ;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.task-list-item::before {
+  @apply hidden;
 }
-.relative + div > pre{
-    @apply mt-0 rounded-t-none;
-} */
+.task-list-item {
+  @apply list-none;
+}
+.footnotes {
+  @apply pt-8 mt-12 border-t border-gray-200 dark:border-gray-700;
+}
+.csl-entry {
+  @apply my-5;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
 .markdown {
   @apply mx-auto my-auto sm:w-11/12 xl:w-5/6 text-sm sm:text-base md:text-xl;
 }
