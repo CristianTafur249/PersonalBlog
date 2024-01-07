@@ -7,11 +7,11 @@ import siteMetadata from '@/data/siteMetatdata'
 import InicioPost from '@/components/Iniciopost'
 import PropTypes from 'prop-types'
 
-const editUrl = (fileName) => `${siteMetadata.siteRepo}/blog/master/data/blog/${fileName}`
+const { siteRepo, siteUrl } = siteMetadata
+
+const editUrl = (fileName) => `${siteRepo}/blog/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
-  `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `${siteMetadata.siteUrl}/blog/${slug}`
-  )}`
+  `https://mobile.twitter.com/search?q=${encodeURIComponent(`${siteUrl}/blog/${slug}`)}`
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 /**
