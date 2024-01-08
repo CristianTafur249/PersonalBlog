@@ -42,7 +42,7 @@ export default function Cookies() {
             De acuerdo
           </button>
           <Link
-            className=" text-cyan-500 underline hover:text-purple-600 dark:hover:text-purple-900 dark:text-cyan-800"
+            className="underline hover:text-purple-600 dark:hover:text-purple-900 text-cyan-800"
             href="/cookies"
           >
             Aviso de Cookies

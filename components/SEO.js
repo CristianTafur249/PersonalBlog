@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import siteMetadata from '@/data/siteMetatdata'
+import siteMetadata from '@/data/siteMetadata'
 import PropTypes from 'prop-types'
 
 /**
@@ -19,6 +19,14 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
   return (
     <Head>
       <title>{title ? `${title} | ${siteMetadata.title}` : siteMetadata.title}</title>
+      <meta name="msapplication-TileColor" content="#000000" />
+      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
       <meta name="robots" content="follow, index" />
       <link rel="icon" href={siteMetadata.siteico} crossOrigin="true" />
       <meta name="description" content={description} />

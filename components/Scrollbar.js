@@ -4,7 +4,7 @@ import ScrollProgressBar from 'react-scroll-progress-bar'
 /**
  * Componente que muestra una barra de progreso de desplazamiento basada en la posición de desplazamiento de la ventana.
  */
-export default function Scrolbr() {
+export default function Scrollbar() {
   const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
