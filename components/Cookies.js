@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { Analitics } from './analitics/Analitiscs'
 
 export default function Cookies() {
   const [showCookies, setShowCookies] = useState(false)
@@ -23,7 +22,6 @@ export default function Cookies() {
 
   return (
     <>
-      {!showCookies && <Analitics />}
       {showCookies && (
         <div className="avisoCookies block shadow-xl shadow-gray-700 dark:shadow-gray-600 dark:bg-gray-300">
           <Image
@@ -33,7 +31,7 @@ export default function Cookies() {
             className="max-w-px absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2/3"
             src="/static/images/cookie.svg"
           />
-          <h3 className="titulo mb-4 text-lg text-gray-800">Cookies</h3>
+          <h2 className="titulo mb-4 text-lg text-gray-800">Cookies</h2>
           <p className="parrafo mb-4 text-gray-800">
             Utilizamos cookies propias y de terceros para mejorar nuestros servicios.
           </p>
