@@ -38,3 +38,4 @@ yarn-error.log*
 .vscode
 public/
 !public/static
+!public/error-500.html
