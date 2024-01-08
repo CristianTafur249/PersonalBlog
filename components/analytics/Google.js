@@ -1,6 +1,6 @@
 import React from 'react'
 
-import siteMetadata from '@/data/siteMetatdata'
+import siteMetadata from '@/data/siteMetadata'
 export const GTM_ID = 'GTM-MB5QVWF'
 const ANALYTICS_ID = siteMetadata.analytics.googleAnalyticsId
 
