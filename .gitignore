@@ -1,41 +1,95 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
+# Ignore coverage reports
 /coverage
 
-# next.js
+# Ignore Next.js build output
 /.next/
 /out/
 
-# production
+# Ignore production build output
 /build
 
-# misc
+# Ignore miscellaneous system files
 .DS_Store
 *.pem
 
-# debug
+# Ignore debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# local env files
+# Ignore local environment files
 .env*.local
 
-# vercel
-.vercel
+# Ignore SonarQube files
+.scannerwork
 
-#sonar
-/.scannerwork
-
-#vscode
+# Ignore Visual Studio Code settings and public directory (except static files and error pages)
 .vscode
 public/
 !public/static
 !public/error-500.html
+!public/error-404.html
+
+# Ignore specific build outputs
+dist
+!.github/actions/*/dist
+.next
+target
+packages/next/wasm/@next
+
+# Ignore dependencies and their lock files
+node_modules
+package-lock.json
+yarn.lock
+!/yarn.lock
+test/node_modules
+.pnpm-store/
+.github/**/node_modules
+
+# Ignore logs & process IDs
+*.log
+pids
+*.cpuprofile
+*.heapsnapshot
+
+# Ignore coverage-related files
+.nyc_output
+coverage
+
+# Ignore test output directories
+test/**/out*
+test/**/next-env.d.ts
+.DS_Store
+/e2e-tests
+test/tmp/**
+test/.trace
+test/traces
+
+# Ignore editor-specific files
+**/.idea
+**/.#*
+.nvmrc
+
+# Ignore example output directories
+examples/**/out
+examples/**/.env*.local
+
+# Ignore PR statistics and test timings
+pr-stats.md
+test-timings.json
+
+# Ignore Vercel & Now files
+.vercel
+.now
+
+# Ignore build cache files
+*.tsbuildinfo
+.swc/
+.turbo
+
+# Ignore sitemap and robots.txt files
+*sitemap
+*robots.txt
