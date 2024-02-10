@@ -1,7 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Sitemaps
-Sitemap: https://thechcode.netlify.app/sitemap.xml
-Sitemap: https://thechcode.netlify.app/feed.xml
