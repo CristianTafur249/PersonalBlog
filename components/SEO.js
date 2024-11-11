@@ -14,7 +14,15 @@ import PropTypes from 'prop-types'
  * @param {string} props.canonicalUrl - La URL canónica de la página.
  * @returns {JSX.Element} - El componente de configuración SEO.
  */
-const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl }) => {
+const CommonSEO = ({
+  title,
+  description,
+  ogType,
+  ogImage,
+  twImage,
+  canonicalUrl,
+  metaKeywords,
+}) => {
   const router = useRouter()
   return (
     <Head>
@@ -30,6 +38,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
       <meta name="robots" content="follow, index" />
       <link rel="icon" href={siteMetadata.siteico} crossOrigin="true" />
       <meta name="description" content={description} />
+      {metaKeywords && <meta name="keywords" content={metaKeywords} />}
       <meta name="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
       <meta name="og:type" content={ogType} />
       <meta name="og:description" content={description} />
@@ -65,7 +74,7 @@ CommonSEO.propTypes = {
  * @param {string} props.description - La descripción de la página.
  * @returns {JSX.Element} - El componente SEO.
  */
-export const PageSEO = ({ title, description }) => {
+export const PageSEO = ({ title, description, metaKeywords }) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   return (
@@ -75,6 +84,7 @@ export const PageSEO = ({ title, description }) => {
       ogType="website"
       ogImage={ogImageUrl}
       twImage={twImageUrl}
+      metaKeywords={metaKeywords}
     />
   )
 }
@@ -92,7 +102,7 @@ PageSEO.propTypes = {
  * @param {string} props.description - La descripción de la página.
  * @returns {JSX.Element} El componente SEO.
  */
-export const TagSEO = ({ title, description }) => {
+export const TagSEO = ({ title, description, metaKeywords }) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const router = useRouter()
@@ -101,6 +111,7 @@ export const TagSEO = ({ title, description }) => {
       <CommonSEO
         title={title}
         description={description}
+        metaKeywords={metaKeywords}
         ogType="website"
         ogImage={ogImageUrl}
         twImage={twImageUrl}
@@ -136,20 +147,6 @@ TagSEO.propTypes = {
  * @param {string} props.canonicalUrl - La URL canónica de la publicación del blog.
  * @returns {JSX.Element} El componente renderizado.
  */
-/**
- * Component for generating SEO metadata and structured data for a blog post.
- *
- * @param {Object} props - The props object.
- * @param {Array} props.authorDetails - The details of the author(s) of the blog post.
- * @param {string} props.title - The title of the blog post.
- * @param {string} props.summary - A summary of the blog post.
- * @param {string} props.date - The date the blog post was published.
- * @param {string} props.lastmod - The date the blog post was last modified.
- * @param {string} props.url - The URL of the blog post.
- * @param {Array} [props.images=[]] - An array of images associated with the blog post.
- * @param {string} props.canonicalUrl - The canonical URL of the blog post.
- * @returns {JSX.Element} The rendered component.
- */
 export const BlogSEO = ({
   authorDetails,
   title,
@@ -160,6 +157,7 @@ export const BlogSEO = ({
   images = [],
   canonicalUrl,
   tags,
+  metaKeywords,
 }) => {
   const publishedAt = new Date(date).toISOString()
   const modifiedAt = new Date(lastmod || date).toISOString()
@@ -224,6 +222,7 @@ export const BlogSEO = ({
         ogImage={twImageUrl}
         twImage={twImageUrl}
         canonicalUrl={canonicalUrl}
+        metaKeywords={metaKeywords}
       />
       <Head>
         {date && <meta property="article:published_time" content={publishedAt} />}
@@ -250,4 +249,5 @@ BlogSEO.propTypes = {
   images: PropTypes.array,
   canonicalUrl: PropTypes.string,
   tags: PropTypes.string,
+  metaKeywords: PropTypes.string,
 }

@@ -4,6 +4,7 @@ import Tag from '@/components/Tag'
 import Link from 'next/link'
 import formatWord from '@/lib/utils/formatWord'
 import PropTypes from 'prop-types'
+import siteMetadata from '@/data/siteMetadata'
 
 export async function getStaticProps() {
   const tags = await getAllTags('blog')
@@ -12,10 +13,15 @@ export async function getStaticProps() {
 
 export default function Tags({ tags }) {
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
+  const keywords = sortedTags.join(', ')
 
   return (
     <>
-      <PageSEO title="Etiquetas" description="Etiquetas del blog" />
+      <PageSEO
+        title={`Tags - ${siteMetadata.author}`}
+        description="Etiquetas de lo que blogueo"
+        metaKeywords={keywords}
+      />
       <div className="mx-auto my-auto w-4/5 px-6 lg:px-8">
         <section className="mb-16 text-center lg:text-left">
           <div className="border-b-2 grid lg:grid-cols-2 gap-6 xl:gap-12 items-center">

@@ -18,7 +18,11 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
   return (
     <>
-      <PageSEO title={'Inicio'} description={siteMetadata.description} />
+      <PageSEO
+        title={'Inicio'}
+        description={siteMetadata.description}
+        metaKeywords={siteMetadata.metaKeywords}
+      />
       <>
         <div className=" w-full">
           <Header />
