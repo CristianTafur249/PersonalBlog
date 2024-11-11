@@ -72,7 +72,7 @@ const MAX_URLS_PER_SITEMAP = 7000;
                 parser: 'html',
             });
 
-            const sitemapFileName = `public/static/sitemap-${i + 1}.xml`;
+            const sitemapFileName = `public/sitemap/sitemap-${i + 1}.xml`;
             fs.writeFileSync(sitemapFileName, formattedSitemap);
             sitemapFiles.push(sitemapFileName);
         }
