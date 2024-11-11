@@ -27,15 +27,15 @@ const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day:
  */
 export default function PostLayout({ frontMatter, authorDetails, posterior, anterior, children }) {
   const { slug, date, title, tags } = frontMatter
-
+  const metaKeywords = tags ? tags.join(', ') : ''
   return (
     <>
       <BlogSEO
         url={`${siteMetadata.siteUrl}/blog/${slug}`}
         authorDetails={authorDetails}
         {...frontMatter}
-        title={`Blog | ${title} |`}
-        tagsString={tags.map((tag) => `"${tag}"`).join(', ')}
+        title={`${title} | Blog`}
+        metaKeywords={`${title}, ${metaKeywords}`}
       />
       <div className="mx-auto my-auto w-5/6">
         <article>

@@ -1,0 +1,28 @@
+# Archivo EditorConfig en el nivel superior
+root = true
+
+# Saltos de línea estilo Unix con un salto de línea al final de cada archivo
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# Indentación de 4 espacios
+[*.{js,jsx,ts,tsx,css,scss,html,json,md}]
+indent_style = space
+indent_size = 4
+
+# Indentación con tabulaciones para Makefiles
+[Makefile]
+indent_style = tab
+
+# Eliminar espacios en blanco al final de las líneas
+[*.{js,jsx,ts,tsx,css,scss,html,json,md}]
+trim_trailing_whitespace = true
+
+# Establecer charset por defecto
+[*.{js,jsx,ts,tsx,css,scss,html,json,md}]
+charset = utf-8
+
+# Controlar el máximo de caracteres por línea
+[*.{js,jsx,ts,tsx,css,scss,html,json,md}]
+max_line_length = 80

@@ -30,7 +30,11 @@ export default function AutorLayout({ children, frontMatter }) {
   const isAboveTheFold = true
   return (
     <>
-      <PageSEO title={`Sobre Mi - ${name}`} description={`Sobre Mi - ${name}`} />
+      <PageSEO
+        title={`Sobre Mi - ${name}`}
+        description={`Sobre Mi - ${name}`}
+        metaKeywords={`Sobre Mi, ${name}, ${ocupation}, ${lengs.join(', ')}`}
+      />
       <SectionContainer>
         <div
           className="dark:border-gray-500 border-b-2 space-y-2 pt-6 pb-8 md:space-y-5"
@@ -73,9 +77,9 @@ export default function AutorLayout({ children, frontMatter }) {
               <a
                 href={twitter}
                 type="button"
-                className="ava m-1 h-9 w-9 rounded-full border-2 lg:h-14 xl:w-14 
-                                    lg:border-2 xl:border-4 uppercase leading-normal  transition 
-                                    duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 
+                className="ava m-1 h-9 w-9 rounded-full border-2 lg:h-14 xl:w-14
+                                    lg:border-2 xl:border-4 uppercase leading-normal  transition
+                                    duration-150 ease-in-out hover:bg-black hover:bg-opacity-5
                                     focus:outline-none focus:ring-0"
                 data-te-ripple-init
                 data-te-ripple-color="light"

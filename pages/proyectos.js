@@ -4,9 +4,15 @@ import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 
 export default function Proyectos() {
+  const keywords = ['projects', 'portfolio', 'personal blog', 'web development', 'coding']
+
   return (
     <>
-      <PageSEO title={`Proyectos`} description={siteMetadata.description} />
+      <PageSEO
+        title={`Proyecto | ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        metaKeywords={keywords}
+      />
       <div className="divide-y divide-gray-200 dark:divide-gray-700 w-5/6 justify-items-center mx-auto">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="dark:text-white  md:text-6xl text-4xl w-full 2xl:text-7xl fond-bold tracking-tight">

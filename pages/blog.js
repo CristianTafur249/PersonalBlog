@@ -17,9 +17,15 @@ export async function getStaticProps() {
 }
 
 export default function Blog({ posts, initialDisplayPosts, pagination }) {
+  const metaKeywords = 'blog, personal blog, tech blog, programming, coding, development'
+
   return (
     <>
-      <PageSEO title={`Blogs`} description={siteMetadata.description} />
+      <PageSEO
+        title={`Blog - ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        metaKeywords={metaKeywords}
+      />
       <ListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
