@@ -1,4 +1,4 @@
-import siteMetadata, { siteUrl } from '@/data/siteMetatdata'
+import siteMetadata, { siteUrl } from '@/data/siteMetadata'
 
 export default function Footer() {
   return (

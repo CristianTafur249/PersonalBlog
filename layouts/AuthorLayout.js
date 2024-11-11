@@ -11,14 +11,22 @@ import PropTypes from 'prop-types'
  * @param {string} props.frontMatter.name - El nombre del autor.
  * @param {string} props.frontMatter.avatar - La URL del avatar del autor.
  * @param {string[]} props.frontMatter.lengs - Los lenguajes manejados por el autor.
- * @param {string} props.frontMatter.ocupation - La ocupación del autor.
+ * @param {string} props.frontMatter.occupation - La ocupación del autor.
  * @param {string} props.frontMatter.twitter - El enlace al perfil de Twitter del autor.
- * @param {string} props.frontMatter.linkedin - El enlace al perfil de LinkedIn del autor.
+ * @param {string} props.frontMatter.LinkedIn - El enlace al perfil de LinkedIn del autor.
  * @param {string} props.frontMatter.github - El enlace al perfil de GitHub del autor.
  * @returns {ReactNode} El componente de diseño del autor.
  */
 export default function AutorLayout({ children, frontMatter }) {
-  const { name, avatar, lengs, ocupation, twitter, linkedin, github } = frontMatter
+  const {
+    name,
+    avatar,
+    lengs,
+    occupation: ocupation,
+    twitter,
+    LinkedIn: linkedin,
+    github,
+  } = frontMatter
   const isAboveTheFold = true
   return (
     <>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { PageSEO } from '@/components/SEO'
-import siteMetadata from '@/data/siteMetatdata'
+import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesMetadata } from '@/lib/mdx'
 import Header from '@/components/Header'
 import PropTypes from 'prop-types'

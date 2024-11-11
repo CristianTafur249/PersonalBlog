@@ -3,7 +3,7 @@ import { BlogSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import Link from '@/components/Link'
 import Image from '@/components/Image'
-import siteMetadata from '@/data/siteMetatdata'
+import siteMetadata from '@/data/siteMetadata'
 import InicioPost from '@/components/Iniciopost'
 import PropTypes from 'prop-types'
 

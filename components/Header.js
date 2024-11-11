@@ -1,4 +1,4 @@
-import siteMetadata from '@/data/siteMetatdata'
+import siteMetadata from '@/data/siteMetadata'
 import Link from './Link'
 
 /**

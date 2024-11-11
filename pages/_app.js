@@ -1,13 +1,13 @@
 import { ClientReload } from '@/components/ClientReload'
 import Navbar from '@/components/Navbar'
-import siteMetadata from '@/data/siteMetatdata'
+import siteMetadata from '@/data/siteMetadata'
 import '@/styles/blogs.css'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import React from 'react'
-import { initGTM, logPageView } from '@/components/analitics/Google'
+import { initGTM, logPageView } from '@/components/analytics/Google'
 import Cookies from '@/components/Cookies'
-import Scrolbr from '@/components/Scrolbr'
+import Scrollbar from '@/components/Scrollbar'
 import PropTypes from 'prop-types'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
@@ -32,7 +32,7 @@ class App extends React.Component {
         </Head>
         {isDevelopment && isSocket && <ClientReload />}
         <Navbar>
-          <Scrolbr />
+          <Scrollbar />
           <Component {...pageProps} />
           <Cookies />
         </Navbar>
