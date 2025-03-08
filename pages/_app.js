@@ -14,34 +14,34 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 class App extends React.Component {
-  componentDidMount() {
-    initGTM()
-    logPageView() /* 
+    componentDidMount() {
+        initGTM()
+        logPageView() /*
     const timeOnPage = new Date().getTime() - performance.timing.navigationStart */
-  }
-  render() {
-    const { Component, pageProps } = this.props
-    return (
-      <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-        <Head>
-          <meta
-            name="google-site-verification"
-            content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y"
-          />
-          <meta content="width=device-width, initial-scale=1" name="viewport" />
-        </Head>
-        {isDevelopment && isSocket && <ClientReload />}
-        <Navbar>
-          <Scrollbar />
-          <Component {...pageProps} />
-          <Cookies />
-        </Navbar>
-      </ThemeProvider>
-    )
-  }
+    }
+    render() {
+        const { Component, pageProps } = this.props
+        return (
+            <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+                <Head>
+                    <meta
+                        name="google-site-verification"
+                        content="f_QfdxqHEcMWPI9hLORb4DBUe8V3CqlbkcUblXOMu6Y"
+                    />
+                    <meta content="width=device-width, initial-scale=1" name="viewport" />
+                </Head>
+                {isDevelopment && isSocket && <ClientReload />}
+                <Navbar>
+                    <Scrollbar />
+                    <Component {...pageProps} />
+                    <Cookies />
+                </Navbar>
+            </ThemeProvider>
+        )
+    }
 }
 App.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
+    Component: PropTypes.elementType.isRequired,
+    pageProps: PropTypes.object.isRequired,
 }
 export default App

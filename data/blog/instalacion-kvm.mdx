@@ -1,7 +1,7 @@
 ---
 title: '¿Cómo instalar Kvm en Ubuntu?'
 date: '2023-04-10'
-lastmod: '2023-04-13'
+lastmod: '2025-03-26'
 tags: ['Linux', 'Virtualizacion', 'Kvm', 'Software libre']
 draft: false
 images: ['https://drive.google.com/uc?export=view&id=1n2YicFnQCzczD4VoGfY9x9q0l36LDJ-3']
@@ -41,7 +41,7 @@ kvm-ok
 
 SI la función de virtualización del procesador no está deshabilitada en el DIOS, la salida es parecida a esta:
 
-![kvm-ok](https://drive.google.com/uc?export=view&id=1uymAHteIXsXolraZZQRtI8YFiQ_DMDZM)
+![kvm-ok](https://www.dropbox.com/s/gus0xxk6slbgbu1/kvm-ok.png?raw=1)
 
 De lo contrario, el comando se imprimirá y aparecerá un mensaje de error similar al siguiente:
 
@@ -57,7 +57,7 @@ Una vez confirmado lo anterior se puede seguir con el proceso de instalación, p
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager
 ```
 
-![installKVM](https://drive.google.com/uc?export=view&id=1n2YicFnQCzczD4VoGfY9x9q0l36LDJ-3)
+![installKVM](https://www.dropbox.com/s/lse2jf9f4afvnl1/installKVM.png?raw=1)
 
 En el cual encontramos que:
 
@@ -74,7 +74,7 @@ Ejecutado el anterior comando procedemos a verificar si la instalación fue hech
 sudo systemctl is-active libvirtd
 ```
 
-![isActive](https://drive.google.com/uc?export=view&id=1vu5RZUp5yUNMvgNPXRnDQ7etF5A_XeC7)
+![isActive](https://www.dropbox.com/s/x0r46yg590s9wik/isActive.png?raw=1)
 
 Para poder crear y administrar máquinas virtuales se debe agregar el usuario a los grupos libvirt y kvm de la siguiente forma:
 
@@ -85,7 +85,7 @@ Para poder crear y administrar máquinas virtuales se debe agregar el usuario a 
     sudo usermod -aG kvm $USER
     ```
 
-    ![USER](https://drive.google.com/uc?export=view&id=1PBqYB2BC2xlQnGT2iYwF7rglU2iMPYTo)
+    ![USER](https://www.dropbox.com/s/sto3hl6bcyi5ala/USER.png?raw=1)
     Donde $USER es la variable de entorno que contiene al usuario actual.
 
 Al finalizar la instalación reiniciamos el computador para evitar problemas con el servicio de arranque de KVM.

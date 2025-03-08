@@ -1,7 +1,7 @@
 ---
 title: '¿Como instalar Sistema Operativo Guest KVM?'
 date: '2023-04-11'
-lastmod: '2023-04-11'
+lastmod: '2025-03-25'
 tags: ['Linux', 'Virtualizacion', 'Kvm', 'Software libre']
 draft: false
 images: ['']
@@ -21,27 +21,27 @@ El uso de KVM y SO Guest puede proporcionar una mayor eficiencia de recursos y f
 
 Para realizar este proceso se debe abrir el gestor de máquinas virtuales que istalamos en la [publicacion](/blog/instalacion-kvm)anterior.
 
-![Gestor de maquinas virtuales](https://drive.google.com/uc?export=view&id=1bd54K53FSpUEvAChkhkPnqEb7qq2pq5D)
+![Gestor de maquinas virtuales](https://www.dropbox.com/s/4i2xw1raatfgap8/gest.png?raw=1)
 
 Luego de esto se le da clic derecho a QEMU/KVM y en new Para poder crear máquinas virtuales.
 
-![QEMU/KVM](https://drive.google.com/uc?export=view&id=1e624lT5wlFAo0vj5Qw7srIB1pT30DhEo)
+![QEMU/KVM](https://www.dropbox.com/s/q000dde69kn8q9s/qemu.png?raw=1)
 
 En la pestaña que se abre se nos permite crear máquinas virtuales, en esta se seleccionará la forma de instalación que se quiere utilizar: mediante una imagen ISO o de CDROM, instalación de red (HTTP, FTP, NFS), Network boot (PXE) o mediante la importación de una imagen ya existente.
 
-![Medio de isntalacion](https://drive.google.com/uc?export=view&id=1Er3dlONFS6fbainEcxNzMZZmgP5RX9Lc)
+![Medio de isntalacion](https://www.dropbox.com/s/8xu3tl9qe5xq1lu/op_iso.png?raw=1)
 
 Una vez seleccionada la forma de instalación (en este caso, imagen ISO), se abrirá una ventana donde se nos pedirá seleccionar el archivo, en este se debe seleccionar “Explore localmente y ubicar el ISO del sistema operativo a instalar
 
-![ISO](https://drive.google.com/uc?export=view&id=1YCF6avBBJjgcFG22MPmOoeOVMzfyv7jW)
+![ISO](https://www.dropbox.com/s/q86rxzp43l18e4p/iso.png?raw=1)
 
 Teniendo ya ubicada la imagen, el programa buscará automáticamente la fuente de instalación y le pondrá el nombre de esta, siempre y cuando la detección automática esté activada.
 
-![automatica](https://drive.google.com/uc?export=view&id=1jIxMrO_jN1AWlzaYpcu2yBOULNNOHB2i)
+![automatica](https://www.dropbox.com/s/d4c3sh9hen31kx4/automatica.png?raw=1)
 
 Una vez culminado lo anterior, el procedimiento a seguir es seleccionar la configuración de memoria y CPU que se le dará a nuestra máquina virtual, hay que tener en cuenta que estas configuraciones se prestarán del anfitrión, por lo cual se debe tener cuidado a la hora de su configuración.
 
-![CPU y Memoria](https://drive.google.com/uc?export=view&id=1dT2JOfULdl8Jus2iCV_WF6iQ-DZG9cbH)
+![CPU y Memoria](https://www.dropbox.com/s/d5rzaifjnqm3sa4/cpuYmen.png?raw=1)
 
 Ahora debemos elegir la cantidad de almacenamiento que designaremos para que sean usadas por nuestra máquina virtual (se deben tener en cuenta los requisitos mínimos del SO a usar).
 
@@ -49,7 +49,7 @@ Ahora debemos elegir la cantidad de almacenamiento que designaremos para que sea
 
 A continuación se muestran las configuraciones rápidas que se han programado para la instalación. clic en finalizar y después empezará la instalación del SO
 
-![InsSO](https://drive.google.com/uc?export=view&id=1lBF32U_MBRf_GEeC6IAATAYjq7C_tlOA)
+![InsSO](https://www.dropbox.com/s/vbqt9jafo91f84b/insSO.png?raw=1)
 
 Al continuar se comenzará la ejecución de la máquina virtual y se procederá a instalar el SO.
-![pantalla de instalacion](https://drive.google.com/uc?export=view&id=1Wr-NdHyiP7GAJxavgnpsrXUNbaMf-j62)
+![pantalla de instalacion](https://www.dropbox.com/s/hd681hp7vhue23y/panIns.png?raw=1)
