@@ -1,4 +1,4 @@
-![techcode-banner](/public/static/images/TechCode1.png)
+![techcode-banner](https://www.dropbox.com/s/3pygigs54e13jjr/TechCode1.png?raw=1)
 
 # TechCode
 

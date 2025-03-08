@@ -38,10 +38,7 @@
 .markdown div > div > a {
   @apply text-gray-50;
 }
-/* .tag {
-  font-size: 9px;
-  z-index: 10;
-} */
+
 .laybl {
   display: grid;
   grid-template-rows: repeat(auto, 1fr);
