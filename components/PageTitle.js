@@ -9,14 +9,14 @@ import PropTypes from 'prop-types'
  * @returns {ReactNode} El componente del título de la página.
  */
 export default function PageTitle({ children }) {
-  return (
-    <SectionContainer>
-      <div className=" text-gray-900 dark:text-gray-50 text-3xl tracking-tight sm:text-4xl  md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
-        <h1>{children}</h1>
-      </div>
-    </SectionContainer>
-  )
+    return (
+        <SectionContainer>
+            <div className=" text-gray-900 dark:text-gray-50 text-3xl tracking-tight sm:text-4xl  md:text-5xl lg:text-6xl xl:text-7xl leading-tight">
+                <h1>{children}</h1>
+            </div>
+        </SectionContainer>
+    )
 }
 PageTitle.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 }

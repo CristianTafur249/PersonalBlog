@@ -11,15 +11,15 @@ import PropTypes from 'prop-types'
  * @returns {JSX.Element} El componente de etiqueta renderizado.
  */
 const Tag = ({ text, clas }) => {
-  return (
-    <Link href={`/etiquetas/${formatWord(text)}`} legacyBehavior>
-      <a className={clas}>{text.split(' ').join('-')}</a>
-    </Link>
-  )
+    return (
+        <Link href={`/etiquetas/${formatWord(text)}`} legacyBehavior>
+            <a className={clas}>{text.split(' ').join('-')}</a>
+        </Link>
+    )
 }
 
 Tag.propTypes = {
-  text: PropTypes.string.isRequired,
-  clas: PropTypes.string,
+    text: PropTypes.string.isRequired,
+    clas: PropTypes.string,
 }
 export default Tag
