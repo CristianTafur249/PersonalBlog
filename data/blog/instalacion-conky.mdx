@@ -1,7 +1,7 @@
 ---
 title: '¿Como instalar y configurar de conky en ubuntu 22.04?'
 date: '2023-04-13'
-lastmod: '2023-04-14'
+lastmod: '2025-03-06'
 tags: ['Linux', 'personalizacion', 'conky', 'Software libre']
 draft: false
 images: 'https://drive.google.com/uc?export=view&id=1ccb7YkZNXIv5Cejy1r9TYJZHCcftXwHH'
@@ -44,7 +44,7 @@ conky
 
 Así se verá después de ejecutarlo con la configuración predeterminada:
 
-![Conky](https://drive.google.com/uc?export=view&id=1ccb7YkZNXIv5Cejy1r9TYJZHCcftXwHH)
+![Conky](https://www.dropbox.com/s/sjx5awlbzerir5v/Conf%20Conky%20.png?raw=1)
 
 Alternativamente, puedes agregar Conky a la lista de aplicaciones de inicio para que se inicie automáticamente cuando se inicie el sistema.
 
@@ -54,7 +54,7 @@ Para hacer esto, abre la aplicación "Aplicaciones de inicio" desde el menú de 
 conky
 ```
 
-![inicio](https://drive.google.com/uc?export=view&id=1E89q5mfDGB0IWMY1zIVDE4ge8NPp5DZf)
+![inicio](https://www.dropbox.com/s/t3dxwvvc3uoco00/Establecer%20al%20inicio%20conky.png?raw=1)
 
 ## Personalizacion
 
@@ -68,7 +68,7 @@ sudo vim /etc/conky/conky.conf
 
 para abrir el archivo de configuración de Conky. Si no existe, se creará un nuevo archivo.
 
-![conf](https://drive.google.com/uc?export=view&id=1F0paLEYM6bpO6dntBNUxc9jw49wGVIFb)
+![Configuración Conky](https://www.dropbox.com/s/ex8et1y3biho0qi/Conky%20Predeterminado.png?raw=1)
 
 2. Una vez abierto el archivo de configuración,entra en modo de edición, presiona la tecla `i`. Luego, realiza los cambios deseados en el archivo buscando las secciones correspondientes a las características que deseas personalizar. Por ejemplo, si deseas cambiar el color de fondo, busca la sección que comienza con own_window_colour y cambia el valor del color.
 3. Para guardar los cambios realizados, presiona Esc para salir del modo de edición. Luego, escribe `:wq` y presiona `Enter`.
@@ -82,6 +82,6 @@ en la terminal. Luego ejecuta `Conky` nuevamente. 5. Si deseas seguir personaliz
 
 Personalmente, recomiendo utilizar este [script.](https://drive.google.com/file/d/1LSddh0XbIrrXdHprFbztC_6sAYvWsPW-/view?usp=share_link) Para usarlo, primero debes borrar todo el contenido del archivo `conky.conf` y luego copiar y pegar el script en él, además, en la seccion downspeed y downspeed se debe colocar la interfaz de red que tiene tu dispositivo. Esto hará que Conky se vea así:
 
-![conky mejor](https://drive.google.com/uc?export=view&id=1f1RnRqkrjGQ--d4WF-kXlVytJzTeWGiv)
+![Conky Personalizado](https://www.dropbox.com/s/21fc5urs2x9u4uw/Conky%20Personalizado.png?raw=1)
 
 Como puedes ver este es un poco más limpio y bonito.
