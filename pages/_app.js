@@ -20,7 +20,10 @@ class App extends React.Component {
     const timeOnPage = new Date().getTime() - performance.timing.navigationStart */
     }
     render() {
-        const { Component, pageProps } = this.props
+        const { Component, pageProps, router } = this.props
+        // Check if we are on the hidden Valentine's page
+        const isHiddenPage = router.pathname === '/para-ti'
+
         return (
             <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
                 <Head>
@@ -31,11 +34,19 @@ class App extends React.Component {
                     <meta content="width=device-width, initial-scale=1" name="viewport" />
                 </Head>
                 {isDevelopment && isSocket && <ClientReload />}
-                <Navbar>
-                    <Scrollbar />
-                    <Component {...pageProps} />
-                    <Cookies />
-                </Navbar>
+                {isHiddenPage ? (
+                    <>
+                        <Scrollbar />
+                        <Component {...pageProps} />
+                        <Cookies />
+                    </>
+                ) : (
+                    <Navbar>
+                        <Scrollbar />
+                        <Component {...pageProps} />
+                        <Cookies />
+                    </Navbar>
+                )}
             </ThemeProvider>
         )
     }
