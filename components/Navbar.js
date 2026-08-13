@@ -1,5 +1,7 @@
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 import Footer from './Footer'
 import ThemeSwitch from './ThemeSwitch'
 import siteMetadata from '@/data/siteMetadata'
@@ -9,15 +11,16 @@ import PropTypes from 'prop-types'
 
 const navigation = [
     { name: 'Inicio', href: '/' },
-    { name: 'Blogs', href: '/blog' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Etiquetas', href: '/etiquetas' },
     { name: 'Proyectos', href: '/proyectos' },
-    { name: 'About', href: '/sobre-mi' },
+    { name: 'Sobre mí', href: '/sobre-mi' },
 ]
 
-function className(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
+const linkClass = (current) =>
+    `rounded-full px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+        current ? 'bg-sunken text-ink' : 'text-muted hover:bg-sunken hover:text-ink'
+    }`
 
 /**
  * Componente de barra de navegación.
@@ -27,106 +30,86 @@ function className(...classes) {
  * @returns {ReactNode} El componente de barra de navegación.
  */
 export default function Navbar({ children }) {
-    return (
-        <div>
-            <header>
-                <div className="fixed w-full top-0 z-50">
-                    <Disclosure as="nav" className="navbar bg-gray-800  ">
-                        {({ open }) => (
-                            <>
-                                <div className="text-black dark:text-white  mx-auto px-2 sm:px-6 lg:px-8">
-                                    <div className="relative flex items-center justify-between h-16">
-                                        <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                                            {/* Botón de menú de celular */}
-                                            <Disclosure.Button className="text-blue-400 inline-flex items-center justify-center p-2 rounded-md dark:text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                                                <span className="sr-only">Abrir menú de inicio</span>
-                                                {open ? (
-                                                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                                                ) : (
-                                                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                                                )}
-                                            </Disclosure.Button>
-                                        </div>
-                                        <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                                            <div className="flex flex-shrink-0 items-center">
-                                                <Link href="/">
-                                                    <Image
-                                                        className="block h-8 w-auto lg:hidden"
-                                                        src={siteMetadata.siteLogo}
-                                                        width={30}
-                                                        height={30}
-                                                        alt="techcode"
-                                                    />
-                                                </Link>
-                                                <Link href="/">
-                                                    <Image
-                                                        className="hidden h-7 w-auto lg:block"
-                                                        src={siteMetadata.siteLogo}
-                                                        width={30}
-                                                        height={30}
-                                                        alt="techcode"
-                                                    />
-                                                </Link>
-                                            </div>
-                                            <div className="hidden sm:block h-auto sm:ml-6 ">
-                                                <div className="flex h-full space-x-4">
-                                                    {navigation.map((item) => (
-                                                        <a
-                                                            key={item.name}
-                                                            href={item.href}
-                                                            className="transition ease-in-out duration-1000
-                                hover:border-b-2 hover:border-green-500
-                              hover:text-green-400 border-b-2
-                                border-transparent text-primary-50
-                              hover:bg-gray-900 rounded-md px-3 h-full
-                                py-2 text-sm md:text-xl xl:text-xl 2xl:text-3xl
-                                font-sans"
-                                                            aria-current={item.current ? 'page' : undefined}
-                                                        >
-                                                            {item.name}
-                                                        </a>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="absolute inset-y-0 right-0 flex items-center justify-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                            <ThemeSwitch />
-                                        </div>
-                                    </div>
-                                </div>
+    const { pathname } = useRouter()
+    const isCurrent = (href) => (href === '/' ? pathname === '/' : pathname.startsWith(href))
 
-                                <Disclosure.Panel className="sm:hidden">
-                                    <div className="space-y-1 px-2 pt-2 pb-3 h-auto dark:text-white">
-                                        {navigation.map((item) => (
-                                            <Disclosure.Button
-                                                key={item.name}
-                                                as="a"
-                                                href={item.href}
-                                                className="transition ease-in-out duration-700
-                          hover:border-b-2 hover:border-gray-500
-                          border-b-2 border-gray-500
-                        text-white h-full hover:bg-gray-100 hover:text-gray-900
-                          block rounded-md px-3 py-2 text-base font-medium"
-                                                aria-current={item.current ? 'page' : undefined}
-                                            >
-                                                {item.name}
-                                            </Disclosure.Button>
-                                        ))}
-                                    </div>
-                                </Disclosure.Panel>
-                            </>
-                        )}
-                    </Disclosure>
-                </div>
+    return (
+        <div className="flex min-h-screen flex-col">
+            <header className="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:px-6 lg:px-8">
+                <Disclosure
+                    as="nav"
+                    aria-label="Principal"
+                    className="mx-auto max-w-6xl rounded-3xl border border-line bg-surface/80 backdrop-blur-md"
+                >
+                    {({ open }) => (
+                        <>
+                            <div className="flex h-14 items-center gap-1 pl-4 pr-2">
+                                <Link
+                                    href="/"
+                                    className="mr-auto flex items-center gap-2 rounded-full text-lg font-bold tracking-tight text-ink"
+                                >
+                                    <Image
+                                        className="h-7 w-7 rounded-lg"
+                                        src={siteMetadata.siteLogo}
+                                        width={28}
+                                        height={28}
+                                        alt=""
+                                    />
+                                    TechCode
+                                </Link>
+                                <div className="hidden items-center gap-1 md:flex">
+                                    {navigation.map((item) => (
+                                        <Link
+                                            key={item.name}
+                                            href={item.href}
+                                            className={linkClass(isCurrent(item.href))}
+                                            aria-current={isCurrent(item.href) ? 'page' : undefined}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    ))}
+                                </div>
+                                <ThemeSwitch />
+                                {/* Botón de menú de celular */}
+                                <Disclosure.Button className="grid h-10 w-10 place-items-center rounded-full text-muted transition-colors duration-200 hover:bg-sunken hover:text-ink md:hidden">
+                                    <span className="sr-only">
+                                        {open ? 'Cerrar menú' : 'Abrir menú'}
+                                    </span>
+                                    {open ? (
+                                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                                    ) : (
+                                        <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                                    )}
+                                </Disclosure.Button>
+                            </div>
+
+                            <Disclosure.Panel className="border-t border-line p-2 md:hidden">
+                                <div className="flex flex-col gap-1">
+                                    {navigation.map((item) => (
+                                        <Disclosure.Button
+                                            key={item.name}
+                                            as={NextLink}
+                                            href={item.href}
+                                            className={`${linkClass(
+                                                isCurrent(item.href)
+                                            )} text-base`}
+                                            aria-current={isCurrent(item.href) ? 'page' : undefined}
+                                        >
+                                            {item.name}
+                                        </Disclosure.Button>
+                                    ))}
+                                </div>
+                            </Disclosure.Panel>
+                        </>
+                    )}
+                </Disclosure>
             </header>
 
-            <main className="mt-14 mb-36 mx-auto w-full my-auto">{children}</main>
-            <div className=" bottom-0   left-0 right-0">
-                <Footer />
-            </div>
+            <main className="flex-1 pb-16 pt-24 md:pb-24 md:pt-28">{children}</main>
+            <Footer />
         </div>
     )
 }
 Navbar.propTypes = {
-    children: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
 }
