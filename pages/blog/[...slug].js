@@ -1,5 +1,6 @@
 import { MDXLayoutRender } from '@/components/MDXComponents'
 import PageTitle from '@/components/PageTitle'
+import SectionContainer from '@/components/SectionContainer'
 import generateRss from '@/lib/generate-rss'
 import { formatSlug, getAllFilesMetadata, getFiles, getFilesBySlug } from '@/lib/mdx'
 import fs from 'fs'
@@ -55,14 +56,14 @@ export default function Blog({ post, authorDetails, anterior, posterior }) {
                     posterior={posterior}
                 />
             ) : (
-                <div className="mt-24 text-center">
+                <SectionContainer>
                     <PageTitle>
                         En Construcción{' '}
-                        <span role="img" alt="roadwork sign" aria-label="roadwork sign">
+                        <span role="img" aria-label="roadwork sign">
                             🚧
                         </span>
                     </PageTitle>
-                </div>
+                </SectionContainer>
             )}
         </>
     )
