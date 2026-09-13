@@ -2,10 +2,11 @@ import { ClientReload } from '@/components/ClientReload'
 import Navbar from '@/components/Navbar'
 import siteMetadata from '@/data/siteMetadata'
 import '@/styles/blogs.css'
+import '@/styles/prism.css'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import React from 'react'
-import { initGTM, logPageView } from '@/components/analytics/Google'
+import Analytics from '@/components/analytics/Analytics'
 import Cookies from '@/components/Cookies'
 import Scrollbar from '@/components/Scrollbar'
 import PropTypes from 'prop-types'
@@ -14,18 +15,17 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 class App extends React.Component {
-    componentDidMount() {
-        initGTM()
-        logPageView() /*
-    const timeOnPage = new Date().getTime() - performance.timing.navigationStart */
-    }
     render() {
         const { Component, pageProps, router } = this.props
         // Check if we are on the hidden Valentine's page
         const isHiddenPage = router.pathname === '/para-ti'
 
         return (
-            <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+            <ThemeProvider
+                attribute="class"
+                defaultTheme={siteMetadata.theme}
+                disableTransitionOnChange
+            >
                 <Head>
                     <meta
                         name="google-site-verification"
@@ -34,6 +34,7 @@ class App extends React.Component {
                     <meta content="width=device-width, initial-scale=1" name="viewport" />
                 </Head>
                 {isDevelopment && isSocket && <ClientReload />}
+                <Analytics />
                 {isHiddenPage ? (
                     <>
                         <Scrollbar />

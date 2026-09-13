@@ -5,18 +5,19 @@ export const GTM_ID = 'GTM-MB5QVWF'
 const ANALYTICS_ID = siteMetadata.analytics.googleAnalyticsId
 
 export const initGTM = () => {
-    if (typeof window !== 'undefined') {
-        const script = document.createElement('script')
-        script.async = true
-        script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`
-        document.body.appendChild(script)
-
+    if (typeof window !== 'undefined' && !window.gtmLoaded) {
+        window.gtmLoaded = true
         window.dataLayer = window.dataLayer || []
         window.gtag = function () {
             window.dataLayer.push(arguments)
         }
         window.gtag('js', new Date())
         window.gtag('config', GTM_ID)
+
+        const script = document.createElement('script')
+        script.async = true
+        script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`
+        document.body.appendChild(script)
     }
 }
 
@@ -40,4 +41,4 @@ export const logEvent = (action, category, label, value) => {
         event_label: label,
         value: value,
     })
-} 
+}
