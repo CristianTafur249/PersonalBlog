@@ -1,0 +1,120 @@
+---
+title: '¿Por qué mi contenedor Docker tiene la hora equivocada?'
+date: '2026-10-13'
+lastmod: '2026-10-13'
+tags: ['Docker', 'Linux', 'Contenedores', 'Software libre']
+draft: false
+images: []
+authors: ['tafur']
+summary: 'Los contenedores Docker usan UTC aunque tu equipo tenga otra zona horaria. Aprende a configurarla y a comprobar que tus tareas programadas corren a la hora correcta.'
+---
+
+Programas una tarea para la noche y arranca en plena tarde. En los registros todas las horas van cinco horas adelantadas: tu equipo marca bien la hora, el contenedor no.
+
+Un contenedor no hereda la zona horaria del equipo anfitrión; si no le indicas otra, trabaja en UTC.
+
+## Comprueba la hora dentro del contenedor
+
+Compara la hora de tu equipo con la del contenedor:
+
+```bash
+date
+docker exec mi-contenedor date
+```
+
+Si la segunda dice `UTC` y la primera no, ese es el problema.
+
+## La solución: la variable TZ
+
+Lo más portable es definir la variable de entorno `TZ` con el nombre de tu zona horaria, que para Colombia es `America/Bogota`.
+
+Con `docker run`:
+
+```bash
+docker run -e TZ=America/Bogota mi-imagen
+```
+
+Con Docker Compose:
+
+```yaml
+services:
+  app:
+    image: mi-imagen
+    environment:
+      - TZ=America/Bogota
+```
+
+Si no sabes el nombre exacto de tu zona, puedes listarlas:
+
+```bash
+timedatectl list-timezones | grep America
+```
+
+Después hay que recrear el contenedor; reiniciarlo no basta, porque las variables de entorno se fijan al crearlo:
+
+```bash
+docker compose up -d
+```
+
+## Cuando la variable no tiene efecto
+
+Si definiste `TZ` y el contenedor sigue en UTC, revisa lo siguiente.
+
+### La imagen no incluye los datos de zonas horarias
+
+Las imágenes mínimas, como las basadas en Alpine, no traen el paquete `tzdata`. Sin él, el sistema no reconoce `America/Bogota` y se queda en UTC sin avisar. Agrégalo en tu Dockerfile:
+
+```docker
+FROM alpine:3.20
+RUN apk add --no-cache tzdata
+ENV TZ=America/Bogota
+```
+
+En imágenes basadas en Debian o Ubuntu el paquete se llama igual:
+
+```docker
+RUN apt-get update && apt-get install -y tzdata && rm -rf /var/lib/apt/lists/*
+```
+
+### La variable está en un archivo que no se carga
+
+Un archivo `.env` junto al `docker-compose.yml` no pasa sus variables al contenedor; Compose solo lo usa para sustituir valores dentro del propio archivo. Para que lleguen al contenedor hay que declararlo:
+
+```yaml
+services:
+  app:
+    image: mi-imagen
+    env_file:
+      - .env
+```
+
+Para ver qué variables recibió el contenedor:
+
+```bash
+docker exec mi-contenedor env | grep TZ
+```
+
+### La aplicación pide la hora en UTC
+
+Algunos programas ignoran la zona del sistema porque el código pide UTC a propósito. En Python, `datetime.utcnow()` siempre devuelve UTC, mientras que `datetime.now()` respeta `TZ`. Si tu aplicación compara la hora actual con un horario configurado, revisa cuál de las dos usa.
+
+## Alternativa: compartir la configuración del anfitrión
+
+También puedes montar los archivos de zona horaria de tu equipo en modo de solo lectura:
+
+```yaml
+services:
+  app:
+    image: mi-imagen
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+```
+
+Funciona en un solo equipo, pero ata el contenedor a esa máquina. Si piensas desplegarlo en otro servidor, la variable `TZ` es más predecible.
+
+## Cuidado con las tareas programadas
+
+Si usas `cron` dentro de un contenedor, el servicio lee la zona horaria al arrancar. Después de corregirla, recrea el contenedor y prueba con una tarea de ensayo que se ejecute a la hora esperada.
+
+En registros y bases de datos conviene guardar las fechas en UTC y convertirlas a hora local solo al mostrarlas; así no hay sorpresas si algún día mueves el servicio a un servidor en otra región.

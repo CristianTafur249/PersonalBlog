@@ -1,0 +1,152 @@
+---
+title: '¿Qué hacer cuando Linux dice que el disco está lleno?'
+date: '2026-10-13'
+lastmod: '2026-10-13'
+tags: ['Almacenamiento', 'Linux', 'Docker', 'Terminal', 'Software libre']
+draft: false
+images: []
+authors: ['tafur']
+summary: 'Encuentra qué está ocupando tu disco en Linux y libera espacio de forma segura: carpetas grandes, Docker, registros del sistema, paquetes y cachés.'
+---
+
+El disco lleno suele notarse cuando ya molesta: una actualización que falla, un programa que no abre o un contenedor que se detiene. Antes de borrar al azar, averigua qué partición está llena y qué la ocupa.
+
+## Paso 1: identifica la partición llena
+
+```bash
+df -h
+```
+
+Fíjate en la columna `Uso%` y en el punto de montaje: no es lo mismo que se llene `/` (el sistema) que `/home` (tus archivos). Las líneas `tmpfs` y `loop` no son discos reales, ignóralas.
+
+## Paso 2: encuentra las carpetas más pesadas
+
+Para ver cuánto ocupa cada carpeta de primer nivel dentro de tu directorio personal:
+
+```bash
+du -h --max-depth=1 ~ | sort -h
+```
+
+Para revisar el sistema completo sin salir de la partición raíz:
+
+```bash
+sudo du -xh --max-depth=1 / | sort -h
+```
+
+La opción `-x` evita que el comando entre en otros discos montados. Repítelo bajando por la carpeta más grande hasta dar con el origen.
+
+`ncdu` hace lo mismo de forma interactiva y se navega con las flechas:
+
+```bash
+sudo apt install ncdu
+sudo ncdu -x /
+```
+
+## Paso 3: revisa a los sospechosos habituales
+
+### Docker
+
+Si usas contenedores, empieza por aquí: imágenes antiguas, contenedores detenidos y caché de compilación crecen sin que lo notes.
+
+```bash
+docker system df
+```
+
+Para eliminar lo que no está en uso:
+
+```bash
+docker system prune
+```
+
+Borra contenedores detenidos, redes sin usar, imágenes sin etiqueta y caché de compilación, pero no los volúmenes. Existe `--volumes`, aunque solo deberías usarla si estás seguro, porque ahí viven los datos de tus bases de datos y servicios.
+
+Los registros de los contenedores tampoco tienen límite de tamaño por defecto. Puedes fijar uno en `/etc/docker/daemon.json`:
+
+```json
+{
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file": "3"
+  }
+}
+```
+
+El límite se aplica a los contenedores creados después de reiniciar el servicio de Docker.
+
+### Registros del sistema
+
+Comprueba cuánto ocupa el diario de systemd y redúcelo:
+
+```bash
+journalctl --disk-usage
+sudo journalctl --vacuum-size=200M
+```
+
+### Paquetes y núcleos antiguos
+
+En Ubuntu y derivadas:
+
+```bash
+sudo apt autoremove --purge
+sudo apt clean
+```
+
+El primero quita dependencias huérfanas y núcleos viejos; el segundo vacía la caché de paquetes descargados.
+
+### Versiones antiguas de Snap
+
+Snap conserva versiones anteriores de cada aplicación. Para ver cuáles están desactivadas:
+
+```bash
+snap list --all | grep desactivado
+```
+
+Si tu sistema está en inglés, busca `disabled`. Para limitar cuántas versiones se guardan en adelante:
+
+```bash
+sudo snap set system refresh.retain=2
+```
+
+### Cachés de usuario
+
+`~/.cache` se puede vaciar sin perder datos, porque los programas la reconstruyen cuando la necesitan. Mira primero qué pesa más:
+
+```bash
+du -h --max-depth=1 ~/.cache | sort -h
+```
+
+La papelera también ocupa espacio hasta que la vacías:
+
+```bash
+du -sh ~/.local/share/Trash
+```
+
+## Dos casos que despistan
+
+### Hay espacio libre, pero el sistema dice que no
+
+Puede que se hayan agotado los inodos, las entradas disponibles para archivos. Pasa cuando hay millones de archivos diminutos:
+
+```bash
+df -i
+```
+
+Si alguna partición marca 100 % en esa tabla, busca carpetas con muchísimos archivos, como cachés o sesiones antiguas.
+
+### Borraste archivos y el espacio no vuelve
+
+Si un programa tenía abierto el archivo que eliminaste, el espacio no se libera hasta que ese programa se cierra; pasa mucho con los registros. Para encontrarlos:
+
+```bash
+sudo lsof +L1
+```
+
+Reinicia el servicio que aparezca en la lista y el espacio vuelve.
+
+## Para que no vuelva a pasar
+
+- Fija un límite a los registros de Docker y al diario del sistema.
+- Ejecuta `docker system prune` cada cierto tiempo si compilas imágenes con frecuencia.
+- Revisa `df -h` antes de una actualización grande.
+- No borres nada dentro de `/var/lib` a mano; usa siempre la herramienta del programa dueño de esos datos.
