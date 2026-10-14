@@ -9,6 +9,9 @@ export const MDXComponents = {
     Image,
     TOInline,
     a: CustomLink,
+    // Imágenes remotas (las locales ya pasan por next/image en remark-img-to-jsx)
+    // eslint-disable-next-line @next/next/no-img-element
+    img: ({ alt = '', ...rest }) => <img alt={alt} loading="lazy" decoding="async" {...rest} />,
     pre: Pre,
     wrapper: ({ components, layout, ...rest }) => {
         const Layout = require(`../layouts/${layout}`).default

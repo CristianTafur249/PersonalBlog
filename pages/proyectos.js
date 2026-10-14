@@ -1,9 +1,17 @@
-import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
+import PageTitle from '@/components/PageTitle'
+import SectionContainer from '@/components/SectionContainer'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
+import { getProjects, REVALIDATE_SECONDS } from '@/lib/content'
+import PropTypes from 'prop-types'
 
-export default function Proyectos() {
+export async function getStaticProps() {
+    const projects = await getProjects()
+    return { props: { projects }, revalidate: REVALIDATE_SECONDS }
+}
+
+export default function Proyectos({ projects }) {
     const keywords = ['projects', 'portfolio', 'personal blog', 'web development', 'coding']
 
     return (
@@ -13,26 +21,24 @@ export default function Proyectos() {
                 description={siteMetadata.description}
                 metaKeywords={keywords}
             />
-            <div className="divide-y divide-gray-200 dark:divide-gray-700 w-5/6 justify-items-center mx-auto">
-                <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-                    <h1 className="dark:text-white  md:text-6xl text-4xl w-full 2xl:text-7xl fond-bold tracking-tight">
-                        Proyectos
-                    </h1>
+            <SectionContainer>
+                <PageTitle>Proyectos</PageTitle>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {projects.map((d) => (
+                        <Card
+                            key={d.title}
+                            title={d.title}
+                            description={d.description}
+                            imgSrc={d.imgSrc}
+                            href={d.href}
+                        />
+                    ))}
                 </div>
-                <div className="container py-12">
-                    <div className="flex flex-wrap mx-auto">
-                        {projectsData.map((d) => (
-                            <Card
-                                key={d.title}
-                                title={d.title}
-                                description={d.description}
-                                imgSrc={d.imgSrc}
-                                href={d.href}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
+            </SectionContainer>
         </>
     )
+}
+
+Proyectos.propTypes = {
+    projects: PropTypes.array.isRequired,
 }

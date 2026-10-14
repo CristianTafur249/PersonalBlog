@@ -6,16 +6,14 @@ class MyDocument extends Document {
         return (
             <Html className="scroll-smooth" lang="es">
                 <Head>
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
+                        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;600&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
                         rel="stylesheet"
-                    ></link>
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,900;1,100;1,400;1,900&display=swap"
-                        rel="stylesheet"
-                    ></link>
+                    />
                 </Head>
-                <body className="bg-gray-100 text-black antialiased dark:bg-gray-900 dark:text-white">
+                <body>
                     <Main />
                     <NextScript />
                 </body>

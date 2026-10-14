@@ -1,45 +1,38 @@
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid'
 import Link from './Link'
-import Image from './Image'
+import Tile from './Tile'
+import Cover from './Cover'
 import PropTypes from 'prop-types'
 
 const Card = ({ title, description, imgSrc, href }) => {
     return (
-        <div className="flex justify-center m-5">
-            <div
-                className={`${imgSrc && 'h-full'
-                    } block max-w-sm rounded-lg bg-gray- shadow-lg dark:bg-neutral-700`}
-            >
-                {imgSrc &&
-                    (href ? (
-                        <Link href={href} aria-label={`Link to ${title}`}>
-                            <Image alt={title} src={imgSrc} className="rounded-t-lg" width={544} height={306} />
-                        </Link>
-                    ) : (
-                        <Image alt={title} src={imgSrc} className="rounded-t-lg" width={544} height={306} />
-                    ))}
-                <div className="p-6">
-                    <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                        {href ? (
-                            <Link href={href} aria-label={`Link to ${title}`}>
-                                {title}
-                            </Link>
-                        ) : (
-                            title
-                        )}
-                    </h5>
-                    <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">{description}</p>
-                    {href && (
+        <Tile as="article" interactive={Boolean(href)} className="group flex h-full flex-col p-3">
+            <Cover src={imgSrc} label={title} className="aspect-[16/9]" />
+            <div className="flex flex-1 flex-col gap-2 p-3">
+                <h2 className="text-xl font-bold leading-snug tracking-tight text-ink">
+                    {href ? (
                         <Link
                             href={href}
-                            className="text-primary-700 dark:text-primary-400"
-                            aria-label={`Link to ${title}`}
+                            className="stretched-link transition-colors duration-200 group-hover:text-accent"
                         >
-                            Ir &rarr;
+                            {title}
                         </Link>
+                    ) : (
+                        title
                     )}
-                </div>
+                </h2>
+                <p className="text-sm leading-relaxed text-muted">{description}</p>
+                {href && (
+                    <span
+                        aria-hidden="true"
+                        className="mt-auto inline-flex items-center gap-1 pt-2 text-sm font-semibold text-accent"
+                    >
+                        Visitar
+                        <ArrowUpRightIcon className="h-4 w-4" />
+                    </span>
+                )}
             </div>
-        </div>
+        </Tile>
     )
 }
 
