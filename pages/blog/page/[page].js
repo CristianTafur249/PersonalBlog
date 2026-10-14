@@ -2,19 +2,19 @@ import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
 import { getAllFilesMetadata } from '@/lib/mdx'
+import { REVALIDATE_SECONDS } from '@/lib/content'
 import { POSTS_PER_PAGE } from '@/pages/blog'
 import PropTypes from 'prop-types'
 
-
 export async function getStaticPaths() {
-    const totalPosts = await getAllFilesMetadata('blog')
+    const totalPosts = await getAllFilesMetadata()
     const totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
     const paths = Array.from({ length: totalPages }, (_, i) => ({
         params: { page: (i + 1).toString() },
     }))
     return {
         paths,
-        fallback: false,
+        fallback: 'blocking',
     }
 }
 
@@ -22,15 +22,19 @@ export async function getStaticProps(context) {
     const {
         params: { page },
     } = context
-    const posts = await getAllFilesMetadata('blog')
+    const posts = await getAllFilesMetadata()
     const pageNumber = parseInt(page)
+    const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE)
+    if (!(pageNumber >= 1 && pageNumber <= totalPages)) {
+        return { notFound: true, revalidate: REVALIDATE_SECONDS }
+    }
     const initialDisplayPosts = posts.slice(
         POSTS_PER_PAGE * (pageNumber - 1),
         POSTS_PER_PAGE * pageNumber
     )
     const pagination = {
         currentPage: pageNumber,
-        totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
+        totalPages,
     }
 
     return {
@@ -39,6 +43,7 @@ export async function getStaticProps(context) {
             initialDisplayPosts,
             pagination,
         },
+        revalidate: REVALIDATE_SECONDS,
     }
 }
 

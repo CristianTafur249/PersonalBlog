@@ -11,6 +11,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './layouts/**/*.{js,ts,jsx,tsx}',
   ],
 
   darkMode: 'class',
@@ -61,12 +62,23 @@ module.exports = {
       teal: colors.teal,
       cyan: colors.cyan,
       transparent: 'transparent',
+      current: 'currentColor',
       black: '#000',
       white: '#fff',
+      // Tokens del tema: sus valores cambian con .dark en styles/blogs.css
+      canvas: 'rgb(var(--c-canvas) / <alpha-value>)',
+      surface: 'rgb(var(--c-surface) / <alpha-value>)',
+      sunken: 'rgb(var(--c-sunken) / <alpha-value>)',
+      line: 'rgb(var(--c-line) / <alpha-value>)',
+      ink: 'rgb(var(--c-ink) / <alpha-value>)',
+      muted: 'rgb(var(--c-muted) / <alpha-value>)',
+      accent: 'rgb(var(--c-accent) / <alpha-value>)',
+      'accent-ink': 'rgb(var(--c-accent-ink) / <alpha-value>)',
     },
     fontFamily: {
-      sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
-      serif: ['Merriweather', 'serif'],
+      sans: ['"Bricolage Grotesque"', ...defaultTheme.fontFamily.sans],
+      serif: ['Merriweather', ...defaultTheme.fontFamily.serif],
+      mono: ['"JetBrains Mono"', ...defaultTheme.fontFamily.mono],
     },
 
     extend: {
@@ -116,140 +128,72 @@ module.exports = {
         13: '3.25rem',
         14: '3.5rem',
       },
-      fontFamily: {
-        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
-      },
-      colors: {
-        primary: colors.teal,
-        gray: colors.neutral,
-      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.800'),
+            '--tw-prose-body': 'rgb(var(--c-ink))',
+            '--tw-prose-headings': 'rgb(var(--c-ink))',
+            '--tw-prose-lead': 'rgb(var(--c-muted))',
+            '--tw-prose-links': 'rgb(var(--c-accent))',
+            '--tw-prose-bold': 'rgb(var(--c-ink))',
+            '--tw-prose-counters': 'rgb(var(--c-muted))',
+            '--tw-prose-bullets': 'rgb(var(--c-muted))',
+            '--tw-prose-hr': 'rgb(var(--c-line))',
+            '--tw-prose-quotes': 'rgb(var(--c-ink))',
+            '--tw-prose-quote-borders': 'rgb(var(--c-accent))',
+            '--tw-prose-captions': 'rgb(var(--c-muted))',
+            '--tw-prose-code': 'rgb(var(--c-ink))',
+            '--tw-prose-pre-code': 'rgb(var(--c-ink))',
+            '--tw-prose-pre-bg': 'rgb(var(--c-surface))',
+            '--tw-prose-th-borders': 'rgb(var(--c-muted))',
+            '--tw-prose-td-borders': 'rgb(var(--c-line))',
+            maxWidth: 'none',
+            fontFamily: theme('fontFamily.serif').join(', '),
+            lineHeight: '1.75',
+            'h1, h2, h3, h4': {
+              fontFamily: theme('fontFamily.sans').join(', '),
+              fontWeight: '700',
+              letterSpacing: '-0.02em',
+              scrollMarginTop: '6rem',
+              textWrap: 'balance',
+            },
+            h2: { fontSize: '1.5em', marginTop: '2em', marginBottom: '0.75em' },
+            h3: { fontSize: '1.25em', marginTop: '1.75em' },
             a: {
-              color: theme('colors.primary.600'),
-              '&:hover': {
-                color: `${theme('colors.primary.700')} !important`,
-              },
-              code: { color: theme('colors.primary.500') },
+              fontWeight: 'inherit',
+              textDecorationThickness: '1px',
+              textUnderlineOffset: '0.2em',
+              '&:hover': { textDecorationThickness: '2px' },
             },
-            h1: {
-              fontWeight: '600',
-              letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.gray.800'),
-            },
-            h2: {
-              fontWeight: '600',
-              letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.gray.800'),
-            },
-            h3: {
+            code: {
+              fontFamily: theme('fontFamily.mono').join(', '),
               fontWeight: '500',
-              color: theme('colors.gray.800'),
+              fontSize: '0.875em',
             },
-            'h4,h5,h6': {
-              color: theme('colors.gray.800'),
+            ':not(pre) > code': {
+              backgroundColor: 'rgb(var(--c-sunken))',
+              padding: '0.15em 0.4em',
+              borderRadius: '0.375rem',
+              overflowWrap: 'anywhere',
             },
+            'code::before': { content: 'none' },
+            'code::after': { content: 'none' },
             pre: {
-              backgroundColor: theme('colors.gray.700'),
+              fontFamily: theme('fontFamily.mono').join(', '),
+              border: '1px solid rgb(var(--c-line))',
+              borderRadius: '1rem',
+              fontSize: '0.875rem',
+              lineHeight: '1.7',
+              paddingRight: '3.5rem',
+              overflowX: 'auto',
             },
-            code: {
-              color: theme('colors.pink.500'),
-              backgroundColor: theme('colors.gray.100'),
-              paddingLeft: '4px',
-              paddingRight: '4px',
-              paddingTop: '2px',
-              paddingBottom: '2px',
-              borderRadius: '0.25rem',
-            },
-            'code::before': {
-              content: 'none',
-            },
-            'code::after': {
-              content: 'none',
-            },
+            'pre code': { fontWeight: '400', fontSize: 'inherit' },
+            img: { borderRadius: '1rem', marginLeft: 'auto', marginRight: 'auto' },
+            table: { display: 'block', overflowX: 'auto' },
             details: {
-              backgroundColor: theme('colors.gray.100'),
-              paddingLeft: '4px',
-              paddingRight: '4px',
-              paddingTop: '2px',
-              paddingBottom: '2px',
-              borderRadius: '0.25rem',
-            },
-            hr: { borderColor: theme('colors.gray.200') },
-            'ol li::marker': {
-              fontWeight: '600',
-              color: theme('colors.gray.500'),
-            },
-            'ul li::marker': {
-              backgroundColor: theme('colors.gray.500'),
-            },
-            strong: { color: theme('colors.gray.600') },
-            blockquote: {
-              color: theme('colors.gray.900'),
-              borderLeftColor: theme('colors.gray.200'),
-            },
-          },
-        },
-        dark: {
-          css: {
-            color: theme('colors.gray.300'),
-            a: {
-              color: theme('colors.primary.500'),
-              '&:hover': {
-                color: `${theme('colors.primary.400')} !important`,
-              },
-              code: { color: theme('colors.primary.400') },
-            },
-            h1: {
-              fontWeight: '700',
-              letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.gray.100'),
-            },
-            h2: {
-              fontWeight: '700',
-              letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.gray.100'),
-            },
-            h3: {
-              fontWeight: '600',
-              color: theme('colors.gray.100'),
-            },
-            'h4,h5,h6': {
-              color: theme('colors.gray.100'),
-            },
-            pre: {
-              backgroundColor: theme('colors.gray.800'),
-            },
-            code: {
-              backgroundColor: theme('colors.gray.800'),
-            },
-            details: {
-              backgroundColor: theme('colors.gray.800'),
-            },
-            hr: { borderColor: theme('colors.gray.700') },
-            'ol li::marker': {
-              fontWeight: '600',
-              color: theme('colors.gray.400'),
-            },
-            'ul li::marker': {
-              backgroundColor: theme('colors.gray.400'),
-            },
-            strong: { color: theme('colors.gray.100') },
-            thead: {
-              th: {
-                color: theme('colors.gray.100'),
-              },
-            },
-            tbody: {
-              tr: {
-                borderBottomColor: theme('colors.gray.700'),
-              },
-            },
-            blockquote: {
-              color: theme('colors.gray.100'),
-              borderLeftColor: theme('colors.gray.700'),
+              backgroundColor: 'rgb(var(--c-sunken))',
+              padding: '0.5rem 1rem',
+              borderRadius: '0.75rem',
             },
           },
         },

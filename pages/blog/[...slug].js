@@ -1,43 +1,47 @@
 import { MDXLayoutRender } from '@/components/MDXComponents'
 import PageTitle from '@/components/PageTitle'
-import generateRss from '@/lib/generate-rss'
-import { formatSlug, getAllFilesMetadata, getFiles, getFilesBySlug } from '@/lib/mdx'
-import fs from 'fs'
+import SectionContainer from '@/components/SectionContainer'
+import { getAllFilesMetadata, getFilesBySlug } from '@/lib/mdx'
+import { REVALIDATE_SECONDS } from '@/lib/content'
 import PropTypes from 'prop-types'
-
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
 export async function getStaticPaths() {
-    const posts = getFiles('blog')
+    const posts = await getAllFilesMetadata()
     return {
         paths: posts.map((p) => ({
             params: {
-                slug: formatSlug(p).split('/'),
+                slug: p.slug.split('/'),
             },
         })),
-        fallback: false,
+        // Las entradas nuevas de Dropbox se generan en la primera visita
+        fallback: 'blocking',
     }
 }
 
 export async function getStaticProps({ params }) {
-    const allPots = await getAllFilesMetadata('blog')
-    const postIndex = allPots.findIndex((post) => formatSlug(post.slug) === params.slug.join('/'))
-    const anterior = allPots[postIndex + 1] || null
-    const posterior = allPots[postIndex - 1] || null
-    const post = await getFilesBySlug('blog', params.slug.join('/'))
+    const slug = params.slug.join('/')
+    const post = await getFilesBySlug('blog', slug)
+    // Los borradores no se publican: su contenido viajaría en los props de la página
+    if (!post || post.frontMatter.draft === true) {
+        return { notFound: true, revalidate: REVALIDATE_SECONDS }
+    }
+
+    const allPosts = await getAllFilesMetadata()
+    const postIndex = allPosts.findIndex((p) => p.slug === slug)
+    const anterior = (postIndex >= 0 && allPosts[postIndex + 1]) || null
+    const posterior = (postIndex > 0 && allPosts[postIndex - 1]) || null
     const authorList = post.frontMatter.author || ['tafur']
     const authorPromise = authorList.map(async (author) => {
         const authorResults = await getFilesBySlug('authors', [author])
         return authorResults.frontMatter
     })
     const authorDetails = await Promise.all(authorPromise)
-    //rss
-    if (allPots.length > 0) {
-        const rss = generateRss(allPots)
-        fs.writeFileSync('./public/feed.xml', rss)
+    return {
+        props: { post, authorDetails, anterior, posterior },
+        revalidate: REVALIDATE_SECONDS,
     }
-    return { props: { post, authorDetails, anterior, posterior } }
 }
 export default function Blog({ post, authorDetails, anterior, posterior }) {
     const { mdxSource, toc, frontMatter } = post
@@ -55,14 +59,14 @@ export default function Blog({ post, authorDetails, anterior, posterior }) {
                     posterior={posterior}
                 />
             ) : (
-                <div className="mt-24 text-center">
+                <SectionContainer>
                     <PageTitle>
                         En Construcción{' '}
-                        <span role="img" alt="roadwork sign" aria-label="roadwork sign">
+                        <span role="img" aria-label="roadwork sign">
                             🚧
                         </span>
                     </PageTitle>
-                </div>
+                </SectionContainer>
             )}
         </>
     )
