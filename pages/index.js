@@ -1,9 +1,9 @@
 import { ArrowRightIcon, ArrowUpRightIcon } from '@heroicons/react/20/solid'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import projectsData from '@/data/projectsData'
 import { getAllFilesMetadata, getFilesBySlug } from '@/lib/mdx'
 import { getAllTags } from '@/lib/tags'
+import { getProjects, REVALIDATE_SECONDS } from '@/lib/content'
 import Header from '@/components/Header'
 import Image from '@/components/Image'
 import Link from '@/components/Link'
@@ -19,8 +19,9 @@ const MAX_TAGS = 10
 const MAX_PROJECTS = 4
 
 export async function getStaticProps() {
-    const posts = await getAllFilesMetadata('blog')
-    const tagCount = await getAllTags('blog')
+    const posts = await getAllFilesMetadata()
+    const tagCount = await getAllTags()
+    const projects = await getProjects()
     const tags = Object.keys(tagCount)
         .sort((a, b) => tagCount[b] - tagCount[a])
         .slice(0, MAX_TAGS)
@@ -31,14 +32,15 @@ export async function getStaticProps() {
         occupation: frontMatter.occupation || frontMatter.ocupation || null,
     }
     return {
-        props: { posts, tags, author },
+        props: { posts, tags, author, projects },
+        revalidate: REVALIDATE_SECONDS,
     }
 }
 
 const moreLinkClass =
     'relative z-10 inline-flex items-center gap-1 text-sm font-semibold text-accent underline-offset-4 hover:underline'
 
-export default function Home({ posts, tags, author }) {
+export default function Home({ posts, tags, author, projects }) {
     const [featured, ...rest] = posts.slice(0, MAX_DISPLAY)
     const beside = rest.slice(0, BESIDE_FEATURED)
     const below = rest.slice(BESIDE_FEATURED)
@@ -128,7 +130,7 @@ export default function Home({ posts, tags, author }) {
                         >
                             <h2 className="text-xl font-bold tracking-tight">Proyectos</h2>
                             <ul className="mt-4 flex flex-col divide-y divide-white/20">
-                                {projectsData.slice(0, MAX_PROJECTS).map((project) => {
+                                {projects.slice(0, MAX_PROJECTS).map((project) => {
                                     const Wrapper = project.href ? Link : 'div'
                                     return (
                                         <li key={project.title}>
@@ -161,7 +163,7 @@ export default function Home({ posts, tags, author }) {
                                 href="/proyectos"
                                 className="mt-auto inline-flex items-center gap-1 self-start pt-6 text-sm font-semibold underline-offset-4 hover:underline focus-visible:outline-white"
                             >
-                                Ver los {projectsData.length} proyectos
+                                Ver los {projects.length} proyectos
                                 <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
                             </Link>
                         </div>
@@ -196,4 +198,5 @@ Home.propTypes = {
     posts: PropTypes.array.isRequired,
     tags: PropTypes.array.isRequired,
     author: PropTypes.object.isRequired,
+    projects: PropTypes.array.isRequired,
 }

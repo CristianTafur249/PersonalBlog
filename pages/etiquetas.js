@@ -1,5 +1,6 @@
 import { PageSEO } from '@/components/SEO'
 import { getAllTags } from '@/lib/tags'
+import { REVALIDATE_SECONDS } from '@/lib/content'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import Link from 'next/link'
@@ -8,8 +9,8 @@ import PropTypes from 'prop-types'
 import siteMetadata from '@/data/siteMetadata'
 
 export async function getStaticProps() {
-    const tags = await getAllTags('blog')
-    return { props: { tags } }
+    const tags = await getAllTags()
+    return { props: { tags }, revalidate: REVALIDATE_SECONDS }
 }
 
 export default function Tags({ tags }) {
