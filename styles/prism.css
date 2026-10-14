@@ -1,0 +1,111 @@
+/* Tema de resaltado para rehype-prism-plus, sobre los tokens del sitio */
+:root {
+  --code-comment: #5b6b68;
+  --code-keyword: #0f766e;
+  --code-string: #9a3412;
+  --code-number: #6d28d9;
+  --code-function: #1d4ed8;
+  --code-tag: #be123c;
+  --code-punctuation: #4a5a57;
+}
+.dark {
+  --code-comment: #8fa5a1;
+  --code-keyword: #2dd4bf;
+  --code-string: #fdba74;
+  --code-number: #c4b5fd;
+  --code-function: #93c5fd;
+  --code-tag: #fda4af;
+  --code-punctuation: #9db2ae;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--code-comment);
+  font-style: italic;
+}
+.token.keyword,
+.token.atrule,
+.token.important,
+.token.attr-name,
+.token.selector,
+.token.builtin {
+  color: var(--code-keyword);
+}
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.inserted {
+  color: var(--code-string);
+}
+.token.number,
+.token.boolean,
+.token.constant,
+.token.symbol,
+.token.variable {
+  color: var(--code-number);
+}
+.token.function,
+.token.class-name,
+.token.property {
+  color: var(--code-function);
+}
+.token.tag,
+.token.deleted {
+  color: var(--code-tag);
+}
+.token.punctuation,
+.token.operator,
+.token.entity,
+.token.url {
+  color: var(--code-punctuation);
+}
+.token.bold {
+  font-weight: 600;
+}
+.token.italic {
+  font-style: italic;
+}
+
+/* Líneas, resaltado y numeración que emite rehype-prism-plus */
+.code-highlight {
+  display: block;
+  min-width: max-content;
+}
+.code-line {
+  display: block;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+.highlight-line {
+  background: rgb(var(--c-accent) / 0.12);
+  box-shadow: inset 2px 0 0 rgb(var(--c-accent));
+}
+.line-number::before {
+  content: attr(line);
+  display: inline-block;
+  width: 1.5rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: var(--code-comment);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Nombre de archivo sobre el bloque (remark-code-title) */
+.remark-code-title {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.8125rem;
+  color: rgb(var(--c-muted));
+  background: rgb(var(--c-sunken));
+  border: 1px solid rgb(var(--c-line));
+  border-bottom: 0;
+  border-radius: 1rem 1rem 0 0;
+  padding: 0.5rem 1rem;
+}
+.remark-code-title + div > pre {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

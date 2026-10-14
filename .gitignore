@@ -97,3 +97,28 @@ test-timings.json
 # Ignore sitemap and robots.txt files
 *sitemap
 *robots.txt
+
+# Ignore AI assistant configuration and local scripts
+.agents/
+skills-lock.json
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+GEMINI.md
+.gemini/
+.cursor/
+.cursorrules
+.windsurf/
+.windsurfrules
+.codex/
+.aider*
+.continue/
+.github/copilot-instructions.md
+.github/instructions/
+.github/prompts/
+.mcp.json
+PRODUCT.md
+DESIGN.md
+.impeccable*
+apply_commits.sh

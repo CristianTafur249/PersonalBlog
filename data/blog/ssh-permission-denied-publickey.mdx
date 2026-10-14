@@ -1,0 +1,128 @@
+---
+title: '¿Cómo solucionar "Permission denied (publickey)" al usar Git por SSH?'
+date: '2026-10-13'
+lastmod: '2026-10-13'
+tags: ['SSH', 'Git', 'Linux', 'Seguridad', 'Software libre']
+draft: false
+images: []
+authors: ['tafur']
+summary: 'Aprende a diagnosticar por qué tu servidor Git rechaza la clave SSH o te sigue pidiendo contraseña, y a manejar varias claves con el archivo config.'
+---
+
+Creaste una clave SSH, la registraste en tu servidor Git y aun así el servidor te pide una contraseña que no existe o responde `Permission denied (publickey)`. Casi siempre es porque SSH no está ofreciendo la clave que tú crees.
+
+Lo que sigue sirve para GitHub, GitLab, Gitea o cualquier servidor Git al que entres por SSH.
+
+## Primero, prueba la conexión
+
+Antes de clonar nada, comprueba la autenticación:
+
+```bash
+ssh -T git@servidor.ejemplo.com
+```
+
+Si todo está bien, verás un saludo con tu nombre de usuario. En Gitea el mensaje termina diciendo que el servidor no ofrece acceso a una terminal; eso no es un error, solo indica que la clave fue aceptada y que la cuenta sirve únicamente para Git.
+
+Si aparece `Permission denied (publickey)`, sigue leyendo.
+
+## Mira qué clave se está enviando
+
+Repite la prueba en modo detallado:
+
+```bash
+ssh -vT git@servidor.ejemplo.com
+```
+
+Las líneas que empiezan por `Offering public key` muestran qué claves se están probando. Lo normal es encontrarte con uno de estos casos:
+
+1. No se ofrece ninguna clave: SSH no encontró tu archivo porque tiene un nombre distinto a los predeterminados (`id_ed25519`, `id_rsa`).
+2. Se ofrece otra clave: tienes varias y SSH prueba primero la equivocada.
+3. Se ofrece la clave correcta y el servidor la rechaza: la clave pública no está registrada, o lo está en otra cuenta.
+
+## Usa el archivo config para elegir la clave
+
+Con más de una clave, lo más fiable es decirle a SSH cuál usar en cada servidor. Edita el archivo de configuración:
+
+```bash
+nano ~/.ssh/config
+```
+
+Y agrega un bloque por servidor:
+
+```text
+Host trabajo
+    HostName servidor.ejemplo.com
+    User git
+    Port 2222
+    IdentityFile ~/.ssh/clave_trabajo
+    IdentitiesOnly yes
+```
+
+Cada línea hace lo siguiente:
+
+- `Host` es un alias que tú eliges.
+- `HostName` es la dirección real del servidor.
+- `Port` solo es necesario si el servidor no usa el puerto 22.
+- `IdentityFile` apunta a la clave **privada**, sin la extensión `.pub`.
+- `IdentitiesOnly yes` obliga a usar solo esa clave. Sin ella, SSH puede ofrecer antes otras claves del agente y agotar los intentos que permite el servidor.
+
+Ahora basta con:
+
+```bash
+ssh -T trabajo
+```
+
+Y para clonar usas el alias en lugar de la dirección:
+
+```bash
+git clone trabajo:usuario/proyecto.git
+```
+
+## Si el servidor usa otro puerto
+
+Sin alias, la forma corta `git@servidor:usuario/proyecto.git` siempre usa el puerto 22. Para otro puerto necesitas la forma completa:
+
+```bash
+git clone ssh://git@servidor.ejemplo.com:2222/usuario/proyecto.git
+```
+
+## Revisa los permisos de los archivos
+
+SSH ignora las claves cuyos permisos son demasiado abiertos. Corrígelos así:
+
+```bash
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/clave_trabajo ~/.ssh/config
+chmod 644 ~/.ssh/clave_trabajo.pub
+```
+
+## Confirma que la clave registrada es la correcta
+
+Muestra tu clave pública y compárala con la que aparece en la configuración de tu cuenta en el servidor:
+
+```bash
+cat ~/.ssh/clave_trabajo.pub
+```
+
+Si no coincide, cópiala de nuevo en una sola línea, sin saltos.
+
+## ¿Te pide contraseña cada vez?
+
+Ojo, que son dos contraseñas distintas:
+
+- Si el mensaje dice `Enter passphrase for key`, te pide la frase que protege tu clave privada, y es normal. Para no escribirla en cada operación, carga la clave una vez en el agente:
+
+```bash
+ssh-add ~/.ssh/clave_trabajo
+```
+
+- Si dice algo como `git@servidor's password`, la autenticación por clave falló y el servidor pasó a pedir contraseña. Vuelve al modo detallado para ver qué clave se está enviando.
+
+## Un último detalle con repositorios ya clonados
+
+Si clonaste el repositorio por HTTPS, las claves SSH no entran en juego porque Git sigue usando esa dirección. Compruébalo y cámbiala:
+
+```bash
+git remote -v
+git remote set-url origin trabajo:usuario/proyecto.git
+```

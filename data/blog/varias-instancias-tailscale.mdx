@@ -1,0 +1,117 @@
+---
+title: '¿Cómo usar varias redes de Tailscale a la vez en Linux?'
+date: '2026-10-13'
+lastmod: '2026-10-13'
+tags: ['Tailscale', 'Linux', 'Redes', 'systemd', 'Software libre']
+draft: false
+images: []
+authors: ['tafur']
+summary: 'Ejecuta varias instancias de Tailscale en el mismo equipo, cada una con su propia cuenta, y haz que todas arranquen solas con systemd.'
+---
+
+Tailscale está pensado para que un equipo pertenezca a una sola red (tailnet) a la vez. Si trabajas con varias, por ejemplo la de tu servidor personal y la de un cliente, puedes cambiar de cuenta con `tailscale switch`, pero solo una queda conectada.
+
+La alternativa es lanzar varias instancias del servicio `tailscaled`, cada una con su propio estado, socket e interfaz de red, y dejarlas configuradas para que arranquen solas con el equipo.
+
+## Antes de empezar
+
+Necesitas tener Tailscale instalado y la primera instancia funcionando de la forma habitual:
+
+```bash
+sudo tailscale status
+```
+
+Esa instancia usa por defecto:
+
+- El estado en `/var/lib/tailscale`
+- El socket en `/run/tailscale/tailscaled.sock`
+- La interfaz `tailscale0`
+- El puerto UDP `41641`
+
+Cada instancia adicional debe usar valores distintos en los cuatro puntos. Si dos comparten alguno, la segunda no arranca o pisa a la primera.
+
+## Crear el servicio de la segunda instancia
+
+Crea un archivo de unidad nuevo para systemd:
+
+```bash
+sudo nano /etc/systemd/system/tailscaled-2.service
+```
+
+Y pega este contenido:
+
+```ini
+[Unit]
+Description=Tailscale (segunda instancia)
+After=network-pre.target
+Wants=network-pre.target
+
+[Service]
+ExecStart=/usr/sbin/tailscaled --statedir=/var/lib/tailscale-2 --socket=/run/tailscale-2/tailscaled.sock --tun=tailscale1 --port=41642
+RuntimeDirectory=tailscale-2
+StateDirectory=tailscale-2
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Con `RuntimeDirectory` y `StateDirectory`, systemd crea las carpetas `/run/tailscale-2` y `/var/lib/tailscale-2` por ti.
+
+Recarga systemd y activa el servicio; `enable` lo deja programado para cada arranque y `--now` lo enciende de una vez:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable --now tailscaled-2.service
+```
+
+## Conectar la segunda instancia a su red
+
+El comando `tailscale` habla por defecto con la primera instancia, así que para la segunda hay que indicarle el socket en cada orden:
+
+```bash
+sudo tailscale --socket=/run/tailscale-2/tailscaled.sock up --accept-dns=false
+```
+
+Te mostrará un enlace para iniciar sesión con la otra cuenta. Si tienes una clave de autenticación, puedes pasarla con `--auth-key`.
+
+`--accept-dns=false` evita que las dos instancias se peleen por el DNS del sistema. Solo una debería administrarlo; en las demás tendrás que usar direcciones IP en lugar de los nombres de MagicDNS.
+
+Para no escribir el socket cada vez, crea un alias en tu `~/.bashrc`:
+
+```bash
+alias tailscale2='sudo tailscale --socket=/run/tailscale-2/tailscaled.sock'
+```
+
+## Verificar que todo está encendido
+
+Revisa los servicios:
+
+```bash
+systemctl status tailscaled tailscaled-2
+```
+
+Y el estado de cada red:
+
+```bash
+sudo tailscale status
+sudo tailscale --socket=/run/tailscale-2/tailscaled.sock status
+```
+
+También puedes confirmar que existen las dos interfaces:
+
+```bash
+ip -brief address | grep tailscale
+```
+
+Para una tercera instancia repite el proceso cambiando el nombre de la unidad, las carpetas, la interfaz (`tailscale2`) y el puerto (`41643`).
+
+## Limitaciones que debes conocer
+
+- Tailscale no documenta esta configuración como soportada. Funciona, pero una actualización podría obligarte a ajustar algo.
+- Todas las tailnets reparten direcciones del mismo rango (`100.64.0.0/10`). Si aceptas rutas de subred con `--accept-routes` en más de una instancia, revisa que no anuncien los mismos rangos.
+- Las instancias escriben reglas en las mismas cadenas de `iptables` o `nftables`. Si una conexión entrante no llega, revisa que el tráfico de esa interfaz esté permitido.
+
+## Cuida tus claves de autenticación
+
+Una clave que empieza por `tskey-auth-` permite unir equipos a tu red, así que no la pegues en chats, capturas ni repositorios. Si se filtra, revócala desde la consola de administración de Tailscale y genera otra.

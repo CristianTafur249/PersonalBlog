@@ -1,0 +1,116 @@
+---
+title: '¿Cómo reiniciar el escritorio KDE Plasma sin cerrar sesión?'
+date: '2026-10-13'
+lastmod: '2026-10-13'
+tags: ['KDE', 'Linux', 'Escritorio', 'personalizacion', 'Software libre']
+draft: false
+images: []
+authors: ['tafur']
+summary: 'Si el panel de KDE Plasma desaparece, se congela o Konsole no abre, puedes reiniciar plasmashell sin perder tus ventanas. Te explico cómo y qué revisar después.'
+---
+
+El panel desaparece, el menú de aplicaciones no responde o el fondo se queda en negro, mientras la música sigue sonando y las ventanas responden. Lo que falló es `plasmashell`, el programa que dibuja el panel, los widgets y el escritorio.
+
+Se puede reiniciar sin cerrar sesión y sin perder tu trabajo.
+
+## Abre un lugar donde escribir comandos
+
+Sin panel, puedes llegar a una terminal así:
+
+- Presiona `Alt+Espacio` o `Alt+F2` para abrir KRunner y escribe `konsole`.
+- Presiona `Ctrl+Alt+T`, el atajo habitual de la terminal.
+- Si nada de eso responde, cambia a una consola de texto con `Ctrl+Alt+F3`, inicia sesión y vuelve después al escritorio con `Ctrl+Alt+F1` o `Ctrl+Alt+F2`.
+
+## Reinicia plasmashell
+
+En las versiones actuales de Plasma el escritorio corre como un servicio de usuario de systemd, así que basta con:
+
+```bash
+systemctl --user restart plasma-plasmashell.service
+```
+
+El panel desaparece un instante y vuelve a cargarse, sin cerrar tus ventanas.
+
+Si responde que el servicio no existe, tu sesión no arranca Plasma con systemd y toca usar el método clásico.
+
+En Plasma 6:
+
+```bash
+kquitapp6 plasmashell; kstart plasmashell
+```
+
+En Plasma 5:
+
+```bash
+kquitapp5 plasmashell; kstart5 plasmashell
+```
+
+Para saber qué versión tienes:
+
+```bash
+plasmashell --version
+```
+
+## Si se congelaron las ventanas y no el panel
+
+Si lo que falla son los bordes de las ventanas, los efectos o el cambio entre aplicaciones, el responsable es KWin, el gestor de ventanas. En una sesión X11 se reinicia así:
+
+```bash
+kwin_x11 --replace &
+```
+
+En Wayland KWin es el propio servidor gráfico y reiniciarlo cierra la sesión, así que guarda lo que puedas y vuelve a entrar.
+
+## Averigua por qué falló
+
+Si pasó una vez, no vale la pena investigar. Si se repite, mira los registros:
+
+```bash
+journalctl --user -b -u plasma-plasmashell.service --no-pager | tail -n 50
+```
+
+Y los cierres inesperados que registró el sistema:
+
+```bash
+coredumpctl list plasmashell
+```
+
+Lo más común es:
+
+1. Un widget de terceros. Los complementos de la tienda de KDE no siempre se actualizan al ritmo del escritorio; quita los que agregaste hace poco y observa si el fallo desaparece.
+2. Una actualización a medias. Si actualizaste paquetes de Plasma con la sesión abierta, las bibliotecas en disco ya no coinciden con las cargadas en memoria; reiniciar el equipo lo resuelve.
+3. El controlador gráfico, sobre todo si los cierres ocurren al activar efectos o al conectar un monitor.
+
+## Si el problema vuelve en cada inicio
+
+Si `plasmashell` falla nada más arrancar, puede haber una caché dañada. Borrarla es seguro porque se regenera sola:
+
+```bash
+rm -rf ~/.cache/plasmashell ~/.cache/plasma* ~/.cache/ksycoca*
+systemctl --user restart plasma-plasmashell.service
+```
+
+Si aun así no arranca, sospecha de la configuración del panel. Haz una copia antes de tocarla:
+
+```bash
+cp ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/appletsrc.respaldo
+```
+
+Si mueves ese archivo a otro lugar, Plasma crea un escritorio nuevo con el panel predeterminado. Pierdes la disposición de tus widgets, pero sabrás si el problema venía de ahí; si no, restaura la copia.
+
+## ¿Y si Konsole tampoco abre?
+
+Cuando Konsole falla a la vez que el panel, suele ser por una actualización parcial de las bibliotecas de KDE. Entra a una consola de texto con `Ctrl+Alt+F3`, completa la actualización y reinicia:
+
+```bash
+sudo apt update
+sudo apt full-upgrade
+sudo reboot
+```
+
+Si solo falla Konsole, prueba con una configuración limpia:
+
+```bash
+mv ~/.config/konsolerc ~/konsolerc.respaldo
+konsole
+```
